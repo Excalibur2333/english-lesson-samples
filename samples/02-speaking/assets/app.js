@@ -275,7 +275,8 @@
       fbOk: '对。先观点，再 because，再理由。大声读一遍。', fbBad: '顺序不对：先说观点（I think we should …），再接 because 和理由。再试一次。' }
   ];
   var quizI = 0, quizWrong = 0;
-  function nudgeAsk() { var a = $('#askBtn'); a.classList.remove('nudge'); void a.offsetWidth; a.classList.add('nudge'); }
+  var askHold = 0;
+  function nudgeAsk() { var a = $('#askBtn'); askHold = Date.now() + 4000; a.classList.remove('mini'); a.classList.remove('nudge'); void a.offsetWidth; a.classList.add('nudge'); }
   function stuckHint(host) {
     quizWrong++;
     if (quizWrong >= 2 && !$('.stuck', host)) {
@@ -415,7 +416,7 @@
     r2cb: { w: 'planets', ipa: '/ˈplænɪts/', tip: '/æ/ 嘴张大；结尾 /ts/ 轻而短。' },
     icea: { w: 'that’s', ipa: '/ðæts/', tip: '开头是浊音 /ð/：舌尖放在齿间并振动声带，别读成 /z/ 或 /d/。' },
     iceb: { w: 'juice', ipa: '/dʒuːs/', tip: '结尾是清音 /s/，别拖成 /z/。' },
-    r3a: { w: 'because', ipa: '/bɪˈkɔːz/', tip: '重音在后面 -CAUSE，结尾是浊音 /z/，不是 /s/。' },
+    r3a: { w: 'because', ipa: '/bɪˈkʌz/', tip: '重音在后面 -CAUSE，结尾是浊音 /z/，不是 /s/。' },
     r3b: { w: 'Saturdays', ipa: '/ˈsætərdeɪz/', tip: '重音在最前面 SAT-，中间的 -ur- 读得很轻。' }
   };
 
@@ -625,8 +626,8 @@
   /* ---------------- ④ 游戏：拉票大作战 ---------------- */
   var ROUNDS = [
     { who: 'Amy', face: '👧', g: 'g', say: 'It’s raining hard today.', zh: '今天雨下得很大。', ops: ['watch a film at home', 'ride our bikes', 'have a picnic'], rs: ['we can stay dry', 'riding is good exercise', 'we can eat outside'], c: 'g1' },
-    { who: 'Ben', face: '👦', g: 'b', say: 'I’m really hungry!', zh: '我好饿！', ops: ['make pizza', 'play chess', 'go for a run'], rs: ['we can eat it together', 'it’s a quiet game', 'running is good for us'], c: 'g2' },
-    { who: 'Tom', face: '🧒', g: 'b', say: 'I sat at my desk all day.', zh: '我在书桌前坐了一整天。', ops: ['play football', 'read a long book', 'watch TV'], rs: ['we need some exercise', 'the story is exciting', 'my favourite show is on'], c: 'g3' },
+    { who: 'Ben', face: '👦', g: 'b', say: 'I’m really hungry!', zh: '我好饿！', ops: ['have some sandwiches', 'play chess', 'go for a run'], rs: ['they are quick to make', 'it’s a quiet game', 'running is good for us'], c: 'g2' },
+    { who: 'Tom', face: '🧒', g: 'b', say: 'I sat at my desk all day.', zh: '我在书桌前坐了一整天。', ops: ['play football', 'read a long book', 'watch TV'], rs: ['we need some exercise', 'the story is exciting', 'my favorite show is on'], c: 'g3' },
     { who: 'Lily', face: '👧', g: 'g', say: 'It’s so hot outside!', zh: '外面太热了！', ops: ['go swimming', 'run in the park', 'fly a kite'], rs: ['the water is cool', 'running keeps us fit', 'it’s windy today'], c: 'g4' },
     { who: 'Nina', face: '👧', g: 'g', say: 'Tomorrow is Grandma’s birthday.', zh: '明天是奶奶的生日。', ops: ['make a card', 'clean our bikes', 'play video games'], rs: ['Grandma loves handmade presents', 'they are very dirty', 'the new game is fun'], c: 'g5' }
   ];
@@ -638,7 +639,7 @@
     pause: function () { if (this.timer) { clearInterval(this.timer); this.timer = null; } if (this.running && state.cur === 'game') { /* 离开页面：本局作废 */ this.running = false; } },
     intro: function () {
       var self = this, host = $('#gameHost'); host.innerHTML = '';
-      host.appendChild(el('p', '', '<b>玩法</b>：同学先说一句自己的情况（有声音）→ 你给他出主意：先选<span class="tag o">观点</span>再选<span class="tag r">理由</span>，拼成一句 <span class="en">I think we should …, because ….</span><br>观点要回应他的情况，理由要接得上观点。说服一位得一票，每轮 ' + ROUND_SEC + ' 秒。拼对之后要把整句大声说出来。'));
+      host.appendChild(el('p', '', '<b>玩法</b>：同学先说一句自己的情况（有声音）→ 你给他出主意：先选<span class="tag o">观点</span>再选<span class="tag r">理由</span>，拼成一句 <span class="en">I think we should …, because ….</span><br>观点要回应他的情况，理由要接得上观点。说服一位得一票，每轮 ' + ROUND_SEC + ' 秒。每一轮最后都要把整句亲口说出来（录音，或拿不到麦克风时点「我说完了」），才能去找下一位。'));
       if (state.gameVotes >= 0) host.appendChild(el('div', 'fb ' + (state.gameVotes >= 3 ? 'ok' : 'bad'), '上一局：' + state.gameVotes + ' / 5 票'));
       var b = el('button', 'btn', '开始拉票'); b.type = 'button';
       b.addEventListener('click', function () { self.i = 0; self.votes = []; self.quick = 0; self.running = true; self.round(); });
@@ -704,10 +705,12 @@
         var row = el('div');
         row.appendChild(playBtn('▶ 听这句', clip(R.c), 'sm'));
         fb.appendChild(row);
-        fb.appendChild(el('div', 'sub', '大声把这句说一遍，再点下一位。'));
+        fb.appendChild(el('div', 'sub', (win ? '票到手了。' : '这一票没拿到。') + '把这句亲口说给 ' + R.who + ' 听，才能去找下一位：'));
         var last = self.i === ROUNDS.length - 1;
-        var b = el('button', 'btn teal', last ? '看结果 →' : '下一位同学 →'); b.type = 'button';
+        var b = el('button', 'btn teal hide', last ? '看结果 →' : '下一位同学 →'); b.type = 'button';
         b.addEventListener('click', function () { stopAudio(); if (last) self.result(); else { self.i++; self.round(); } });
+        Recorder(fb, { model: R.c, sayLabel: '按一下，说给 ' + R.who + ' 听', maxSec: 12, onDone: function () {
+          b.classList.remove('hide'); try { b.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {} } });
         fb.appendChild(b);
         var bar = $('.gbar', host); if (bar) bar.outerHTML = self.barAfter();
         if (!timeout) play(clip((win ? 'vote_yes_' : 'vote_no_') + R.g));
@@ -776,7 +779,7 @@
         + '<div id="askWhy"></div>'
         + '<textarea id="askText" placeholder="也可以自己写一句，中文就行"></textarea>';
       var why = $('#askWhy', sheet);
-      ['听不清 Leo 说什么', '不知道理由怎么说', 'because 后面不会接', '发音没把握', '想法有，英语说不出来'].forEach(function (w) {
+      ['听不清对方说什么', '不知道理由怎么说', 'because 后面不会接', '发音没把握', '想法有，英语说不出来'].forEach(function (w) {
         var b = el('button', 'pill sm', w); b.type = 'button'; b.addEventListener('click', function () { b.classList.toggle('sel'); }); why.appendChild(b);
       });
       var send = el('button', 'btn', '发给老师'); send.type = 'button';
@@ -794,6 +797,7 @@
     close: function () { $('#askMask').classList.remove('on'); Ask.isOpen = false; }
   };
   $('#askBtn').addEventListener('click', function () { Ask.open(); });
+  window.addEventListener('scroll', function () { if (Date.now() < askHold) return; $('#askBtn').classList.toggle('mini', window.scrollY > 80); }, { passive: true });
   $('#askMask').addEventListener('click', function (e) { if (e.target === this) Ask.close(); });
 
   /* 视频播放时停掉别的声音 */

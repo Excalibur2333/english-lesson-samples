@@ -182,7 +182,9 @@ details.map[open] summary:after{content:"收起 ▴"}
 .check i{font-style:normal;flex:0 0 28px;font-size:18px}
 .check span{flex:1}
 /* 问老师 */
-.ask{position:fixed;right:12px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:30;background:var(--ink);color:#fff;border-radius:24px;padding:10px 15px;font-weight:700;font-size:14px;box-shadow:0 4px 12px rgba(31,42,68,.3)}
+.ask{position:fixed;right:12px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:30;background:var(--ink);color:#fff;border-radius:24px;padding:8px 12px;font-weight:700;font-size:13px;box-shadow:0 4px 12px rgba(31,42,68,.3)}
+.ask.mini{padding:0;width:40px;height:40px;border-radius:50%;font-size:17px;opacity:.88}
+.ask.mini .t{display:none}
 .ask.nudge{animation:pulse2 1s 3}
 @keyframes pulse2{50%{transform:scale(1.12)}}
 .mask{position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(31,42,68,.5);z-index:40;display:none;align-items:flex-end;justify-content:center}
@@ -219,7 +221,7 @@ details.map[open] summary:after{content:"收起 ▴"}
     <div class="map-row"><q>Level 3 情景对话+个人观点表达（KET-PET阶段）</q><span>情景是「和同学商量周六去哪儿」，整课只练一件事：说出观点，再用 because 给一个理由。</span></div>
     <div class="map-row"><q>输出形式：AI虚拟情景对练、日常话题阐述、简单理由输出</q><span>都在第 ③ 步。AI虚拟情景对练：和虚拟同学 Leo 对话 4 轮，走向跟着回答分支，第 3 轮要对他的主意表态。简单理由输出：每轮都要给理由，只答一个词会被追问 Why。日常话题阐述：对话结束后，把商量好的计划自己连着讲 3–4 句。</span></div>
     <div class="map-row"><q>能力目标：摆脱机械跟读，实现主动简单输出</q><span>第 ② 步分三小步：跟读 → 判断配对 → 只给提示词自己说，然后才进对练。</span></div>
-    <div class="map-row"><q>对标：KET/PET口语题型</q><span>方案里写「KET=描述复述｜PET=情景表达」，这一课取的是「情景表达」这一侧。任务形式参考 KET 口语 Part 2（聊喜好并说原因）和 PET 口语 Part 3（两人商量并做决定，要对同伴的主意表态）；句子难度在 KET 和 PET 之间。文字全部原创，没有用真题。</span></div>
+    <div class="map-row"><q>对标：KET/PET口语题型</q><span>方案里写「KET=描述复述｜PET=情景表达」，这一课取的是「情景表达」这一侧。任务形式参考 KET 口语 Part 2（讨论喜好并给出理由）和 PET 口语 Part 3（提出并回应建议、讨论备选、商量出一致意见）；句子难度在 KET 和 PET 之间。文字全部原创，没有用真题。</span></div>
     <div class="map-row"><q>听中带说、输入带动输出，听力积累达到阶段阈值，自动解锁对应层级口语任务</q><span>第 ① 步先听系统示范的对话再开口；阶梯图下写了解锁条件（样本里默认已达标）。</span></div>
     <div class="map-row"><q>口语全阶纠音、流利度/发音/逻辑多维打分</q><span>对练结束后的打分卡。静态网页接不了真 AI，哪一项是规则算的、哪一项是预置的，卡片上逐项标了。</span></div>
     <div class="map-row"><q>AI游戏化闯关、积分徽章、趣味交互，解决坚持问题</q><span>第 ④ 步游戏「拉票大作战」、右上角一路累加的积分、第 ⑤ 步的过关徽章。</span></div>
@@ -231,7 +233,7 @@ details.map[open] summary:after{content:"收起 ▴"}
     <span class="lv">口语八级阶梯 · Level 3 · 第 1 课</span>
     <h1 class="en">Saturday Plan</h1>
     <p style="font-weight:700;margin:0">周六去哪儿：说出你的想法，再给一个理由</p>
-    <p class="sub" style="margin:2px 0 0">情景对话 + 个人观点表达（KET–PET 阶段）· 约 6 分钟</p>
+    <p class="sub" style="margin:2px 0 0">情景对话 + 个人观点表达（KET–PET 阶段）· 约 7 分钟</p>
     <img src="assets/img/school.jpg" alt="Leo 和 Mia 在校门口商量周六的安排" width="960" height="540">
   </div>
 
@@ -349,9 +351,9 @@ details.map[open] summary:after{content:"收起 ▴"}
 
 </div>
 
-<button class="ask" id="askBtn">🙋 问老师</button>
+<button class="ask" id="askBtn" aria-label="问老师">🙋<span class="t"> 问老师</span></button>
 <div class="mask" id="askMask"><div class="sheet" id="askSheet"></div></div>
 
-<script src="assets/app.js?v=1121d"></script>
+<script src="assets/app.js?v=1121e"></script>
 </body>
 </html>
