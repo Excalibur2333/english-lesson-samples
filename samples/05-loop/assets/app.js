@@ -251,8 +251,8 @@ var MAP = [
   ['精听：AI分句停顿、挖空、复读、跟读、错题巩固、精修细节', '第 2 步：系统先用 45 秒短片讲这一课的三句话，再一句一停、挖空选词、复读、慢速；第一次选错的句子，最后会再来一遍。', 'listen2'],
   ['听中带说、输入带动输出，听力积累达到阶段阈值，自动解锁对应层级口语任务', '第 2 步做完才提示「口语任务解锁」，接着进第 3 步开口。', 'speak1'],
   ['Level 2 看图描述+短句复述……输出形式：绘本画面描述、3-5句故事复述、简单人机问答', '第 4 步：看四幅图，用四句话复述故事，再口头回答系统问的一个问题。第 3 步的两句跟读属于你方案里的 Level 1（短句模仿），放在前面当热身。', 'speak2'],
-  ['图片预测剧情（Predict）；读后口头复述（Retell）；新旧知识关联（Connect）', '第 5 步：看新一页的图先猜再读；把句子排回顺序后，只看 First / Then / Next / At last 口头复述；把 can 连到「谁能帮我」。', 'read'],
-  ['入门写作：单词仿写、单句翻译、句型替换、短文改写', '第 6 步只做了其中一项「句型替换」：换动物、换动作，自己打出一句新的。单词仿写、单句翻译、短文改写这个样本没做。', 'write'],
+  ['图片预测剧情（Predict）」「读后口头复述（Retell）」「新旧知识关联（Connect）', '第 5 步：看新一页的图先猜再读；把句子排回顺序后，只看 First / Then / Next / Finally 口头复述；把 can 连到「谁能帮我」。', 'read'],
+  ['入门写作」「单词仿写、单句翻译、句型替换、短文改写', '第 6 步只做了其中一项「句型替换」：换动物、换动作，自己打出一句新的。单词仿写、单句翻译、短文改写这个样本没做。', 'write'],
   ['语法不单独开课，全部融入写作与句型训练落地', '第 6 步写句子时才用到「它 + 动词加 s」，写错了当场提示；没有单独的语法课（第 2 步的短片里只用十来秒点了一下 hops / runs / walks 的尾巴）。', 'write'],
   ['AI游戏化闯关、积分徽章、趣味交互，解决坚持问题', '第 7 步「把苹果推回家」：答对了要自己动手把苹果推一格，朋友一个个来帮忙；限时、三颗心、连对加分，答错的题排到最后再考。', 'game'],
   ['全维度学情数据看板：听、说、读、写、语法、策略掌握度可视化', '第 8 步：六个维度都按这一次的真实操作当场算，每个分数下面写着依据。听、读、写、语法看对错；说看完成情况和自评；策略主要记「用没用过」，还谈不上掌握度。', 'board'],
@@ -283,7 +283,7 @@ var ASK = {
   speak1: { qs: ['我不知道读得对不对', 'help 我读不好', '我不敢读'], reply: '你的录音我会听。help 先慢慢来：he—l—p，舌尖顶一下上牙后面再合嘴。读错没关系，先大声。' },
   speak2: { qs: ['我不知道怎么开头', '说到一半忘词了', '我只能说两句'], reply: '看着第一幅图，先说 First, Pip sees a big red apple. 一幅图说一句就够，四幅图就是四句。忘了的词先跳过，接着说下一幅。' },
   read: { qs: ['有个词我不会读', '我猜的和故事不一样', '句子顺序我排不对'], reply: '不会读的词，点一下那句话听声音，再自己读一遍。猜得不一样不要紧，Predict 练的是先看图再猜。排顺序时想一想：谁最后才来的？' },
-  write: { qs: ['为什么要加 s', '这个词我不会拼', '我觉得写对了，还说不对'], reply: '一只动物（它）做一个动作，动词后面要加 s：A rabbit hops by. A cat jumps by. 你写的句子我看到了，照着原句再改一次，改完我再看。' },
+  write: { qs: ['为什么要加 s', '这个词我不会拼', '我觉得写对了，还说不对'], reply: '主语是一个人或一只动物（他/她/它）时，动词后面要加 s：A rabbit hops by. A cat jumps by. 你写的句子我看到了，照着原句再改一次，改完我再看。' },
   game: { qs: ['时间太短了', '有一题我不会', '我想再玩一次'], reply: '不会的那题系统已经记下了，会排到最后再考你一次。时间不够就先不管分数，把句子看清楚再点。' }
 };
 function fmtSec(ms) { var s = Math.round(ms / 1000); return s < 60 ? s + ' 秒' : Math.floor(s / 60) + ' 分 ' + (s % 60) + ' 秒'; }
@@ -339,6 +339,7 @@ SCREENS.home = function () {
     '<p class="sub">同一篇童话走完一圈：听 → 说 → 读 → 写 → 闯关 → 过关。全程由系统带着走，卡住了点右下角的「问老师」。</p></div></div>' +
     '<div class="four"><div><b>文字</b>课文和要点</div><div><b>视频</b>动画+讲解</div><div><b>练习</b>听说读写</div><div><b>游戏</b>推苹果回家</div></div>' +
     '<button class="btn pri" id="start">' + (Object.keys(R.done).length ? '接着上这一课' : '开始今天的一课（约 8 分钟）') + ' ›</button>' +
+    '<p class="sub" style="text-align:center;margin:8px 0 0">赶时间？点顶上的圆钮，可以直接看「玩」（闯关）和「看板」。</p>' +
     '<div class="card" style="margin-top:12px"><h3>孩子的一天 · 这一课怎么走</h3><ul class="route">' +
     routes.map(function (r, i) {
       var done = r[3].every(function (s) { return R.done[s]; });
@@ -516,12 +517,12 @@ SCREENS.speak1 = function () {
 /* ---------- 4 看图复述 ---------- */
 var RETELL = [
   { img: 1, id: 'r01', st: 'First,', hint: 'Pip sees … It is too …', full: 'Pip sees a big red apple. It is too big.', zh: 'Pip 和大苹果' },
-  { img: 3, id: 'r02', st: 'Then', hint: 'a rabbit and a fox … But …', full: 'A rabbit and a fox help Pip. But the apple is too big.', zh: '兔子和狐狸来帮忙' },
+  { img: 3, id: 'r02', st: 'Then,', hint: 'a rabbit and a fox … But …', full: 'A rabbit and a fox help Pip. But the apple is too big.', zh: '兔子和狐狸来帮忙' },
   { img: 4, id: 'r03', st: 'Next,', hint: 'a bear … The apple …', full: 'A bear helps. The apple rolls to Pip’s home.', zh: '大熊来了，苹果滚起来' },
-  { img: 5, id: 'r04', st: 'At last,', hint: 'the friends …', full: 'The friends eat the apple together.', zh: '大家一起吃苹果' }
+  { img: 5, id: 'r04', st: 'Finally,', hint: 'the friends …', full: 'The friends eat the apple together.', zh: '大家一起吃苹果' }
 ];
 SCREENS.speak2 = function () {
-  stage.innerHTML = head(null, '第 4 步 · 看图复述：用四句话讲这个故事', ['口语 · Level 2', '看图描述+短句复述'], '「输出形式：绘本画面描述、3-5句故事复述」',
+  stage.innerHTML = head(null, '第 4 步 · 看图复述：用四句话讲这个故事', ['口语 · Level 2', '看图描述+短句复述'], '「输出形式：绘本画面描述、3-5句故事复述、简单人机问答」',
     '看着四幅图，一幅图说一句。图下面是句子的开头，后面自己接。') +
     '<div class="card"><div class="strip">' + RETELL.map(function (r, i) {
       return '<figure data-f="' + i + '"><img src="' + TH(r.img) + '" alt=""><figcaption class="eng"><i>' + r.st + '</i> ' + r.hint + '</figcaption></figure>';
@@ -600,7 +601,7 @@ SCREENS.read = function () {
     });
   }
   function book() {
-    stage.innerHTML = hd('同源复用') + '<div class="quote">方案原句：「听力听过的所有素材，全部同步转为阅读素材，实现『先听懂、再读懂』的闭环降维学习。」</div>' +
+    stage.innerHTML = hd('同源复用') + '<div class="quote">方案原句：「听力听过的所有素材，全部同步转为阅读素材，实现『先听懂、再读懂』的闭环降维学习」</div>' +
       '<p>下面就是你刚才听过、说过的那一篇，一个字没改。能自己读的直接读；读不出来的，<b>点一下那句话</b>听声音。</p>' +
       STORY.map(function (p, i) {
         return '<div class="page"><img src="' + IM(p.img) + '" alt="" loading="lazy"><div class="pgno">第 ' + (i + 1) + ' 页</div><div class="tx">' + p.lines.map(lineBtn).join('') + '</div></div>';
@@ -661,7 +662,7 @@ SCREENS.read = function () {
         solved = true;
         sl.forEach(function (s, i) { s.classList.add('ok'); $('span', s).innerHTML = '<b style="color:#E4483A">' + RETELL[i].st + '</b> ' + esc(i === 0 || i === 2 || i === 3 ? RETELL[i].full.charAt(0) === 'P' ? RETELL[i].full : RETELL[i].full.charAt(0).toLowerCase() + RETELL[i].full.slice(1) : 'a' + RETELL[i].full.slice(1)); });
         $('#pool').innerHTML = '';
-        $('#rFb').innerHTML = '<div class="fb ok">顺序对了。系统给每句加了 First / Then / Next / At last，这就是复述的架子。</div>' +
+        $('#rFb').innerHTML = '<div class="fb ok">顺序对了。系统给每句加了 First / Then / Next / Finally，这就是复述的架子。</div>' +
           '<button class="btn sm" id="rPlay">▶ 听一遍</button>' +
           '<button class="btn pri" id="rHide">记住了，盖住句子口头复述 ›</button>';
         $('#rPlay').addEventListener('click', function () { playSeq(['r01', 'r02', 'r03', 'r04'], function (i) { sl.forEach(function (s, j) { s.style.outline = j === i ? '3px solid #F6B93B' : 'none'; }); }); });
@@ -769,7 +770,7 @@ function checkWrite(v, a, vb) {
   var words = low.split(' ');
   if (words.indexOf(vb + 's') < 0) {
     g = false;
-    if (words.indexOf(vb) >= 0) issues.push('动词要加 s：一只 ' + a + '（它）做动作，' + vb + ' → <b>' + vb + 's</b>。原句也是 hop → hop<b>s</b>。');
+    if (words.indexOf(vb) >= 0) issues.push('动词要加 s：主语是一只 ' + a + '（它），' + vb + ' → <b>' + vb + 's</b>。原句也是 hop → hop<b>s</b>。');
     else issues.push('动作词再看一眼：应该是 <b>' + vb + 's</b>（' + vb + ' 后面加 s）。');
   }
   if (words.indexOf(a) < 0) issues.push('动物的词再对一下：<b>' + a + '</b>。');
@@ -860,6 +861,7 @@ SCREENS.game = function () {
       '<div class="card">' + TRACK +
       '<p style="margin-top:10px">答对一题，就轮到你<b>连点三下把苹果推一格</b>，朋友会一个个来帮忙；<b>6 格到家</b>。</p>' +
       '<p class="sub">· 每题限时，超时算错 · 答错掉一颗心，这题排到最后再考 · 三颗心掉完，苹果滚回起点 · 连对有加分</p>' +
+      '<p class="note">样本演示：这 6 道题是按这一课预先出的。正式版由 AI 按孩子的错题出关卡。</p>' +
       '<button class="btn pri" id="gStart">开始闯关 ›</button></div>';
     pos = 0; pushN = 0; place();
     $('#gStart').addEventListener('click', start);
