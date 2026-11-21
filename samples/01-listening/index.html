@@ -158,8 +158,7 @@ video{width:100%;aspect-ratio:16/9;background:#000}
 .sum div{background:#f6f7fb;border-radius:10px;padding:8px 4px;font-size:12px;color:var(--sub)}
 .sum b{display:block;font-size:20px;color:var(--ink)}
 /* ask */
-.ask{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:30;background:var(--yel);color:var(--navy);font-weight:800;font-size:14px;border-radius:99px;padding:9px 14px;box-shadow:0 4px 14px rgba(0,0,0,.25);border:2px solid #fff}
-.ask::before{content:"卡住了？";font-weight:400;font-size:12px}
+.ask{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:30;background:var(--yel);color:var(--navy);font-weight:800;font-size:13px;border-radius:99px;padding:7px 12px;box-shadow:0 4px 14px rgba(0,0,0,.25);border:2px solid #fff}
 .mask{position:fixed;left:0;right:0;top:0;bottom:0;background:rgba(10,15,30,.5);z-index:40;display:none}
 .mask.on{display:block}
 .sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-radius:18px 18px 0 0;padding:16px 16px calc(18px + env(safe-area-inset-bottom));max-height:82vh;overflow:auto;transform:translateY(105%);transition:transform .25s;max-width:520px;margin:0 auto}
@@ -187,13 +186,14 @@ video{width:100%;aspect-ratio:16/9;background:#000}
   <span class="tag">听力样本 · 学术进阶段（低阶）</span>
   <h1>Why Does Thunder Come Late?<br>雷声为什么总是迟到</h1>
   <p>原创动画科普短片 · 约 70 秒 · 约 170 词 · 画面辅助 · 适合初高中铺垫</p>
+  <p style="font-size:12px;margin-top:5px;color:#aab6d3">样本只做了一段约 70 秒的；正式课按 TED-Ed 原片的长度（4–5 分钟）选材，分 3–4 段精听。</p>
 </div></div>
 
 <div class="wrap">
 <details class="map" id="map">
   <summary>这个样本对应你方案里的哪几条</summary>
   <ol>
-    <li><q>学术进阶段（新增）：TED-Ed动画科普短片（低阶、画面辅助、适合初高中铺垫）</q><div class="to">→ 本课素材：一段自己写、自己配音配画的 70 秒动画科普短片（<b>第 2 步</b>）。没有用 TED-Ed 的任何文字和画面。</div></li>
+    <li><q>学术进阶段（新增）<br>TED-Ed动画科普短片（低阶、画面辅助、适合初高中铺垫）</q><div class="to">→ 本课素材：一段自己写、自己配音配画的 70 秒动画科普短片（<b>第 2 步</b>）。没有用 TED-Ed 的任何文字和画面。</div></li>
     <li><q>泛听：后台循环磨耳朵，积累语感体量</q><div class="to">→ <b>第 2 步「泛听」</b>：先看短片（默认不开字幕），再用「磨耳朵循环」只听声音：三段同级素材连着放，切到后面的步骤也不停。</div></li>
     <li><q>精听：AI分句停顿、挖空、复读、跟读、错题巩固、精修细节</q><div class="to">→ <b>第 3 步「精听」</b>：六样各有一个能点的地方，名字和你写的一样。挖空是听写（把听到的词打出来），写不出才降一档给选项。</div></li>
     <li><q>听中带说、输入带动输出，听力积累达到阶段阈值，自动解锁对应层级口语任务</q><div class="to">→ 精听每句都要跟读；页面顶部的<b>「听力积累」</b>条过了 80 这条线，<b>第 6 步</b>的口语任务自动解锁。样本里用这一课的积累代表「阶段阈值」，正式版按整个学段累计的听力量算。</div></li>
@@ -244,6 +244,7 @@ video{width:100%;aspect-ratio:16/9;background:#000}
     <div class="videobox"><video id="vid" controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/img/poster.jpg" src="assets/video/thunder_nosub.mp4"></video></div>
     <div class="row" style="margin-top:8px"><button class="btn sec" id="subbtn">英文字幕：关（点一下打开）</button></div>
     <p class="hint">第一遍先不开字幕，靠耳朵和画面，不用每个词都懂。听过一遍，再打开字幕对一对。</p>
+    <p class="hint">注意：片子里让孩子在户外数秒，是为了讲原理。现实中只要听得见雷声，就应该待在室内，在屋里数秒。</p>
   </div>
   <div class="card">
     <h3>② 磨耳朵循环（只有声音，3 段同级素材）</h3>
@@ -293,9 +294,8 @@ video{width:100%;aspect-ratio:16/9;background:#000}
     <ol class="pts" style="padding-left:20px;margin:0">
       <li><b>科普短片的四段结构</b>：现象 → 问题 → 解释 → 应用。听到黄色的信号词（<i>But here's the strange part / So why / The answer is / That means / So you can</i>），就知道讲到哪一段了。以后听 TED 演讲也是靠它们跟上思路。</li>
       <li><b>大数字</b>：英文按「千」数。<i>three hundred thousand</i> = 300 × 1,000 = 300,000（三十万）。先抓 hundred、thousand 这两个单位词。</li>
-      <li><b>弱读和重音</b>：<i>three hundred and forty</i> 里的 and 读得很轻，像 /ən/；<i>forty</i> 结尾短促 /ti/，<i>fourteen</i> 结尾是长音 /tiːn/，听结尾的长短来分。</li>
+      <li><b>弱读和重音</b>：<i>three hundred and forty</i> 里的 and 读得很轻，像 /ən/；<i>FORty</i> 重音在前、结尾轻而短，<i>fourTEEN</i> 重音在后、结尾拉长带 /n/；听重音落在前还是后、结尾有没有 /n/ 来分。</li>
     </ol>
-    <p class="hint" style="margin-top:10px">安全提醒：只要听得见雷声，就已经在闪电能打到的范围里，应该马上进屋。数秒测距是用来弄懂原理的，不是用来判断「还安全」的。</p>
   </div>
   <button class="btn full next" data-go="4">下一步：玩游戏 →</button>
 </section>
@@ -329,7 +329,7 @@ video{width:100%;aspect-ratio:16/9;background:#000}
   <div id="speak" style="display:none">
     <div class="card">
       <h3>口语任务 · Level 4 小型主题汇报</h3>
-      <p class="hint" style="margin-top:0">你方案里这一级的输出形式：1-2分钟mini presentation、科普内容口头讲解。</p>
+      <p class="hint" style="margin-top:0">你方案里这一级的输出形式：1-2分钟mini presentation、故事总结、科普内容口头讲解、利弊简单讨论。这一课练其中的「科普内容口头讲解」。</p>
       <p style="margin:0 0 6px">用 1–2 分钟，把「雷声为什么迟到」<b>讲给没看过短片的同学听</b>（科普内容口头讲解）。按开头-主体-结尾来讲：</p>
       <div class="frame">
         <div><b>开头 · 提出问题</b><em>Have you ever noticed that …? Let me explain why.</em></div>
@@ -402,11 +402,11 @@ var PARTS={1:['p1','现象 · 先看到闪电，后听到雷'],2:['p2','问题 �
 var WORDS=[['w_lightning','lightning','闪电'],['w_thunder','thunder','雷声'],['w_flash','flash','闪光；一闪'],['w_travel','travel','（光、声）传播'],['w_instantly','instantly','立刻，瞬间'],['w_roughly','roughly','大约'],['w_divide','divide','除以'],['w_gap','gap','间隔']];
 var FINE=[
  {id:'s03',img:'scene3.jpg',tpl:"But here's the strange part: lightning and thunder are born at exactly the same {0}.",blanks:[{a:'moment',o:['moment','minute','movement']}],
-  tip:"<b>精修细节</b>　<i>But here's the strange part</i> 是转折信号：后面要讲一件和常识相反的事，耳朵要竖起来。<i>at exactly</i> 里的 at 读得很轻、很短。"},
+  tip:"<b>精修细节</b>　<i>But here's the strange part</i> 是转折信号：后面要讲一件和常识相反的事，耳朵要竖起来。<i>at exactly</i> 里的 at 读得很轻、很短。<br><b>学科词</b>　下一句的 <i>the air bursts outward</i>，科学上的说法是空气受热急速膨胀（<i>expand</i>），炸开的那一下叫冲击波（<i>shock wave</i>）。以后听更长的科普片会直接用这两个词。"},
  {id:'s06',img:'scene5.jpg',tpl:'The answer is speed. Light travels at about {0} kilometers per second.',blanks:[{a:'300,000',alt:['300000','three hundred thousand','300 thousand','300k'],o:['300,000','30,000','3,000']}],
   tip:'<b>精修细节</b>　大数字先抓单位词：<i>three hundred <u>thousand</u></i> = 300 × 1,000 = 300,000。中文按「万」数，英文按「千」数，所以它是「三十万」，不是三万。'},
  {id:'s08',img:'scene6.jpg',tpl:'Sound is much slower. It moves through the air at only about {0} meters per second.',blanks:[{a:'340',alt:['three hundred and forty','three hundred forty'],o:['340','314','430']}],
-  tip:'<b>精修细节</b>　<i>three hundred and forty</i>：and 弱读成 /ən/，几乎听不见。<i>forty</i> 结尾短促 /ti/；<i>fourteen</i> 结尾是长音 /tiːn/。分不清 -ty 和 -teen 时，听结尾的长短最可靠。'},
+  tip:'<b>精修细节</b>　<i>three hundred and forty</i>：and 弱读成 /ən/，几乎听不见。分 -ty 和 -teen 先听重音：<i>FORty</i> 重音在前，结尾轻而短；<i>fourTEEN</i> 重音在后，结尾拉长、带清楚的 /n/。'},
  {id:'s11',img:'scene7.jpg',tpl:'Then {0} that number by three. Six seconds? The storm is about {1} kilometers away.',blanks:[{a:'divide',o:['divide','decide','multiply']},{a:'two',alt:['2'],o:['two','three','six']}],
   tip:'<b>精修细节</b>　<i>divide A by B</i> = A 除以 B。<i>Six seconds?</i> 用升调自己问、自己答，是科普讲解里常见的口气，听到升调就等着后面的答案。'},
  {id:'s12',img:'scene8.jpg',tpl:'And if the gap keeps getting {0}, the storm is coming {1}. Time to head inside.',blanks:[{a:'shorter',o:['shorter','longer','louder']},{a:'closer',o:['closer','slower','later']}],
@@ -424,16 +424,16 @@ var GAME=[
  {id:'g3',t:'Nine seconds passed between the flash and the thunder.',o:['3 km','6 km','9 km','27 km'],a:'3 km',km:3,ex:'9 ÷ 3 = 3 km'},
  {id:'g4',t:'First I counted nine seconds. Now the gap is only six.',o:['Coming closer','Moving away'],a:'Coming closer',km:2,from:3,ex:'9 秒 → 6 秒，间隔变短：3 km → 2 km，在靠近'},
  {id:'g5',t:'This time the gap was twelve seconds.',o:['3 km','4 km','6 km','12 km'],a:'4 km',km:4,ex:'12 ÷ 3 = 4 km'},
- {id:'g6',t:'I counted thirty seconds before I heard the boom.',o:['10 km','about 4 km','3 km','30 km'],a:'10 km',km:10,ex:'thirty（结尾短）是 30，不是 thirteen（结尾长，13）：30 ÷ 3 = 10 km'},
+ {id:'g6',t:'I counted thirty seconds before I heard the boom.',o:['10 km','about 4 km','3 km','30 km'],a:'10 km',km:10,ex:'THIRty（重音在前、结尾轻短）是 30，不是 thirTEEN（重音在后、结尾带 /n/，13）：30 ÷ 3 = 10 km'},
  {id:'g7',t:'A moment ago the gap was three seconds. Now it is fifteen.',o:['Coming closer','Moving away'],a:'Moving away',km:5,from:1,ex:'3 秒 → 15 秒，间隔变长：1 km → 5 km，在远离'},
- {id:'g8',t:'Flash! I counted fifteen seconds, and then the thunder arrived.',o:['5 km','about 17 km','15 km','3 km'],a:'5 km',km:5,ex:'fifteen（结尾长）是 15，不是 fifty（结尾短，50）：15 ÷ 3 = 5 km'}
+ {id:'g8',t:'Flash! I counted fifteen seconds, and then the thunder arrived.',o:['5 km','about 17 km','15 km','3 km'],a:'5 km',km:5,ex:'fifTEEN（结尾拉长、带 /n/）是 15，不是 FIFty（重音在前、结尾轻短，50）：15 ÷ 3 = 5 km'}
 ];
 var FAQ=[
  [['关键词记不住怎么办？','不用背。先听个响，短片里每个词都会再出现，精听时还会再碰到。'],['travel 不是「旅行」吗？','讲光和声音的时候，travel 是「传播、行进」。Light travels fast = 光传播得很快。']],
  [['语速太快，听不懂怎么办？','泛听只要抓住「它在讲什么问题」。细节留到下一步精听，那里一句一句停，还能放慢。'],['能不能先看字幕和文字稿？','第一遍先不看：短片的字幕默认是关的，文字稿在第 4 步才打开。听过一遍，可以把字幕打开对一对。']],
  [['three hundred thousand 到底是多少？','300 × 1,000 = 300,000，也就是三十万。英文没有「万」这个单位。'],['听了几遍还是写不出？','点「慢速」再听一遍；还写不出，点「给我选项」降一档。这一句会进错题本，这一步结尾会再考你一次。'],['跟读总觉得读不像？','先点「复读×3」听熟节奏，再跟着读；注意重音落在哪几个词上。']],
  [['这些黄色的信号词有什么用？','它们是路标。听到 The answer is，就知道要给解释了；听到 So you can，就知道要讲怎么用了。'],['文字能看懂，但听的时候还是跟不上？','回到第 2 步用「磨耳朵循环」再放两三遍，现在你知道每一句的意思，会越听越清楚。']],
- [['thirty 和 thirteen 分不清？','听结尾的长短：thirty 的 -ty 很短 /ti/；thirteen 的 -teen 是长音 /tiːn/。fifteen / fifty 也一样。'],['为什么要除以 3？','声音走 1 公里大约要 3 秒，所以数到几秒，就除以 3 得到公里数。']],
+ [['thirty 和 thirteen 分不清？','先听重音：thirty 重音在前、-ty 很短；thirteen 重音在后、-teen 拉长带 /n/。fifteen / fifty 也一样。'],['为什么要除以 3？','声音走 1 公里大约要 3 秒，所以数到几秒，就除以 3 得到公里数。']],
  [['不知道怎么开头？','直接用提示里的第一句：Have you ever noticed that thunder always comes after lightning?'],['讲到一半忘词了？','先点「听示范」听一遍，再照着三段提示讲；不用和示范一样，用自己的话。']]
 ];
 
@@ -791,20 +791,31 @@ function renderLock(){
   }
 }
 $('#modelbtn').onclick=function(){playBtn(this,clip('model'))};
-recorder($('#spkrec'),{max:120,label:'开始讲（录音）',verb:'讲',note:'准备好就开始。目标 1–2 分钟，最长录 2 分钟，讲完点停止。',onDone:function(d){spokeDur=d;$('#selfcheck').style.display=''}});
+function initSpk(){spokeDur=null;recorder($('#spkrec'),{max:120,label:'开始讲（录音）',verb:'讲',note:'准备好就开始。目标 1–2 分钟，最长录 2 分钟，讲完点停止。',onDone:function(d){spokeDur=d;$('#selfcheck').style.display=''}})}
+initSpk();
 $('#submitspk').onclick=function(){
   var ck={};$$('#selfcheck input').forEach(function(i){ck[i.value]=i.checked});
   var lines=[];
   lines.push(ck.open&&ck.end?'结构：开头、主体、结尾三段都有，这是 Level 4 要建立的框架。':'结构：'+(!ck.open?'缺开头——先用一句 Have you ever noticed …? 把问题抛出来。':'')+(!ck.end?'缺结尾——最后用 So here is a trick … 或 Next time …, try it yourself! 收住。':''));
   lines.push(ck.body?'内容：原因讲到了（光快、声音慢）。':'内容：原因没讲清。主体里要有这两句：Light travels incredibly fast. Sound is much slower.');
   lines.push(ck.num?'细节：用上了数字，听的人能照着做。':'细节：补一个数字会更清楚，比如 about three seconds to travel one kilometer。');
-  if(spokeDur!=null)lines.push('时长：'+spokeDur.toFixed(0)+' 秒。'+(spokeDur<50?'偏短：这一级要求 1–2 分钟，主体再展开两三句（闪电怎么产生雷声、光和声音各有多快）。':'达到 1–2 分钟的要求。'));
-  else lines.push('时长：这次没有录音，无法统计。');
+  if(spokeDur!=null)lines.push('时长：'+spokeDur.toFixed(0)+' 秒。'+(spokeDur<60?'偏短：这一级要求 1–2 分钟，主体再展开两三句（闪电怎么产生雷声、光和声音各有多快）。':'达到 1–2 分钟的要求。'));
+  else lines.push('时长：这次没有录音，没法核对，先按你的自评算。');
   var f=$('#spkfb');f.style.display='';
   f.innerHTML='<h3>反馈</h3><ul style="padding-left:20px;margin:0">'+lines.map(function(l){return '<li>'+l+'</li>'}).join('')+'</ul><div class="demo">样本演示：这里是预置反馈（按你勾的自评和录音时长，用规则拼出来的），正式版接 AI：自动听录音，给发音、流利度、逻辑三项打分并逐句纠音。</div>';
-  S.spoke=true;refresh();
+  var structOK=ck.open&&ck.end,durOK=spokeDur==null||spokeDur>=60;
   var mins=Math.max(1,Math.round((Date.now()-S.t0)/60000)),wr=Object.keys(S.wrong).length;
   var fin=$('#finish');fin.style.display='';
+  if(!(structOK&&durOK)){
+    fin.innerHTML='<h3>口语还差一点</h3><p style="margin:6px 0">'+(!durOK?'这一级要讲满 1 分钟，这次只有 '+spokeDur.toFixed(0)+' 秒。':'')+(!structOK?'开头和结尾要齐全。':'')+'</p>'
+     +'<p class="hint">听力已经过线，口语达标才算这一课过关。照着上面的反馈再讲一遍。</p>';
+    var again=el('button','btn full yel','再讲一遍');
+    again.onclick=function(){stopAudio();$$('#selfcheck input').forEach(function(i){i.checked=false});$('#selfcheck').style.display='none';$('#spkfb').style.display='none';fin.style.display='none';initSpk();$('#spkrec').scrollIntoView({block:'center'})};
+    fin.appendChild(again);
+    var dm=el('div','demo','样本演示：达标线按录音时长（满 60 秒）和你勾的自评来判断；正式版由 AI 听录音判断。');dm.style.textAlign='left';fin.appendChild(dm);
+    fin.scrollIntoView({behavior:'smooth',block:'start'});return;
+  }
+  S.spoke=true;refresh();
   fin.innerHTML='<h3>这一课过关了</h3><div class="badge"><i>⚡</i>雷声测距员</div><div class="sum"><div><b>'+score()+'</b>听力积累</div><div><b>'+wr+'</b>错题（已巩固 '+Object.keys(S.fixed).length+'）</div><div><b>'+mins+' 分</b>用时</div></div>'
    +'<p class="hint">学 → 练 → 玩 → 过关 这条线由页面自己带着走完了。</p>'
    +'<div class="demo" style="text-align:left">样本演示：正式版里，老师那边只收到你的错题、口语录音和你点「问老师」提的问题；同一级会继续推送动画科普短片，这一级累计够了，再升到「TED精简主题演讲（中阶、观点类输入）」。</div>';
