@@ -94,7 +94,7 @@
   });
 
   var STUCK = '<div><button class="link" data-ask>连错两次了，可以问老师 🙋</button></div>';
-  var TIN = 'display:block;width:100%;height:76px;resize:none;line-height:1.5;border:2px solid #C6CFDB;border-radius:12px;padding:8px 12px;font-family:Georgia,serif;font-size:18px;color:#1F3A5F;margin:4px 0 10px;outline:none;background:#fff';
+  var TIN = 'width:100%;box-sizing:border-box;height:76px;resize:none;line-height:1.5;border:2px solid #C6CFDB;border-radius:12px;padding:8px 12px;font-family:Georgia,serif;font-size:18px;color:#1F3A5F;margin:4px 0 10px;outline:none;background:#fff';
 
   /* ---------- 第 2 步：读范文 ---------- */
   var MODEL = [
@@ -134,7 +134,7 @@
         misses++; ST.read.miss++; beep('bad');
         w.classList.add('no'); setTimeout(function () { w.classList.remove('no'); }, 400);
         fbN.className = 'fb no';
-        fbN.innerHTML = '「' + esc(w.textContent.replace(/[.,!]/g, '')) + '」不是。要找的是讲「做了什么、当时怎么样」的词，比如：去了、看见了、（那天）很棒。' + (misses >= 3 ? STUCK : '');
+        fbN.innerHTML = '「' + esc(w.textContent.replace(/[.,!]/g, '')) + '」不是。要找的是动词：讲「做了什么、当时是什么样」的那个词，比如 去了 went、看见了 saw，还有 It ___ great 里的那个词。' + (misses >= 3 ? STUCK : '');
       }
     });
     $('#readHint').onclick = function () {
@@ -192,7 +192,7 @@
     { model: 'We <em>saw</em> <u>some baby chickens</u> and <em>picked</em> <u>apples</u>.',
       parts: [{ text: 'We' }, { label: '动词 ①', opts: ['see', 'seed', 'saw'], ans: 'saw' }, { label: '看到的', opts: ['some monkeys', 'a big robot', 'a funny film'] }, { text: 'and' }, { label: '动词 ②', opts: ['played', 'play', 'plays'], ans: 'played' }, { label: '玩的', opts: ['football', 'games', 'with a dog'] }, { text: '.' }] },
     { model: 'I <em>had</em> <u>lunch</u> <u>in the garden</u>. It <em>was</em> <u>great</u>!',
-      parts: [{ text: 'I' }, { label: '动词', opts: ['have', 'had', 'haved'], ans: 'had' }, { label: '吃的', opts: ['dinner', 'a picnic', 'breakfast'] }, { label: '在哪儿', opts: ['at a restaurant', 'in the park', 'at home'] }, { text: '. It' }, { label: 'is 变成？', opts: ['is', 'was', 'were'], ans: 'was' }, { label: '感觉', opts: ['fun', 'great', 'amazing'] }, { text: '!' }] },
+      parts: [{ text: 'I' }, { label: '动词', opts: ['have', 'had', 'haved'], ans: 'had' }, { label: '吃的', opts: ['dinner', 'pizza', 'breakfast'] }, { label: '在哪儿', opts: ['at a restaurant', 'in the park', 'at home'] }, { text: '. It' }, { label: 'is 变成？', opts: ['is', 'was', 'were'], ans: 'was' }, { label: '感觉', opts: ['fun', 'great', 'amazing'] }, { text: '!' }] },
     { free: true }
   ];
   function renderFree(it, body, api) {
@@ -267,8 +267,8 @@
     { from: 'It <em>is</em> sunny <u>today</u>.', pre: 'It', post: 'sunny <u>yesterday</u>.', ans: 'was', base: 'is', opts: ['is', 'were', 'was'] }
   ];
   function renderRewrite(it, body, api) {
-    body.innerHTML = '<div class="pair"><div class="who">平时的事</div><p class="en">' + it.from + '</p></div>' +
-      '<div class="pair mine"><div class="who">昨天的事（把红色的动词改掉，填进空格）</div><p class="en">' + it.pre +
+    body.innerHTML = '<div class="pair"><div class="who">现在／平时</div><p class="en">' + it.from + '</p></div>' +
+      '<div class="pair mine"><div class="who">已经过去的事（把红色的动词改掉，填进空格）</div><p class="en">' + it.pre +
       ' <input class="gap" type="text" inputmode="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" maxlength="12" placeholder="?"> ' + it.post + '</p></div>' +
       '<div class="chips" data-optbox style="display:none;margin-top:8px">' + it.opts.map(function (o) { return '<button class="chip" data-v="' + o + '">' + o + '</button>'; }).join('') + '</div>' +
       '<div class="row"><button class="btn primary" data-check>检查</button><button class="link" data-opts>不想打字？点这里选</button></div>';
@@ -320,7 +320,7 @@
     var placed = [], order = shuffle(it.chunks.map(function (c, i) { return i; }));
     var typing = false;
     body.innerHTML = '<p class="zh">' + it.zh + '</p><div data-chunkui><div class="answer" data-ans></div><div class="chips" data-pool></div></div>' +
-      '<textarea data-typed rows="2" autocapitalize="sentences" autocomplete="off" autocorrect="off" spellcheck="false" maxlength="90" placeholder="在这里打出整句英文" style="display:none;' + TIN + '"></textarea>' +
+      '<textarea data-typed rows="2" autocapitalize="sentences" autocomplete="off" autocorrect="off" spellcheck="false" maxlength="90" placeholder="在这里打出整句英文" style="' + TIN + ';display:none"></textarea>' +
       '<div class="row"><button class="btn primary" data-check disabled>检查</button><button class="link" data-clear>清空重来</button><button class="link" data-totype>⌨️ 不用词块，自己打字</button></div>';
     var tin = $('[data-typed]', body);
     function draw() {
@@ -335,7 +335,7 @@
       if (closest(e.target, '[data-clear]')) { placed = []; tin.value = ''; draw(); return; }
       if ((c = closest(e.target, '[data-totype]'))) {
         typing = !typing;
-        tin.style.display = typing ? '' : 'none'; $('[data-chunkui]', body).style.display = typing ? 'none' : '';
+        tin.style.display = typing ? 'block' : 'none'; $('[data-chunkui]', body).style.display = typing ? 'none' : '';
         c.textContent = typing ? '🧩 改用词块' : '⌨️ 不用词块，自己打字';
         if (typing) tin.focus();
         draw(); return;
@@ -442,10 +442,10 @@
     $('#wText').addEventListener('input', updCount);
     $('#wName').addEventListener('input', updCount);
     $('#wTabs').addEventListener('click', function (e) { var b = closest(e.target, '[data-mode]'); if (b) setMode(b.getAttribute('data-mode')); });
-    $('#wDemo').onclick = function () { $('#wText').value = DEMO_BAD; setMode('type'); toast('已填入一封带典型错误的作文，点「交给 AI 批改」'); };
+    $('#wDemo').onclick = function () { $('#wText').value = DEMO_BAD; setMode('type'); toast('已填入一封带典型错误的作文，点「交上去批改」'); };
     $('#wSubmit').onclick = function () {
       var t = getText();
-      if (wc(t) < 5) { toast('先写几句，再交给 AI 批改哦'); return; }
+      if (wc(t) < 5) { toast('先写几句，再交上去批改哦'); return; }
       lastMark = mark(t);
       ST.write.tries++;
       if (ST.write.firstErr === null) ST.write.firstErr = lastMark.tenseN;
@@ -453,7 +453,7 @@
       complete('write');
       go(7);
     };
-    setMode('chunk');
+    setMode('type');
   };
 
   /* ---------- 第 7 步：批改（规则检查 + 预置反馈） ---------- */
@@ -538,8 +538,11 @@
     }
     if (!/\b(yesterday|last\s+\w+)\b/i.test(text)) sugg.push({ t: '加上时间词，让 Tom 一眼知道是哪天的事', bf: 'We went to the Science Museum.', af: '<b>Yesterday</b> we went to the Science Museum.' });
     if (!/\b(it|that|this|trip|day)\s+(was|is)\b/i.test(text)) sugg.push({ t: '最后加一句感受，更像在跟朋友说话', bf: '', af: 'It was <b>amazing</b>!' });
-    if (sugg.length < 2 && !/\bbecause\b/i.test(text)) sugg.push({ t: '想再进一步？加一个原因', bf: 'It was great!', af: 'It was great <b>because</b> the robot waved at us.' });
-    sugg = sugg.slice(0, 2);
+    /* 固定带一条连句建议（because / and then），更贴近 KET 写作「把句子连起来写」的要求 */
+    var connS = !/\bbecause\b/i.test(text) ? { t: '用 because 加一个原因，把两层意思连起来', bf: 'It was great!', af: 'It was great <b>because</b> the robot waved at us.' }
+      : (!/\bthen\b/i.test(text) ? { t: '用 and then 把先后顺序连起来', bf: 'We saw a big robot. We had ice cream.', af: 'We saw a big robot <b>and then</b> we had ice cream.' } : null);
+    sugg = sugg.slice(0, connS ? 1 : 2);
+    if (connS) sugg.push(connS);
     return {
       text: text, toks: toks, fixes: fixes, tenseN: tenseN, capN: capN, pastOk: pastOk, pts: pts, words: words, scores: scores, sugg: sugg,
       fixedText: toks.map(function (t, i) { return fixes[i] ? fixes[i].to : t; }).join(''),
@@ -597,8 +600,8 @@
       '<p class="muted" style="margin:8px 0 0">对标 KET 写作评分的三个维度（内容、结构、语言，每项 5 分）。样本里的分数由规则算出，只做演示。</p></div>';
     if (r.pass) h += '<button class="btn" data-goto="6">想再改一改</button>';
     else h += '<button class="btn go" data-goto="6">← 回去自己改一改，再交一次</button>' +
-      (ST.write.tries >= 2 ? '<button class="btn" id="mkAdopt">改了两次还没过？填入 AI 改好的版本</button>'
-        : '<p class="muted" style="text-align:center;margin:8px 0 0">先自己改。第二次还没过，这里会出现「填入 AI 改好的版本」。</p>');
+      (ST.write.tries >= 2 ? '<button class="btn" id="mkAdopt">改了两次还没过？填入系统改好的版本（样本演示）</button>'
+        : '<p class="muted" style="text-align:center;margin:8px 0 0">先自己改。第二次还没过，这里会出现「填入系统改好的版本」。</p>');
     $('#mkBox').innerHTML = h;
     var ad = $('#mkAdopt');
     if (ad) ad.onclick = function () {
@@ -682,6 +685,7 @@
       h = '<div class="letter" id="gL"><div class="kind">✉️ 排队：' + q.zh + '</div><div class="body"><div class="answer" id="gAns" style="margin:0;border-color:#C6CFDB"></div></div></div>' +
         '<div class="chips" id="gOpts">' + ord.map(function (ci) { return '<button class="chip" data-ci="' + ci + '">' + q.c[ci] + '</button>'; }).join('') + '</div>';
     }
+    var f0 = $('#gFb'); if (f0) { f0.className = 'fb'; f0.innerHTML = ''; }
     card.innerHTML = h;
     G.lock = false;
   }

@@ -78,9 +78,9 @@ video{width:100%;border-radius:12px;background:#122640;display:block;aspect-rati
 .mail-h b{color:var(--ink)}
 .mail-b{padding:12px 14px 14px;position:relative}
 .mail-b .ln{font-family:Georgia,"Times New Roman",serif;font-size:19px;line-height:2.6;margin:0;padding-left:10px;border-left:4px solid transparent}
-.mail-b.struct .p1{border-left-color:var(--yellow)}
-.mail-b.struct .p2{border-left-color:var(--blue)}
-.mail-b.struct .p3{border-left-color:var(--green)}
+.mail-b.struct .p1{border-left-color:var(--blue)}
+.mail-b.struct .p2{border-left-color:var(--red)}
+.mail-b.struct .p3{border-left-color:var(--yellow)}
 .legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12.5px;padding:0 14px 10px;color:var(--muted)}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
 .w{position:relative;display:inline-block;border-radius:6px;padding:0 1px;cursor:pointer}
@@ -261,8 +261,8 @@ video{width:100%;border-radius:12px;background:#122640;display:block;aspect-rati
   </div>
   <ol class="path">
     <li><b>1 看</b>Pip 教写邮件</li><li><b>2 读</b>Lily 的邮件</li><li><b>3 仿写</b>照着写句子</li>
-    <li><b>4 改写</b>平时→昨天</li><li><b>5 翻译</b>中文→英文</li><li><b>6 写</b>一封短邮件</li>
-    <li><b>7 批改</b>AI 当场改</li><li><b>8 游戏</b>赶邮车</li><li><b>9 过关</b>领徽章</li>
+    <li><b>4 改写</b>现在→过去</li><li><b>5 翻译</b>中文→英文</li><li><b>6 写</b>一封短邮件</li>
+    <li><b>7 批改</b>当场批改</li><li><b>8 游戏</b>赶邮车</li><li><b>9 过关</b>领徽章</li>
   </ol>
   <p class="muted">每一步系统都会当场告诉你对不对。卡住了，点右上角「问老师」。</p>
   <button class="btn go" data-go="next">开始这一课 →</button>
@@ -273,7 +273,7 @@ video{width:100%;border-radius:12px;background:#122640;display:block;aspect-rati
   <h2>第 1 步 · 看：Pip 教你写这封邮件</h2>
   <p class="sub">点一下播放，大约 1 分钟，有英文配音和中英字幕。</p>
   <video id="vid" controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/poster.jpg?v=2">
-    <source src="assets/lesson.mp4?v=2" type="video/mp4">
+    <source src="assets/lesson.mp4?v=3" type="video/mp4">
   </video>
   <div class="card">
     <b>这段视频教了三件事</b>
@@ -294,7 +294,7 @@ video{width:100%;border-radius:12px;background:#122640;display:block;aspect-rati
   <div class="mail">
     <div class="mail-h">To: <b>Ben</b>　Subject: <b>My weekend</b></div>
     <div class="mail-b struct" id="modelMail"></div>
-    <div class="legend"><span><i style="background:#F2B544"></i>打招呼</span><span><i style="background:#2F6FB5"></i>讲你的事</span><span><i style="background:#2E9E6B"></i>说再见 + 名字</span></div>
+    <div class="legend"><span><i style="background:#2F6FB5"></i>打招呼</span><span><i style="background:#D9483B"></i>讲你的事</span><span><i style="background:#F2B544"></i>说再见 + 名字</span></div>
   </div>
   <button class="btn" id="listenBtn">🔊 听 Lily 读一遍</button>
   <div class="task"><b>找一找：</b>Lily 讲的都是上周六的事。邮件里有 5 个<b>变成了「过去的样子」的动词</b>（视频里见过），把它们点出来。<b class="n" id="readN">0 / 5</b>
@@ -315,7 +315,7 @@ video{width:100%;border-radius:12px;background:#122640;display:block;aspect-rati
 
 <!-- 4 改写 -->
 <section class="scr" id="s-rewrite">
-  <h2>第 4 步 · 改写：把「平时的事」改成「昨天的事」</h2>
+  <h2>第 4 步 · 改写：把「现在／平时的事」改成「过去的事」</h2>
   <div class="plan">方案原句：「所有语法知识点全部通过仿写、改写、翻译、写作落地实操掌握」。</div>
   <div id="rwBox"></div>
   <button class="btn primary" data-go="next" data-need="rewrite" disabled>下一步：翻译 →</button>
@@ -349,7 +349,7 @@ video{width:100%;border-radius:12px;background:#122640;display:block;aspect-rati
     </div>
     <p class="muted" style="margin:0">中文意思：昨天全班去了科技馆，Tom 生病没去。写邮件告诉他：去了哪儿、看到了什么、在那儿做了什么。</p>
   </div>
-  <div class="tabs" id="wTabs"><button class="on" data-mode="chunk">🧩 词块拼句</button><button data-mode="type">⌨️ 自己打字</button></div>
+  <div class="tabs" id="wTabs"><button class="on" data-mode="type">⌨️ 自己打字</button><button data-mode="chunk">🧩 用词块拼（备选）</button></div>
   <div id="wChunk">
     <div class="card" id="wLines"></div>
     <div class="row" style="margin:6px 0"><span class="muted">④ 你的英文名：</span><input id="wName" type="text" maxlength="14" value="Alex" autocomplete="off" autocorrect="off" spellcheck="false"></div>
@@ -360,7 +360,7 @@ video{width:100%;border-radius:12px;background:#122640;display:block;aspect-rati
     <textarea id="wText" autocapitalize="sentences" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Hi Tom,&#10;Yesterday we ..."></textarea>
   </div>
   <div class="wc">已写 <b id="wCount">0</b> 词（要求 25 词以上）</div>
-  <button class="btn go" id="wSubmit">交给 AI 批改 →</button>
+  <button class="btn go" id="wSubmit">交上去批改 →</button>
   <button class="skip" id="wDemo">样本审阅用：填入一封带典型错误的学生作文，看它怎么被批改</button>
 </section>
 
@@ -405,6 +405,6 @@ video{width:100%;border-radius:12px;background:#122640;display:block;aspect-rati
 </div>
 <div class="toast" id="toast"></div>
 </div>
-<script src="assets/app.js?v=8"></script>
+<script src="assets/app.js?v=10"></script>
 </body>
 </html>
