@@ -1,0 +1,382 @@
+{
+ "v01_narr": {
+  "text": "Level three. Today's lesson: Saturday plan. Listen to Leo and Mia.",
+  "voice": "en-US-AndrewNeural",
+  "dur": 5.26
+ },
+ "v08_narr": {
+  "text": "Did you hear that? Mia didn't just say: the park.",
+  "voice": "en-US-AndrewNeural",
+  "dur": 3.5
+ },
+ "v09_narr": {
+  "text": "First, she gave her opinion. I think we should go to the park.",
+  "voice": "en-US-AndrewNeural",
+  "dur": 3.98
+ },
+ "v10_narr": {
+  "text": "Then, she gave a reason. Because the weather is nice.",
+  "voice": "en-US-AndrewNeural",
+  "dur": 3.7
+ },
+ "v11_narr": {
+  "text": "Opinion, plus because, plus reason.",
+  "voice": "en-US-AndrewNeural",
+  "dur": 3.31
+ },
+ "v12_narr": {
+  "text": "You can start with: I think. I'd like to. Or, I prefer.",
+  "voice": "en-US-AndrewNeural",
+  "dur": 4.3
+ },
+ "v13_narr": {
+  "text": "Now it's your turn. Leo is waiting for you.",
+  "voice": "en-US-AndrewNeural",
+  "dur": 2.86
+ },
+ "v14_narr": {
+  "text": "Tell him what you think, and why!",
+  "voice": "en-US-AndrewNeural",
+  "dur": 1.87
+ },
+ "d1_leo": {
+  "text": "Hi Mia! Tomorrow is Saturday. What shall we do?",
+  "voice": "en-US-BrianNeural",
+  "dur": 4.18
+ },
+ "d2_mia": {
+  "text": "I think we should go to the park, because the weather is nice.",
+  "voice": "en-US-AnaNeural",
+  "dur": 5.14
+ },
+ "d3_leo": {
+  "text": "Good idea! What shall we do there?",
+  "voice": "en-US-BrianNeural",
+  "dur": 2.69
+ },
+ "d4_mia": {
+  "text": "I'd like to ride bikes, because it's good exercise. What about you?",
+  "voice": "en-US-AnaNeural",
+  "dur": 6.7
+ },
+ "d5_leo": {
+  "text": "I prefer flying a kite, because it's windy this week.",
+  "voice": "en-US-BrianNeural",
+  "dur": 3.41
+ },
+ "d6_mia": {
+  "text": "OK! Let's do both!",
+  "voice": "en-US-AnaNeural",
+  "dur": 3.67
+ },
+ "sh1": {
+  "text": "I think we should go to the park, because the weather is nice.",
+  "voice": "en-US-AnaNeural",
+  "dur": 5.14
+ },
+ "sh1_slow": {
+  "text": "I think we should go to the park, because the weather is nice.",
+  "voice": "en-US-AnaNeural",
+  "dur": 6.74
+ },
+ "sh2": {
+  "text": "I'd like to ride bikes, because it's good exercise.",
+  "voice": "en-US-AnaNeural",
+  "dur": 4.82
+ },
+ "sh2_slow": {
+  "text": "I'd like to ride bikes, because it's good exercise.",
+  "voice": "en-US-AnaNeural",
+  "dur": 6.34
+ },
+ "s_swim": {
+  "text": "I think we should go swimming, because it's very hot today.",
+  "voice": "en-US-AnaNeural",
+  "dur": 5.06
+ },
+ "s_pizza": {
+  "text": "I'd like to make pizza, because I'm really hungry.",
+  "voice": "en-US-AnaNeural",
+  "dur": 4.66
+ },
+ "leo_r1": {
+  "text": "Hi! Tomorrow is Saturday. What shall we do?",
+  "voice": "en-US-BrianNeural",
+  "dur": 3.98
+ },
+ "leo_r1_why": {
+  "text": "The park? Hmm. Why the park?",
+  "voice": "en-US-BrianNeural",
+  "dur": 2.95
+ },
+ "leo_r2p": {
+  "text": "Good idea! What shall we do there: ride bikes, or fly a kite?",
+  "voice": "en-US-BrianNeural",
+  "dur": 4.82
+ },
+ "leo_r2p_why": {
+  "text": "Bikes? Why do you like bikes?",
+  "voice": "en-US-BrianNeural",
+  "dur": 2.47
+ },
+ "leo_r2c": {
+  "text": "Nice! Which film shall we see: the cartoon, or the space film?",
+  "voice": "en-US-BrianNeural",
+  "dur": 5.21
+ },
+ "leo_r2c_why": {
+  "text": "The cartoon? Why?",
+  "voice": "en-US-BrianNeural",
+  "dur": 1.85
+ },
+ "leo_r3": {
+  "text": "OK! Shall we meet in the morning, or in the afternoon?",
+  "voice": "en-US-BrianNeural",
+  "dur": 4.44
+ },
+ "leo_r3_why": {
+  "text": "The morning? Why?",
+  "voice": "en-US-BrianNeural",
+  "dur": 1.78
+ },
+ "leo_end_am": {
+  "text": "Morning is fine with me. See you at nine!",
+  "voice": "en-US-BrianNeural",
+  "dur": 3.29
+ },
+ "leo_end_pm": {
+  "text": "Sure, the afternoon is fine. See you at two!",
+  "voice": "en-US-BrianNeural",
+  "dur": 3.53
+ },
+ "m_r1a": {
+  "text": "I think we should go to the park, because the weather is nice.",
+  "voice": "en-US-AnaNeural",
+  "dur": 5.14
+ },
+ "m_r1b": {
+  "text": "I'd like to watch a film, because there's a new cartoon this week.",
+  "voice": "en-US-AnaNeural",
+  "dur": 5.42
+ },
+ "m_r2pa": {
+  "text": "I prefer riding bikes, because it's good exercise.",
+  "voice": "en-US-AnaNeural",
+  "dur": 5.04
+ },
+ "m_r2pb": {
+  "text": "I'd like to fly a kite, because it's windy today.",
+  "voice": "en-US-AnaNeural",
+  "dur": 4.63
+ },
+ "m_r2ca": {
+  "text": "I'd like to see the cartoon, because it's really funny.",
+  "voice": "en-US-AnaNeural",
+  "dur": 4.82
+ },
+ "m_r2cb": {
+  "text": "I prefer the space film, because I love learning about planets.",
+  "voice": "en-US-AnaNeural",
+  "dur": 5.78
+ },
+ "m_r3a": {
+  "text": "I think the morning is better, because it's not so hot. What about you?",
+  "voice": "en-US-AnaNeural",
+  "dur": 6.91
+ },
+ "m_r3b": {
+  "text": "I prefer the afternoon, because I get up late on Saturdays. Is that OK?",
+  "voice": "en-US-AnaNeural",
+  "dur": 7.37
+ },
+ "g1": {
+  "text": "I think we should watch a film at home, because we can stay dry.",
+  "voice": "en-US-AnaNeural",
+  "dur": 5.38
+ },
+ "g2": {
+  "text": "I think we should make pizza, because we can eat it together.",
+  "voice": "en-US-AnaNeural",
+  "dur": 5.04
+ },
+ "g3": {
+  "text": "I think we should play football, because we need some exercise.",
+  "voice": "en-US-AnaNeural",
+  "dur": 5.38
+ },
+ "g4": {
+  "text": "I think we should go swimming, because the water is cool.",
+  "voice": "en-US-AnaNeural",
+  "dur": 4.85
+ },
+ "g5": {
+  "text": "I think we should make a card, because Grandma loves handmade presents.",
+  "voice": "en-US-AnaNeural",
+  "dur": 6.0
+ },
+ "vote_yes": {
+  "text": "Good idea! You have my vote!",
+  "voice": "en-GB-MaisieNeural",
+  "dur": 3.86
+ },
+ "vote_no": {
+  "text": "Hmm, I'm not sure about that.",
+  "voice": "en-GB-MaisieNeural",
+  "dur": 2.88
+ },
+ "leo_ice": {
+  "text": "Great! And after that, let's get some ice cream. What do you think?",
+  "voice": "en-US-BrianNeural",
+  "dur": 4.99
+ },
+ "leo_ice_why": {
+  "text": "No? Why not?",
+  "voice": "en-US-BrianNeural",
+  "dur": 1.73
+ },
+ "leo_r4_a": {
+  "text": "Yay, ice cream it is! Now, shall we meet in the morning, or in the afternoon?",
+  "voice": "en-US-BrianNeural",
+  "dur": 6.43
+ },
+ "leo_r4_b": {
+  "text": "Juice? OK, that sounds good too. Now, shall we meet in the morning, or in the afternoon?",
+  "voice": "en-US-BrianNeural",
+  "dur": 6.79
+ },
+ "m_ice_a": {
+  "text": "That's a good idea, because I love ice cream!",
+  "voice": "en-US-AnaNeural",
+  "dur": 4.46
+ },
+ "m_ice_b": {
+  "text": "I'm not sure, because I had ice cream yesterday. How about some juice?",
+  "voice": "en-US-AnaNeural",
+  "dur": 7.01
+ },
+ "g1s": {
+  "text": "It's raining hard today.",
+  "voice": "en-US-AnaNeural",
+  "dur": 2.54
+ },
+ "g2s": {
+  "text": "I'm really hungry!",
+  "voice": "en-US-BrianNeural",
+  "dur": 1.87
+ },
+ "g3s": {
+  "text": "I sat at my desk all day.",
+  "voice": "en-US-BrianNeural",
+  "dur": 2.14
+ },
+ "g4s": {
+  "text": "It's so hot outside!",
+  "voice": "en-US-AnaNeural",
+  "dur": 2.71
+ },
+ "g5s": {
+  "text": "Tomorrow is Grandma's birthday.",
+  "voice": "en-US-AnaNeural",
+  "dur": 2.95
+ },
+ "vote_yes_g": {
+  "text": "Good idea! You have my vote!",
+  "voice": "en-US-AnaNeural",
+  "dur": 3.91
+ },
+ "vote_no_g": {
+  "text": "Hmm, I'm not sure about that.",
+  "voice": "en-US-AnaNeural",
+  "dur": 3.07
+ },
+ "vote_yes_b": {
+  "text": "Good idea! You have my vote!",
+  "voice": "en-US-BrianNeural",
+  "dur": 2.47
+ },
+ "vote_no_b": {
+  "text": "Hmm, I'm not sure about that.",
+  "voice": "en-US-BrianNeural",
+  "dur": 2.38
+ },
+ "mono_pa_a_a": {
+  "text": "On Saturday, I'm going to the park with Leo. We're going to ride bikes, because it's good exercise. After that, we're going to get some ice cream. We're meeting at nine in the morning.",
+  "voice": "en-US-AnaNeural",
+  "dur": 16.15
+ },
+ "mono_pa_a_b": {
+  "text": "On Saturday, I'm going to the park with Leo. We're going to ride bikes, because it's good exercise. After that, we're going to get some ice cream. We're meeting at two in the afternoon.",
+  "voice": "en-US-AnaNeural",
+  "dur": 16.39
+ },
+ "mono_pa_b_a": {
+  "text": "On Saturday, I'm going to the park with Leo. We're going to ride bikes, because it's good exercise. After that, we're going to have some juice. We're meeting at nine in the morning.",
+  "voice": "en-US-AnaNeural",
+  "dur": 16.06
+ },
+ "mono_pa_b_b": {
+  "text": "On Saturday, I'm going to the park with Leo. We're going to ride bikes, because it's good exercise. After that, we're going to have some juice. We're meeting at two in the afternoon.",
+  "voice": "en-US-AnaNeural",
+  "dur": 16.3
+ },
+ "mono_pb_a_a": {
+  "text": "On Saturday, I'm going to the park with Leo. We're going to fly a kite, because it's windy. After that, we're going to get some ice cream. We're meeting at nine in the morning.",
+  "voice": "en-US-AnaNeural",
+  "dur": 15.53
+ },
+ "mono_pb_a_b": {
+  "text": "On Saturday, I'm going to the park with Leo. We're going to fly a kite, because it's windy. After that, we're going to get some ice cream. We're meeting at two in the afternoon.",
+  "voice": "en-US-AnaNeural",
+  "dur": 15.77
+ },
+ "mono_pb_b_a": {
+  "text": "On Saturday, I'm going to the park with Leo. We're going to fly a kite, because it's windy. After that, we're going to have some juice. We're meeting at nine in the morning.",
+  "voice": "en-US-AnaNeural",
+  "dur": 15.43
+ },
+ "mono_pb_b_b": {
+  "text": "On Saturday, I'm going to the park with Leo. We're going to fly a kite, because it's windy. After that, we're going to have some juice. We're meeting at two in the afternoon.",
+  "voice": "en-US-AnaNeural",
+  "dur": 15.67
+ },
+ "mono_ca_a_a": {
+  "text": "On Saturday, I'm going to the cinema with Leo. We're going to see a cartoon, because it's really funny. After that, we're going to get some ice cream. We're meeting at nine in the morning.",
+  "voice": "en-US-AnaNeural",
+  "dur": 16.27
+ },
+ "mono_ca_a_b": {
+  "text": "On Saturday, I'm going to the cinema with Leo. We're going to see a cartoon, because it's really funny. After that, we're going to get some ice cream. We're meeting at two in the afternoon.",
+  "voice": "en-US-AnaNeural",
+  "dur": 16.51
+ },
+ "mono_ca_b_a": {
+  "text": "On Saturday, I'm going to the cinema with Leo. We're going to see a cartoon, because it's really funny. After that, we're going to have some juice. We're meeting at nine in the morning.",
+  "voice": "en-US-AnaNeural",
+  "dur": 16.18
+ },
+ "mono_ca_b_b": {
+  "text": "On Saturday, I'm going to the cinema with Leo. We're going to see a cartoon, because it's really funny. After that, we're going to have some juice. We're meeting at two in the afternoon.",
+  "voice": "en-US-AnaNeural",
+  "dur": 16.42
+ },
+ "mono_cb_a_a": {
+  "text": "On Saturday, I'm going to the cinema with Leo. We're going to see a space film, because I love learning about planets. After that, we're going to get some ice cream. We're meeting at nine in the morning.",
+  "voice": "en-US-AnaNeural",
+  "dur": 17.45
+ },
+ "mono_cb_a_b": {
+  "text": "On Saturday, I'm going to the cinema with Leo. We're going to see a space film, because I love learning about planets. After that, we're going to get some ice cream. We're meeting at two in the afternoon.",
+  "voice": "en-US-AnaNeural",
+  "dur": 17.66
+ },
+ "mono_cb_b_a": {
+  "text": "On Saturday, I'm going to the cinema with Leo. We're going to see a space film, because I love learning about planets. After that, we're going to have some juice. We're meeting at nine in the morning.",
+  "voice": "en-US-AnaNeural",
+  "dur": 17.35
+ },
+ "mono_cb_b_b": {
+  "text": "On Saturday, I'm going to the cinema with Leo. We're going to see a space film, because I love learning about planets. After that, we're going to have some juice. We're meeting at two in the afternoon.",
+  "voice": "en-US-AnaNeural",
+  "dur": 17.57
+ }
+}

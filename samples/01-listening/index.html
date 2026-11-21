@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>听力样本 · 学术进阶段 · 动画科普短片</title>
+<style>
+:root{--navy:#14213d;--navy2:#1f2f56;--ink:#1b2333;--sub:#5b6577;--line:#e3e6ee;--bg:#f4f1ea;--card:#fff;--yel:#ffc93c;--yel2:#fff3c9;--teal:#1a9c8f;--teal2:#e0f5f2;--red:#d9463b;--red2:#fde8e6;--pur:#5b4b8a}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;padding-bottom:96px}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;touch-action:manipulation}
+.wrap{max-width:520px;margin:0 auto;padding:0 14px}
+.top{background:var(--navy);color:#fff;padding:16px 0 14px}
+.tag{display:inline-block;font-size:12px;background:var(--yel);color:var(--navy);border-radius:99px;padding:1px 10px;font-weight:700}
+.top h1{font-size:21px;margin:8px 0 2px;line-height:1.3}
+.top p{margin:0;font-size:13px;color:#c9d2e6}
+details.map{background:var(--card);border-radius:14px;margin:12px 0 0;border:1px solid var(--line);overflow:hidden}
+details.map summary{list-style:none;padding:12px 14px;font-weight:700;font-size:15px;display:flex;justify-content:space-between;align-items:center}
+details.map summary::-webkit-details-marker{display:none}
+details.map summary::after{content:"展开 ▾";font-weight:400;font-size:13px;color:var(--sub)}
+details.map[open] summary::after{content:"收起 ▴"}
+.map ol{margin:0;padding:0 14px 12px 14px;list-style:none}
+.map li{border-top:1px dashed var(--line);padding:10px 0;font-size:14px}
+.map q{display:block;quotes:none;background:var(--yel2);border-left:3px solid var(--yel);padding:6px 8px;border-radius:4px;color:#4a3c00}
+.map q::before,.map q::after{content:""}
+.map .to{color:var(--sub);margin-top:4px}
+.map .to b{color:var(--teal)}
+.meterbox{position:sticky;top:0;z-index:20;background:var(--bg);padding:10px 0 8px;border-bottom:1px solid var(--line)}
+.meterrow{display:flex;justify-content:space-between;font-size:13px;color:var(--sub);align-items:baseline}
+.meterrow b{color:var(--ink);font-size:15px}
+.meter{position:relative;height:12px;background:#dfe3ec;border-radius:99px;margin-top:5px}
+.meter i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:linear-gradient(90deg,var(--teal),#36c2b0);width:0;transition:width .5s}
+.meter em{position:absolute;left:80%;top:-3px;bottom:-3px;width:2px;background:var(--navy)}
+.meter span{position:absolute;left:80%;top:-19px;transform:translateX(-50%);font-size:11px;color:var(--navy);white-space:nowrap}
+.steps{display:flex;gap:6px;overflow-x:auto;padding:8px 0 2px;scrollbar-width:none}
+.steps::-webkit-scrollbar{display:none}
+.steps button{flex:0 0 auto;font-size:13px;padding:5px 10px;border-radius:99px;background:#e7e9f0;color:var(--sub);white-space:nowrap}
+.steps button.on{background:var(--navy);color:#fff;font-weight:700}
+.steps button.done::before{content:"✓ ";color:var(--teal)}
+.steps button.on.done::before{color:var(--yel)}
+section.step{display:none;padding-top:14px}
+section.step.on{display:block}
+h2{font-size:19px;margin:0 0 4px}
+h2 small{display:block;font-size:13px;font-weight:400;color:var(--sub)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+.card h3{margin:0 0 6px;font-size:16px}
+.hint{font-size:13px;color:var(--sub);margin:4px 0}
+.demo{font-size:12px;color:#8a5a00;background:#fff6dc;border-radius:6px;padding:4px 8px;margin-top:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:8px 16px;border-radius:12px;background:var(--navy);color:#fff;font-weight:700}
+.btn.sec{background:#e9ecf4;color:var(--navy)}
+.btn.yel{background:var(--yel);color:var(--navy)}
+.btn.teal{background:var(--teal)}
+.btn:disabled{opacity:.4}
+.btn.full{display:flex;width:100%}
+.btn.playing{background:var(--red);color:#fff}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row .btn{flex:1 1 0;padding:8px 6px;font-size:15px}
+.next{margin:18px 0 6px}
+.words{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.words button{text-align:left;background:#f6f7fb;border:1px solid var(--line);border-radius:10px;padding:8px 10px;line-height:1.3}
+.words b{display:block;font-size:17px}
+.words span{font-size:13px;color:var(--sub)}
+.words button.playing{border-color:var(--teal);background:var(--teal2)}
+.videobox{border-radius:14px;overflow:hidden;background:#000;line-height:0}
+video{width:100%;aspect-ratio:16/9;background:#000}
+.loop{display:flex;align-items:center;gap:12px}
+.loop .big{flex:0 0 60px;width:60px;height:60px;border-radius:50%;background:var(--navy);color:var(--yel);font-size:24px}
+.loop .big.playing{background:var(--red);color:#fff}
+.bar{height:6px;background:#dfe3ec;border-radius:99px;overflow:hidden;margin:6px 0}
+.bar i{display:block;height:100%;width:0;background:var(--teal)}
+.q{margin:14px 0 0}
+.q p{margin:0 0 6px;font-weight:700}
+.opts{display:grid;gap:8px}
+.opts button{text-align:left;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:#fff;min-height:44px}
+.opts button.ok{border-color:var(--teal);background:var(--teal2);font-weight:700}
+.opts button.no{border-color:var(--red);background:var(--red2);animation:shake .3s}
+.fb{font-size:14px;margin-top:6px;border-radius:8px;padding:6px 10px;display:none}
+.fb.ok{display:block;background:var(--teal2);color:#0b5c54}
+.fb.no{display:block;background:var(--red2);color:#8f2118}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.segs{display:flex;gap:2px;height:30px;margin:8px 0 2px}
+.segs button{background:#d5d9e6;border-radius:4px;min-width:0;font-size:10px;color:#6b7386;padding:0}
+.segs button.key{background:var(--yel)}
+.segs button.cur{outline:2px solid var(--navy)}
+.segs button.ok{background:var(--teal);color:#fff}
+.segs button.playing{background:var(--red);color:#fff}
+.fine img{width:100%;border-radius:10px;display:block;aspect-ratio:16/7;object-fit:cover;object-position:top;background:#dfe3ec}
+.cloze{font-size:19px;line-height:2;margin:10px 0 6px;font-weight:600}
+.blank{display:inline-block;min-width:74px;border-bottom:2.5px solid var(--navy);text-align:center;color:var(--teal);padding:0 4px;line-height:1.3}
+.blank.act{background:var(--yel2);border-color:var(--yel)}
+.blank.ok{border-color:var(--teal)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.chips button{flex:1 1 28%;min-height:46px;border-radius:10px;border:1.5px solid var(--navy);background:#fff;font-size:17px;font-weight:700}
+.chips button:disabled{opacity:.35}
+.chips button.no{border-color:var(--red);background:var(--red2);animation:shake .3s}
+.tip{background:#f1eefb;border-left:3px solid var(--pur);border-radius:6px;padding:8px 10px;font-size:14px;margin:10px 0}
+.tip b{color:var(--pur)}
+.zh{font-size:14px;color:var(--sub)}
+.shadow{border-top:1px dashed var(--line);margin-top:12px;padding-top:12px}
+.rec{color:var(--red);font-weight:700;font-size:14px}
+.link{color:var(--teal);text-decoration:underline;font-size:13px;padding:8px 0;display:inline-block}
+.wrongbook li{margin:4px 0}
+.script p{margin:0 0 4px;padding:6px 8px;border-radius:8px;font-size:17px;line-height:1.55}
+.script p.playing{background:var(--teal2)}
+.script p .zh{display:none}
+.script.showzh p .zh{display:block}
+.script mark{background:var(--yel2);color:inherit;border-bottom:2px solid var(--yel);padding:0 1px}
+.part{font-size:12px;font-weight:700;color:#fff;border-radius:4px;padding:1px 8px;display:inline-block;margin:12px 0 4px}
+.p1{background:#4a6fa5}.p2{background:var(--red)}.p3{background:var(--teal)}.p4{background:var(--pur)}
+.pts li{margin:6px 0;font-size:15px}
+/* game */
+.sky{position:relative;height:180px;border-radius:14px;overflow:hidden;background:radial-gradient(1.6px 1.6px at 12% 14%,#fff 60%,transparent 61%),radial-gradient(1.6px 1.6px at 31% 30%,#fff 60%,transparent 61%),radial-gradient(1.6px 1.6px at 52% 9%,#fff 60%,transparent 61%),radial-gradient(1.6px 1.6px at 76% 24%,#fff 60%,transparent 61%),radial-gradient(1.6px 1.6px at 91% 11%,#fff 60%,transparent 61%),linear-gradient(#10163a,#2c2a66 55%,#4a3a86 74%,#1d3a33 74%,#15281f)}
+.sky::before{content:"";position:absolute;left:-12%;width:70%;bottom:46px;height:44px;background:#27485a;border-radius:50% 50% 0 0/100% 100% 0 0;opacity:.9}
+.sky::after{content:"";position:absolute;right:-14%;width:80%;bottom:46px;height:30px;background:#1f3c4c;border-radius:50% 50% 0 0/100% 100% 0 0;opacity:.9}
+.sky .cap{position:absolute;left:0;right:0;top:8px;text-align:center;color:#ffe9a3;font-weight:800;font-size:15px;text-shadow:0 1px 3px #000;z-index:3}
+.sky .flash{position:absolute;left:0;right:0;top:0;bottom:0;background:#fff;opacity:0;pointer-events:none}
+.sky.zap .flash{animation:zap .5s}
+@keyframes zap{0%{opacity:.95}30%{opacity:.2}45%{opacity:.8}100%{opacity:0}}
+.sky.hit{animation:shake .35s}
+.house{position:absolute;z-index:2;left:14px;bottom:44px;width:34px;height:26px;background:#f2e2c0;border-radius:2px}
+.house::before{content:"";position:absolute;left:-6px;top:-18px;border:23px solid transparent;border-top:0;border-bottom:18px solid #c8553d}
+.house::after{content:"";position:absolute;left:12px;top:8px;width:10px;height:12px;background:var(--yel)}
+.cloud{position:absolute;z-index:2;top:30px;left:60%;width:74px;height:30px;background:#8f93b8;border-radius:30px;transition:left .8s;transform:translateX(-50%)}
+.cloud::before{content:"";position:absolute;left:12px;top:-14px;width:30px;height:30px;border-radius:50%;background:#8f93b8;box-shadow:24px 4px 0 -2px #8f93b8}
+.cloud::after{content:"";position:absolute;left:30px;top:28px;border:8px solid transparent;border-top:26px solid var(--yel);transform:skewX(-18deg);opacity:.9}
+.cloud b{position:absolute;top:62px;left:50%;transform:translateX(-50%);color:#fff;font-size:15px;white-space:nowrap;background:rgba(0,0,0,.45);padding:0 8px;border-radius:99px}
+.road{position:absolute;z-index:2;left:54px;right:8px;bottom:18px;height:2px;background:rgba(255,255,255,.35)}
+.road span{position:absolute;top:4px;font-size:10px;color:rgba(255,255,255,.7);transform:translateX(-50%)}
+.hud{display:flex;justify-content:space-between;font-size:14px;margin:8px 2px 4px;font-weight:700}
+.hud .hearts{color:var(--red);letter-spacing:2px}
+.gopts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.gopts button{min-height:58px;border-radius:12px;background:var(--navy);color:#fff;font-size:19px;font-weight:700}
+.gopts button.ok{background:var(--teal)}
+.gopts button.no{background:var(--red);animation:shake .3s}
+.gopts button:disabled{opacity:.55}
+.gq{font-weight:700;margin:10px 0 0;font-size:16px}
+.gfb{min-height:66px;font-size:14px;margin-top:8px;border-radius:10px;padding:8px 10px;background:#f6f7fb}
+.gfb b{font-size:15px}
+.result{text-align:center}
+.result .n{font-size:44px;font-weight:800;color:var(--navy);line-height:1.2}
+/* pass */
+.lock{text-align:center;padding:20px 12px}
+.lock .ico{width:74px;height:74px;border-radius:50%;margin:0 auto 8px;background:#e7e9f0;display:flex;align-items:center;justify-content:center;font-size:34px}
+.lock.open .ico{background:var(--yel);animation:pop .6s}
+@keyframes pop{0%{transform:scale(.4)}60%{transform:scale(1.2)}100%{transform:scale(1)}}
+.frame{display:grid;gap:8px;margin:10px 0}
+.frame div{border-radius:10px;padding:8px 10px;background:#f6f7fb;border-left:4px solid var(--navy);font-size:15px}
+.frame div b{display:block;font-size:12px;color:var(--sub)}
+.frame div em{font-style:normal;color:var(--teal);font-weight:600}
+.check label{display:flex;gap:8px;align-items:flex-start;padding:6px 0;font-size:15px}
+.check input{width:20px;height:20px;margin-top:3px;flex:0 0 auto}
+.badge{width:120px;height:120px;border-radius:50%;margin:8px auto;background:radial-gradient(circle at 35% 30%,#ffe9a3,var(--yel) 55%,#e0a100);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--navy);font-weight:800;box-shadow:0 6px 0 #b98600;animation:pop .6s}
+.badge i{font-style:normal;font-size:40px;line-height:1}
+.sum{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;margin:10px 0}
+.sum div{background:#f6f7fb;border-radius:10px;padding:8px 4px;font-size:12px;color:var(--sub)}
+.sum b{display:block;font-size:20px;color:var(--ink)}
+/* ask */
+.ask{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:30;background:var(--yel);color:var(--navy);font-weight:800;font-size:14px;border-radius:99px;padding:9px 14px;box-shadow:0 4px 14px rgba(0,0,0,.25);border:2px solid #fff}
+.ask::before{content:"卡住了？";font-weight:400;font-size:12px}
+.mask{position:fixed;left:0;right:0;top:0;bottom:0;background:rgba(10,15,30,.5);z-index:40;display:none}
+.mask.on{display:block}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-radius:18px 18px 0 0;padding:16px 16px calc(18px + env(safe-area-inset-bottom));max-height:82vh;overflow:auto;transform:translateY(105%);transition:transform .25s;max-width:520px;margin:0 auto}
+.sheet.on{transform:none}
+.sheet h3{margin:0 0 4px;font-size:18px}
+.sheet details{border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin:8px 0;font-size:15px}
+.sheet summary{font-weight:700}
+.sheet textarea{width:100%;min-height:70px;border:1.5px solid var(--line);border-radius:10px;padding:8px;font:inherit}
+.ctx{background:#f6f7fb;border-radius:10px;padding:8px 10px;font-size:13px;color:var(--sub);margin:8px 0}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:rgba(20,33,61,.94);color:#fff;padding:10px 16px;border-radius:12px;font-size:14px;z-index:60;max-width:86%;text-align:center;display:none}
+.toast.on{display:block}
+.blankin{width:108px;max-width:44vw;font:inherit;font-weight:700;color:var(--teal);text-align:center;border:0;border-bottom:2.5px solid var(--navy);background:var(--yel2);border-radius:6px 6px 0 0;padding:0 4px;height:36px;outline:none;-webkit-appearance:none}
+.blankin:focus{background:#ffe9a3}
+.blankin:disabled{background:#eceef3;opacity:.7}
+.tracks{display:grid;gap:6px;margin-top:10px}
+.tracks button{text-align:left;background:#f6f7fb;border:1px solid var(--line);border-radius:10px;padding:7px 10px;line-height:1.35}
+.tracks b{display:block;font-size:15px}
+.tracks span{font-size:12px;color:var(--sub)}
+.tracks button.playing{border-color:var(--teal);background:var(--teal2)}
+#mini{display:block;width:100%;margin-top:6px;font-size:13px;background:var(--navy);color:#fff;border-radius:8px;padding:6px 10px;text-align:left}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <span class="tag">听力样本 · 学术进阶段（低阶）</span>
+  <h1>Why Does Thunder Come Late?<br>雷声为什么总是迟到</h1>
+  <p>原创动画科普短片 · 约 70 秒 · 约 170 词 · 画面辅助 · 适合初高中铺垫</p>
+</div></div>
+
+<div class="wrap">
+<details class="map" id="map">
+  <summary>这个样本对应你方案里的哪几条</summary>
+  <ol>
+    <li><q>学术进阶段（新增）：TED-Ed动画科普短片（低阶、画面辅助、适合初高中铺垫）</q><div class="to">→ 本课素材：一段自己写、自己配音配画的 70 秒动画科普短片（<b>第 2 步</b>）。没有用 TED-Ed 的任何文字和画面。</div></li>
+    <li><q>泛听：后台循环磨耳朵，积累语感体量</q><div class="to">→ <b>第 2 步「泛听」</b>：先看短片（默认不开字幕），再用「磨耳朵循环」只听声音：三段同级素材连着放，切到后面的步骤也不停。</div></li>
+    <li><q>精听：AI分句停顿、挖空、复读、跟读、错题巩固、精修细节</q><div class="to">→ <b>第 3 步「精听」</b>：六样各有一个能点的地方，名字和你写的一样。挖空是听写（把听到的词打出来），写不出才降一档给选项。</div></li>
+    <li><q>听中带说、输入带动输出，听力积累达到阶段阈值，自动解锁对应层级口语任务</q><div class="to">→ 精听每句都要跟读；页面顶部的<b>「听力积累」</b>条过了 80 这条线，<b>第 6 步</b>的口语任务自动解锁。样本里用这一课的积累代表「阶段阈值」，正式版按整个学段累计的听力量算。</div></li>
+    <li><q>Level 4 小型主题汇报……科普内容口头讲解……建立「开头-主体-结尾」表达框架</q><div class="to">→ 解锁的就是这一级：用开头-主体-结尾，把短片内容讲给别人听（<b>第 6 步</b>）。</div></li>
+    <li><q>听力素材与后期阅读素材同源复用、听过即读懂</q><div class="to">→ <b>第 4 步「文字」</b>：文字稿在听完之后才给，并标出科普短片的结构和信号词。</div></li>
+    <li><q>AI游戏化闯关、积分徽章、趣味交互，解决坚持问题</q><div class="to">→ <b>第 5 步「游戏」</b>：听英文报告给雷暴测距，用的就是这段短片里的话和方法；过关发徽章。</div></li>
+    <li><span class="hint">（这一条是你微信里的原话）</span><q>老师只是服务，教学由系统主要完成。孩子有卡点的时候老师再答疑就行。</q><div class="to">→ 六步都由页面自己带着走；右下角<b>「问老师」</b>是卡住时的入口，会带上当前步骤和错题。</div></li>
+  </ol>
+</details>
+</div>
+
+<div id="anchor"></div>
+<div class="meterbox"><div class="wrap">
+  <div class="meterrow"><span>听力积累 <b id="mval">0</b> / 100</span><span id="mtxt">到 80 自动解锁口语任务 🔒</span></div>
+  <div class="meter"><i id="mbar"></i><em></em></div>
+  <div class="steps" id="steps"></div>
+  <button id="mini" style="display:none"></button>
+</div></div>
+
+<div class="wrap" id="main">
+
+<!-- 0 热身 -->
+<section class="step" data-name="学·热身">
+  <h2>第 1 步　听前热身<small>学：先知道要听什么，认 8 个关键词</small></h2>
+  <div class="card">
+    <h3>先猜一猜</h3>
+    <p style="margin:0 0 8px">下雷雨的时候，闪电和雷声是谁先到？为什么？</p>
+    <div class="opts" id="predict">
+      <button>我先看到闪电，过一会儿才听到雷</button>
+      <button>我觉得它们是同时到的</button>
+      <button>没注意过</button>
+    </div>
+    <div class="fb" id="predictfb"></div>
+  </div>
+  <div class="card">
+    <h3>关键词（点一下听发音）</h3>
+    <div class="words" id="words"></div>
+    <p class="hint">不用背。短片里每个词都会再出现，带着耳朵去找它们。</p>
+  </div>
+  <button class="btn full next" data-go="1">下一步：泛听 →</button>
+</section>
+
+<!-- 1 泛听 -->
+<section class="step" data-name="学·泛听">
+  <h2>第 2 步　泛听<small>学：整段听，磨耳朵，只抓「它在讲什么问题」</small></h2>
+  <div class="card">
+    <h3>① 看短片（画面辅助）</h3>
+    <div class="videobox"><video id="vid" controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/img/poster.jpg" src="assets/video/thunder_nosub.mp4"></video></div>
+    <div class="row" style="margin-top:8px"><button class="btn sec" id="subbtn">英文字幕：关（点一下打开）</button></div>
+    <p class="hint">第一遍先不开字幕，靠耳朵和画面，不用每个词都懂。听过一遍，再打开字幕对一对。</p>
+  </div>
+  <div class="card">
+    <h3>② 磨耳朵循环（只有声音，3 段同级素材）</h3>
+    <div class="loop">
+      <button class="big" id="loopbtn" aria-label="播放">▶</button>
+      <div style="flex:1;min-width:0">
+        <div><b id="loopstate">点左边开始</b></div>
+        <div class="bar"><i id="loopbar"></i></div>
+        <div class="hint" style="margin:0">已听完 <b id="loopn">0</b> 段 · 约 <b id="loopmin">0</b> 分钟 · <label><input type="checkbox" id="loopon" checked> 自动循环</label></div>
+      </div>
+    </div>
+    <div class="tracks" id="tracks"></div>
+    <p class="hint">泛听靠量：不看字，放着听。切到后面的步骤它也不停，直到你播别的声音。</p>
+    <div class="demo">样本演示：后两段同级素材只做了音频，没有配画面和精听；循环只在本页面内有效，正式版做成锁屏后也能后台循环，并累计每天的泛听时长。</div>
+  </div>
+  <div class="card">
+    <h3>③ 听懂大意了吗</h3>
+    <div id="gist"></div>
+  </div>
+  <button class="btn full next" data-go="2">下一步：精听 →</button>
+</section>
+
+<!-- 2 精听 -->
+<section class="step" data-name="练·精听">
+  <h2>第 3 步　精听<small>练：一句一句停下来，抠细节</small></h2>
+  <div class="card">
+    <h3>AI 分句停顿</h3>
+    <p class="hint">系统把这段旁白切成 12 句，每句放完自动停。黄色 5 句是这一课的精听重点，点任意一格可以单独听那一句。</p>
+    <div class="segs" id="segs"></div>
+    <div class="demo">样本演示：这 12 句是预先切好的；正式版由 AI 对任何一段素材自动切句、自动挑挖空的词。</div>
+  </div>
+  <div class="card fine" id="fine"></div>
+  <div class="card" id="review" style="display:none"></div>
+  <button class="btn full next" data-go="3">下一步：看文字稿 →</button>
+</section>
+
+<!-- 3 文字 -->
+<section class="step" data-name="学·文字">
+  <h2>第 4 步　文字稿和要点<small>学：先听懂，再读懂。点任意一句可以再听</small></h2>
+  <div class="card">
+    <div class="row" style="margin-bottom:6px"><button class="btn sec" id="zhbtn">显示中文</button><button class="btn sec" id="readall">▶ 从头连读</button></div>
+    <div class="script" id="script"></div>
+    <div class="demo">样本演示（同源复用）：样本只做到「听完才给文字稿」。正式版里，这篇文字稿听完后会自动进入阅读素材库，之后的阅读课直接用它。</div>
+  </div>
+  <div class="card">
+    <h3>这一课的三个要点</h3>
+    <ol class="pts" style="padding-left:20px;margin:0">
+      <li><b>科普短片的四段结构</b>：现象 → 问题 → 解释 → 应用。听到黄色的信号词（<i>But here's the strange part / So why / The answer is / That means / So you can</i>），就知道讲到哪一段了。以后听 TED 演讲也是靠它们跟上思路。</li>
+      <li><b>大数字</b>：英文按「千」数。<i>three hundred thousand</i> = 300 × 1,000 = 300,000（三十万）。先抓 hundred、thousand 这两个单位词。</li>
+      <li><b>弱读和重音</b>：<i>three hundred and forty</i> 里的 and 读得很轻，像 /ən/；<i>forty</i> 结尾短促 /ti/，<i>fourteen</i> 结尾是长音 /tiːn/，听结尾的长短来分。</li>
+    </ol>
+    <p class="hint" style="margin-top:10px">安全提醒：只要听得见雷声，就已经在闪电能打到的范围里，应该马上进屋。数秒测距是用来弄懂原理的，不是用来判断「还安全」的。</p>
+  </div>
+  <button class="btn full next" data-go="4">下一步：玩游戏 →</button>
+</section>
+
+<!-- 4 游戏 -->
+<section class="step" data-name="玩·游戏">
+  <h2>第 5 步　游戏：听雷测距<small>玩：听英文报告，用短片里的方法算出雷暴有多远</small></h2>
+  <div class="card">
+    <div class="hud"><span id="ground">第 0 / 8 道</span><span>得分 <span id="gscore">0</span></span><span class="hearts" id="ghearts">♥♥♥</span></div>
+    <div class="sky" id="sky">
+      <div class="cloud" id="cloud"><b id="ckm">? km</b></div>
+      <div class="house"></div>
+      <div class="road" id="road"></div>
+      <div class="cap" id="gcap"></div>
+      <div class="flash"></div>
+    </div>
+    <div class="bar" style="margin-top:10px"><i id="gbar" style="background:var(--yel);width:100%"></i></div>
+    <div id="gstage">
+      <p style="margin:8px 0">你是观测员。每一道会<b>闪一下</b>，然后耳机里传来一句<b>英文报告</b>（英音）。听清数了几秒，<b>除以 3</b>，选出雷暴离你多远；有时要判断它在靠近还是远离。8 道题，3 条命，答得越快分越高。第一局雷暴会一路逼近再离开，看你能不能全程跟住它。</p>
+      <button class="btn yel full" id="gstart">开始游戏</button>
+    </div>
+  </div>
+  <button class="btn full next" data-go="5">下一步：过关 →</button>
+</section>
+
+<!-- 5 过关 -->
+<section class="step" data-name="过关·口语">
+  <h2>第 6 步　过关，解锁口语<small>听力积累到 80，口语任务自动打开</small></h2>
+  <div class="card lock" id="lock"></div>
+  <div class="demo" style="margin:-4px 0 12px">样本演示：这里用这一课的积累代表「阶段阈值」。正式版按整个学段累计的听力量（时长、篇数、正确率）判断，到线后自动解锁对应层级的口语任务。</div>
+  <div id="speak" style="display:none">
+    <div class="card">
+      <h3>口语任务 · Level 4 小型主题汇报</h3>
+      <p class="hint" style="margin-top:0">你方案里这一级的输出形式：1-2分钟mini presentation、科普内容口头讲解。</p>
+      <p style="margin:0 0 6px">用 1–2 分钟，把「雷声为什么迟到」<b>讲给没看过短片的同学听</b>（科普内容口头讲解）。按开头-主体-结尾来讲：</p>
+      <div class="frame">
+        <div><b>开头 · 提出问题</b><em>Have you ever noticed that …? Let me explain why.</em></div>
+        <div><b>主体 · 讲清原因</b><em>First, lightning and thunder happen … / Lightning heats the air so quickly that … / Light travels … / Sound is much slower. It needs …</em></div>
+        <div><b>结尾 · 教一个方法</b><em>So here is a trick. Count … then divide … / Next time …, try it yourself!</em></div>
+      </div>
+      <div class="row"><button class="btn sec" id="modelbtn">🎧 听示范（约 1 分钟）</button></div>
+      <div class="shadow">
+        <div id="spkrec"></div>
+      </div>
+    </div>
+    <div class="card" id="selfcheck" style="display:none">
+      <h3>讲完自己对一下</h3>
+      <div class="check">
+        <label><input type="checkbox" value="open"> 开头提了一个问题，或说了要讲什么</label>
+        <label><input type="checkbox" value="body"> 讲清了「光很快、声音慢」</label>
+        <label><input type="checkbox" value="num"> 用到了至少一个数字（three seconds / one kilometer / divide by three）</label>
+        <label><input type="checkbox" value="end"> 结尾教了数秒测距的方法，或有一句收尾</label>
+      </div>
+      <button class="btn full teal" id="submitspk">提交，看反馈</button>
+    </div>
+    <div class="card" id="spkfb" style="display:none"></div>
+    <div class="card result" id="finish" style="display:none"></div>
+  </div>
+</section>
+
+</div>
+
+<button class="ask" id="askbtn">问老师</button>
+<div class="mask" id="mask"></div>
+<div class="sheet" id="sheet">
+  <h3>卡住了？</h3>
+  <p class="hint">系统先帮你；还是不懂，再把卡点发给老师。</p>
+  <div id="faq"></div>
+  <div class="ctx" id="ctx"></div>
+  <textarea id="asktxt" placeholder="想问老师什么？比如：three hundred and forty 我总听成 314"></textarea>
+  <div class="row" style="margin-top:8px"><button class="btn sec" id="askclose">先不问了</button><button class="btn" id="asksend">发给老师</button></div>
+  <div class="demo">样本演示：这里不会真的发出去。正式版会把当前步骤、错题本和你的录音一起推给陪跑老师。</div>
+</div>
+<div class="toast" id="toast"></div>
+<audio id="player" preload="none"></audio>
+<audio id="sfx" preload="none" src="assets/audio/thunder.mp3"></audio>
+<audio id="mine" preload="none"></audio>
+
+<script>
+(function(){
+'use strict';
+var A='assets/audio/', IMG='assets/img/';
+var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+function el(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+var toastT;function toast(t){var e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){e.classList.remove('on')},2600)}
+
+/* ---------- data ---------- */
+var SENT=[
+ {id:'s01',d:4.09,part:1,t:'Dark clouds roll in, and a flash of lightning splits the sky.',zh:'乌云压过来，一道闪电划破天空。'},
+ {id:'s02',d:5.5,part:1,t:'You wait. One... two... three... and then, boom! The thunder finally arrives.',zh:'你等着。一、二、三……然后，轰！雷声终于到了。'},
+ {id:'s03',d:4.93,part:2,t:"<mark>But here's the strange part:</mark> lightning and thunder are born at exactly the same moment.",zh:'奇怪的地方在这里：闪电和雷声其实是在同一瞬间产生的。'},
+ {id:'s04',d:6.35,part:2,t:'Lightning heats the air around it so quickly that the air bursts outward, and that burst is the thunder.',zh:'闪电把周围的空气瞬间加热，空气猛地向外炸开，这一炸就是雷声。'},
+ {id:'s05',d:1.9,part:2,t:'<mark>So why</mark> does the thunder always come late?',zh:'那为什么雷声总是迟到？'},
+ {id:'s06',d:4.98,part:3,t:'<mark>The answer is</mark> speed. Light travels at about 300,000 kilometers per second.',zh:'答案是速度。光每秒大约跑三十万公里。'},
+ {id:'s07',d:5.11,part:3,t:'From a storm a few kilometers away, it reaches your eyes almost instantly.',zh:'几公里外的雷暴，光几乎一瞬间就到你眼里。'},
+ {id:'s08',d:5.92,part:3,t:'Sound is much slower. It moves through the air at only about 340 meters per second.',zh:'声音慢得多。它在空气里每秒只走大约 340 米。'},
+ {id:'s09',d:4.19,part:3,t:'<mark>That means</mark> sound needs roughly three seconds to travel one kilometer.',zh:'也就是说，声音走一公里大约要三秒。'},
+ {id:'s10',d:6.55,part:4,t:'<mark>So you can</mark> work out how far away a storm is. When you see a flash, start counting the seconds until you hear the thunder.',zh:'所以你可以自己算出雷暴离你有多远。看到闪电就开始数秒，一直数到听见雷声。'},
+ {id:'s11',d:5.55,part:4,t:'<mark>Then</mark> divide that number by three. Six seconds? The storm is about two kilometers away.',zh:'然后把这个数除以三。六秒？雷暴大约在两公里外。'},
+ {id:'s12',d:4.98,part:4,t:'<mark>And if</mark> the gap keeps getting shorter, the storm is coming closer. Time to head inside.',zh:'如果间隔越来越短，说明雷暴正在靠近，该进屋了。'}
+];
+var PARTS={1:['p1','现象 · 先看到闪电，后听到雷'],2:['p2','问题 · 明明同时发生，为什么雷迟到'],3:['p3','解释 · 光快，声音慢'],4:['p4','应用 · 数秒给雷暴测距']};
+var WORDS=[['w_lightning','lightning','闪电'],['w_thunder','thunder','雷声'],['w_flash','flash','闪光；一闪'],['w_travel','travel','（光、声）传播'],['w_instantly','instantly','立刻，瞬间'],['w_roughly','roughly','大约'],['w_divide','divide','除以'],['w_gap','gap','间隔']];
+var FINE=[
+ {id:'s03',img:'scene3.jpg',tpl:"But here's the strange part: lightning and thunder are born at exactly the same {0}.",blanks:[{a:'moment',o:['moment','minute','movement']}],
+  tip:"<b>精修细节</b>　<i>But here's the strange part</i> 是转折信号：后面要讲一件和常识相反的事，耳朵要竖起来。<i>at exactly</i> 里的 at 读得很轻、很短。"},
+ {id:'s06',img:'scene5.jpg',tpl:'The answer is speed. Light travels at about {0} kilometers per second.',blanks:[{a:'300,000',alt:['300000','three hundred thousand','300 thousand','300k'],o:['300,000','30,000','3,000']}],
+  tip:'<b>精修细节</b>　大数字先抓单位词：<i>three hundred <u>thousand</u></i> = 300 × 1,000 = 300,000。中文按「万」数，英文按「千」数，所以它是「三十万」，不是三万。'},
+ {id:'s08',img:'scene6.jpg',tpl:'Sound is much slower. It moves through the air at only about {0} meters per second.',blanks:[{a:'340',alt:['three hundred and forty','three hundred forty'],o:['340','314','430']}],
+  tip:'<b>精修细节</b>　<i>three hundred and forty</i>：and 弱读成 /ən/，几乎听不见。<i>forty</i> 结尾短促 /ti/；<i>fourteen</i> 结尾是长音 /tiːn/。分不清 -ty 和 -teen 时，听结尾的长短最可靠。'},
+ {id:'s11',img:'scene7.jpg',tpl:'Then {0} that number by three. Six seconds? The storm is about {1} kilometers away.',blanks:[{a:'divide',o:['divide','decide','multiply']},{a:'two',alt:['2'],o:['two','three','six']}],
+  tip:'<b>精修细节</b>　<i>divide A by B</i> = A 除以 B。<i>Six seconds?</i> 用升调自己问、自己答，是科普讲解里常见的口气，听到升调就等着后面的答案。'},
+ {id:'s12',img:'scene8.jpg',tpl:'And if the gap keeps getting {0}, the storm is coming {1}. Time to head inside.',blanks:[{a:'shorter',o:['shorter','longer','louder']},{a:'closer',o:['closer','slower','later']}],
+  tip:'<b>精修细节</b>　<i>keeps getting shorter</i>：keep getting + 比较级 =「越来越…」（keep doing 本身表示动作一直持续）。这句的信息全在两个比较级 <i>shorter / closer</i> 上，听漏了 -er 意思就变了。'}
+];
+var GIST=[
+ {q:'1. What is this video mainly about?',o:['Why lightning is dangerous','Why we hear thunder after we see lightning','How clouds make rain'],a:1,
+  ok:'对。整段都在回答 So why does the thunder always come late?',no:'再想想：片子反复在问的那个问题是什么？可以再听一遍这一句。',clip:'s05'},
+ {q:'2. How can you tell that a storm is coming closer?',o:['The lightning gets brighter','The thunder lasts longer','The gap between the flash and the thunder gets shorter'],a:2,
+  ok:'对。If the gap keeps getting shorter, the storm is coming closer.',no:'不是这个。答案在最后一句，点下面再听一遍。',clip:'s12'}
+];
+var GAME=[
+ {id:'g1',t:'I saw a flash, and I counted three seconds before the thunder.',o:['1 km','3 km','9 km','30 km'],a:'1 km',km:1,ex:'3 ÷ 3 = 1 km'},
+ {id:'g2',t:'The thunder arrived six seconds after the flash.',o:['2 km','3 km','6 km','18 km'],a:'2 km',km:2,ex:'6 ÷ 3 = 2 km'},
+ {id:'g3',t:'Nine seconds passed between the flash and the thunder.',o:['3 km','6 km','9 km','27 km'],a:'3 km',km:3,ex:'9 ÷ 3 = 3 km'},
+ {id:'g4',t:'First I counted nine seconds. Now the gap is only six.',o:['Coming closer','Moving away'],a:'Coming closer',km:2,from:3,ex:'9 秒 → 6 秒，间隔变短：3 km → 2 km，在靠近'},
+ {id:'g5',t:'This time the gap was twelve seconds.',o:['3 km','4 km','6 km','12 km'],a:'4 km',km:4,ex:'12 ÷ 3 = 4 km'},
+ {id:'g6',t:'I counted thirty seconds before I heard the boom.',o:['10 km','about 4 km','3 km','30 km'],a:'10 km',km:10,ex:'thirty（结尾短）是 30，不是 thirteen（结尾长，13）：30 ÷ 3 = 10 km'},
+ {id:'g7',t:'A moment ago the gap was three seconds. Now it is fifteen.',o:['Coming closer','Moving away'],a:'Moving away',km:5,from:1,ex:'3 秒 → 15 秒，间隔变长：1 km → 5 km，在远离'},
+ {id:'g8',t:'Flash! I counted fifteen seconds, and then the thunder arrived.',o:['5 km','about 17 km','15 km','3 km'],a:'5 km',km:5,ex:'fifteen（结尾长）是 15，不是 fifty（结尾短，50）：15 ÷ 3 = 5 km'}
+];
+var FAQ=[
+ [['关键词记不住怎么办？','不用背。先听个响，短片里每个词都会再出现，精听时还会再碰到。'],['travel 不是「旅行」吗？','讲光和声音的时候，travel 是「传播、行进」。Light travels fast = 光传播得很快。']],
+ [['语速太快，听不懂怎么办？','泛听只要抓住「它在讲什么问题」。细节留到下一步精听，那里一句一句停，还能放慢。'],['能不能先看字幕和文字稿？','第一遍先不看：短片的字幕默认是关的，文字稿在第 4 步才打开。听过一遍，可以把字幕打开对一对。']],
+ [['three hundred thousand 到底是多少？','300 × 1,000 = 300,000，也就是三十万。英文没有「万」这个单位。'],['听了几遍还是写不出？','点「慢速」再听一遍；还写不出，点「给我选项」降一档。这一句会进错题本，这一步结尾会再考你一次。'],['跟读总觉得读不像？','先点「复读×3」听熟节奏，再跟着读；注意重音落在哪几个词上。']],
+ [['这些黄色的信号词有什么用？','它们是路标。听到 The answer is，就知道要给解释了；听到 So you can，就知道要讲怎么用了。'],['文字能看懂，但听的时候还是跟不上？','回到第 2 步用「磨耳朵循环」再放两三遍，现在你知道每一句的意思，会越听越清楚。']],
+ [['thirty 和 thirteen 分不清？','听结尾的长短：thirty 的 -ty 很短 /ti/；thirteen 的 -teen 是长音 /tiːn/。fifteen / fifty 也一样。'],['为什么要除以 3？','声音走 1 公里大约要 3 秒，所以数到几秒，就除以 3 得到公里数。']],
+ [['不知道怎么开头？','直接用提示里的第一句：Have you ever noticed that thunder always comes after lightning?'],['讲到一半忘词了？','先点「听示范」听一遍，再照着三段提示讲；不用和示范一样，用自己的话。']]
+];
+
+/* ---------- audio core ---------- */
+var P=$('#player'), sfx=$('#sfx'), mine=$('#mine'), vid=$('#vid'), cur=null;
+var loopWait=false;
+function stopAudio(){loopWait=false;var c=cur;cur=null;try{P.pause()}catch(e){}try{mine.pause()}catch(e){}if(c&&c.onstop)c.onstop(false)}
+function playAudio(src,o){
+  o=o||{};stopAudio();try{vid.pause()}catch(e){}
+  cur=o;var r=o.rate||1;P.src=src;P.defaultPlaybackRate=r;P.playbackRate=r;
+  var pr;try{pr=P.play()}catch(e){pr=null}
+  if(pr&&pr.catch)pr.catch(function(){if(cur===o){cur=null;if(o.onstop)o.onstop(false);if(o.onfail)o.onfail();else toast('没播出来，请再点一下')}});
+}
+P.addEventListener('loadedmetadata',function(){if(cur&&cur.rate)P.playbackRate=cur.rate});
+P.addEventListener('ended',function(){var c=cur;cur=null;if(c){if(c.onstop)c.onstop(true);if(c.onend)c.onend()}});
+P.addEventListener('timeupdate',function(){if(cur&&cur.ontime)cur.ontime(P.currentTime,P.duration||0)});
+function clip(id){return A+id+'.mp3'}
+function playBtn(btn,src,o){ // toggle play on a button
+  o=o||{};if(btn.classList.contains('playing')){stopAudio();return}
+  var oo={rate:o.rate,ontime:o.ontime,onend:o.onend,onfail:o.onfail,onstop:function(){btn.classList.remove('playing');if(o.onstop)o.onstop()}};
+  playAudio(src,oo);btn.classList.add('playing');
+}
+vid.addEventListener('play',function(){stopAudio()});
+
+/* ---------- state & meter ---------- */
+var S={video:false,loop:false,gist:[false,false],fine:[false,false,false,false,false],game:0,gamePlayed:false,wrong:{},fixed:{},spoke:false,demoUnlock:false,t0:Date.now()};
+var TH=80, wasOpen=false;
+function score(){return (S.video?20:0)+(S.loop?10:0)+S.gist.filter(Boolean).length*5+S.fine.filter(Boolean).length*7+Math.round(S.game/8*25)}
+function refresh(){
+  var v=Math.min(100,score());$('#mval').textContent=v;$('#mbar').style.width=v+'%';
+  var open=v>=TH;$('#mtxt').textContent=open?'已达阈值 80 · 口语任务已解锁 🔓':'到 80 自动解锁口语任务 🔒';
+  if(open&&!wasOpen){wasOpen=true;if(stepIdx!==5)toast('听力积累达到 80：口语任务已自动解锁，去第 6 步看看')}
+  var done=[predicted,S.video&&S.gist[0]&&S.gist[1],S.fine.every(Boolean),scriptSeen,S.gamePlayed,S.spoke];
+  $$('#steps button').forEach(function(b,i){b.classList.toggle('done',!!done[i])});
+  var fineDone=S.fine.every(Boolean)&&!wrongList().length,nb=$('.next',secs[2]);nb.classList.toggle('sec',!fineDone);nb.textContent=fineDone?'下一步：看文字稿 →':'先跳过精听，看文字稿 →';
+  if(stepIdx===5)renderLock();
+}
+var predicted=false, scriptSeen=false, stepIdx=0;
+
+/* ---------- steps nav ---------- */
+var secs=$$('section.step');
+secs.forEach(function(s,i){var b=el('button',null,(i+1)+' '+s.dataset.name);b.onclick=function(){go(i)};$('#steps').appendChild(b)});
+function go(i){
+  if(!(cur&&cur.tag==='loop'))stopAudio();try{vid.pause()}catch(e){}if(G.state!=='idle'&&i!==4)gameAbort();
+  stepIdx=i;secs.forEach(function(s,k){s.classList.toggle('on',k===i)});
+  $$('#steps button').forEach(function(b,k){b.classList.toggle('on',k===i);if(k===i&&b.scrollIntoView)b.scrollIntoView({inline:'center',block:'nearest'})});
+  if(i===3)scriptSeen=true;
+  if(i===5)renderLock();
+  refresh();
+  readAllStop();
+  var y=$('#anchor').getBoundingClientRect().top+window.pageYOffset;if(window.pageYOffset>y)window.scrollTo(0,y);
+}
+$$('.next').forEach(function(b){b.onclick=function(){go(+b.dataset.go)}});
+
+/* ---------- step 0 ---------- */
+$$('#predict button').forEach(function(b,i){b.onclick=function(){
+  $$('#predict button').forEach(function(x){x.classList.remove('ok')});b.classList.add('ok');predicted=true;
+  var f=$('#predictfb');f.className='fb ok';f.textContent=['你观察得很细。那为什么雷会「迟到」？带着这个问题去听。','真的是同时到吗？下次打雷可以数一数。带着这个问题去听。','没关系，短片开头就会演给你看。带着「谁先到」这个问题去听。'][i];refresh();
+}});
+WORDS.forEach(function(w){var b=el('button',null,'<b>'+w[1]+'</b><span>'+w[2]+'</span>');b.onclick=function(){playBtn(b,clip(w[0]))};$('#words').appendChild(b)});
+
+/* ---------- step 1 泛听 ---------- */
+vid.addEventListener('timeupdate',function(){if(!S.video&&vid.duration&&vid.currentTime/vid.duration>0.85){S.video=true;refresh()}});
+vid.addEventListener('ended',function(){if(!S.video){S.video=true;refresh()}});
+var subOn=false;
+$('#subbtn').onclick=function(){
+  subOn=!subOn;var t=vid.currentTime,was=!vid.paused;this.textContent='英文字幕：'+(subOn?'开（点一下关掉）':'关（点一下打开）');this.classList.toggle('yel',subOn);this.classList.toggle('sec',!subOn);
+  vid.src='assets/video/'+(subOn?'thunder.mp4':'thunder_nosub.mp4');vid.load();
+  vid.addEventListener('loadedmetadata',function h(){vid.removeEventListener('loadedmetadata',h);try{vid.currentTime=t}catch(e){}if(was){var q=vid.play();if(q&&q.catch)q.catch(function(){})}});
+};
+var TRACKS=[['full','Why Does Thunder Come Late?','本课 · 美音 · 67 秒'],['x_sea','Why Is the Sea Salty?','同级 · 英音 · 57 秒'],['x_bat','How Do Bats Fly in the Dark?','同级 · 澳音 · 60 秒']];
+var loopN=0, loopI=0, loopSec=0, loopBtn=$('#loopbtn'), mini=$('#mini');
+TRACKS.forEach(function(t,i){var b=el('button',null,'<b>'+(i+1)+'. '+t[1]+'</b><span>'+t[2]+'</span>');b.onclick=function(){if(b.classList.contains('playing'))stopAudio();else loopPlay(i)};$('#tracks').appendChild(b)});
+function loopUI(on){
+  loopBtn.classList.toggle('playing',on);loopBtn.textContent=on?'■':'▶';mini.style.display=on?'':'none';
+  $$('#tracks button').forEach(function(b,k){b.classList.toggle('playing',on&&k===loopI)});
+  if(on){$('#loopstate').textContent='正在放：'+TRACKS[loopI][1];mini.textContent='🎧 磨耳朵循环中：'+TRACKS[loopI][1]+'　■ 点这里停'}
+}
+function loopPlay(i){
+  loopI=i;
+  playAudio(clip(TRACKS[i][0]),{tag:'loop',
+    ontime:function(t,d){if(d)$('#loopbar').style.width=(t/d*100)+'%'},
+    onstop:function(ended){loopUI(false);if(!ended)$('#loopstate').textContent='已暂停'},
+    onend:function(){loopN++;loopSec+=(P.duration||60);$('#loopn').textContent=loopN;$('#loopmin').textContent=(loopSec/60).toFixed(1);if(i===0&&!S.loop){S.loop=true;refresh()}
+      if($('#loopon').checked){$('#loopstate').textContent='马上放下一段…';loopWait=true;setTimeout(function(){if(loopWait&&!cur)loopPlay((i+1)%TRACKS.length)},700)}else $('#loopstate').textContent='听完一段'}
+  });
+  loopUI(true);
+}
+loopBtn.onclick=function(){if(loopBtn.classList.contains('playing'))stopAudio();else loopPlay(loopI)};
+mini.onclick=function(){stopAudio()};
+GIST.forEach(function(g,gi){
+  var box=el('div','q','<p>'+g.q+'</p>'),opts=el('div','opts'),fb=el('div','fb');
+  g.o.forEach(function(t,oi){var b=el('button',null,String.fromCharCode(65+oi)+'. '+t);b.onclick=function(){
+    if(S.gist[gi])return;
+    if(oi===g.a){b.classList.add('ok');S.gist[gi]=true;fb.className='fb ok';fb.textContent=g.ok;refresh()}
+    else{b.classList.remove('no');void b.offsetWidth;b.classList.add('no');fb.className='fb no';fb.innerHTML=g.no+' ';
+      var r=el('button','link','▶ 再听这一句');r.onclick=function(){playBtn(r,clip(g.clip))};fb.appendChild(r)}
+  };opts.appendChild(b)});
+  box.appendChild(opts);box.appendChild(fb);$('#gist').appendChild(box);
+});
+
+/* ---------- recording ---------- */
+var REC_OK=!!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia&&window.MediaRecorder);
+var rec=null;
+function recStart(maxMs,onTick,onDone,onFail){
+  stopAudio();
+  navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
+    var mr;try{mr=new MediaRecorder(stream)}catch(e){stream.getTracks().forEach(function(t){t.stop()});onFail();return}
+    var chunks=[],t0=Date.now();
+    mr.ondataavailable=function(e){if(e.data&&e.data.size)chunks.push(e.data)};
+    mr.onstop=function(){clearInterval(rec.iv);stream.getTracks().forEach(function(t){t.stop()});var dur=(Date.now()-t0)/1000;rec=null;
+      var blob=new Blob(chunks,{type:mr.mimeType||'audio/webm'});if(!blob.size){onFail();return}onDone(URL.createObjectURL(blob),dur)};
+    rec={mr:mr,iv:setInterval(function(){var s=(Date.now()-t0);onTick(s/1000);if(s>=maxMs)recStop()},200)};
+    mr.start();onTick(0);
+  }).catch(function(){onFail()});
+}
+function recStop(){if(rec&&rec.mr.state!=='inactive')rec.mr.stop()}
+function playMine(btn,url){if(btn.classList.contains('playing')){stopAudio();return}stopAudio();try{vid.pause()}catch(e){}
+  cur={onstop:function(){btn.classList.remove('playing')}};mine.src=url;btn.classList.add('playing');
+  var pr=mine.play();if(pr&&pr.catch)pr.catch(function(){btn.classList.remove('playing');cur=null;toast('回放失败，请再点一下')})}
+mine.addEventListener('ended',function(){var c=cur;cur=null;if(c&&c.onstop)c.onstop(true)});
+/* generic recorder widget: host element, options {max, label, onDone(dur|null), origClip, note} */
+function recorder(host,o){
+  host.innerHTML='';
+  var st=el('div','hint',o.note||''),row=el('div','row'),b=el('button','btn yel','🎙 '+o.label),out=el('div','row');out.style.marginTop='8px';
+  var skip=el('button','link',REC_OK?'没法录音？大声'+o.verb+'一遍，再点这里':'这个浏览器拿不到麦克风：大声'+o.verb+'一遍，再点这里');
+  row.appendChild(b);host.appendChild(st);host.appendChild(row);host.appendChild(out);host.appendChild(skip);
+  if(!REC_OK){b.disabled=true}
+  function fail(){b.disabled=true;b.textContent='🎙 麦克风不可用';b.classList.remove('playing');st.innerHTML='<span class="rec">拿不到麦克风（没授权，或这个浏览器不支持）。</span>请大声'+o.verb+'一遍，然后点下面这行。';}
+  b.onclick=function(){
+    if(rec){recStop();return}
+    b.classList.add('playing');
+    recStart(o.max*1000,function(s){b.textContent='■ 停止　'+s.toFixed(0)+' / '+o.max+' 秒'},function(url,dur){
+      b.classList.remove('playing');b.textContent='🎙 重录';out.innerHTML='';
+      if(o.origClip){var a=el('button','btn sec','▶ 原音');a.onclick=function(){playBtn(a,clip(o.origClip))};out.appendChild(a)}
+      var m=el('button','btn sec','▶ 我的录音');m.onclick=function(){playMine(m,url)};out.appendChild(m);
+      st.textContent='录好了（'+dur.toFixed(0)+' 秒）。听听原音，再听听自己。';o.onDone(dur);
+    },fail);
+  };
+  skip.onclick=function(){st.textContent='好，已记为「口头'+o.verb+'」。';o.onDone(null)};
+}
+
+/* ---------- step 2 精听 ---------- */
+var fi=0, fineHost=$('#fine');
+var segMap={};SENT.forEach(function(s,i){
+  var b=el('button',null,i+1);b.style.flex=s.d+' 1 0';if(FINE.some(function(f){return f.id===s.id}))b.classList.add('key');
+  b.onclick=function(){playBtn(b,clip(s.id))};segMap[s.id]=b;$('#segs').appendChild(b)});
+function markSegs(){FINE.forEach(function(f,i){segMap[f.id].classList.toggle('ok',S.fine[i]);segMap[f.id].classList.toggle('cur',i===fi&&!S.fine.every(Boolean))})}
+function clozeHTML(f,filled){return f.tpl.replace(/\{(\d)\}/g,function(_,n){n=+n;return '<span class="blank'+(filled[n]?' ok':'')+'" data-n="'+n+'">'+(filled[n]||'&nbsp;')+'</span>'})}
+/* builds one cloze card. cb when all blanks right; isReview skips shadowing */
+function buildCloze(host,f,isReview,cb){
+  var filled=[],act=0,heard=false,missed=false;
+  host.innerHTML='';
+  if(!isReview){var im=el('img');im.alt='';im.src=IMG+f.img;im.onerror=function(){im.style.display='none'};host.appendChild(im)}
+  var ctr=el('div','row');ctr.style.marginTop='10px';
+  var b1=el('button','btn','▶ 听这一句'),b2=el('button','btn sec','复读 ×3'),b3=el('button','btn sec','慢速');
+  ctr.appendChild(b1);ctr.appendChild(b2);ctr.appendChild(b3);host.appendChild(ctr);
+  var cz=el('div','cloze'),chips=el('div','chips'),fb=el('div','fb'),after=el('div');
+  host.appendChild(cz);host.appendChild(chips);host.appendChild(fb);host.appendChild(after);
+  function onHeard(){if(!heard){heard=true;draw()}}
+  b1.onclick=function(){onHeard();playBtn(b1,clip(f.id))};
+  b3.onclick=function(){onHeard();playBtn(b3,clip(f.id),{rate:0.75})};
+  var rp3={alive:false,n:0};
+  function repReset(){rp3.alive=false;b2.textContent='复读 ×3';b2.classList.remove('playing')}
+  b2.onclick=function(){onHeard();
+    if(rp3.alive){repReset();stopAudio();return}
+    rp3.alive=true;rp3.n=0;
+    (function again(){rp3.n++;b2.textContent='复读 '+rp3.n+'/3';
+      playAudio(clip(f.id),{onstop:function(ended){if(!ended)repReset()},
+        onend:function(){if(rp3.alive&&rp3.n<3)setTimeout(function(){if(rp3.alive&&!cur)again();else repReset()},650);else repReset()},onfail:repReset});
+      b2.classList.add('playing')})();
+  };
+  var mode='type';   /* 'type' = dictation; 'pick' = three options (a hint, counts as a miss) */
+  function norm(x){return String(x).toLowerCase().replace(/[\s,.\-!?]/g,'')}
+  function accept(bl,v){v=norm(v);if(!v)return false;if(v===norm(bl.a))return true;return (bl.alt||[]).some(function(a){return norm(a)===v})}
+  function miss(){missed=true;S.wrong[f.id]=(S.wrong[f.id]||0)+1;delete S.fixed[f.id]}
+  function draw(){
+    act=0;while(act<f.blanks.length&&filled[act])act++;
+    var done=act>=f.blanks.length;chips.innerHTML='';
+    if(done){cz.innerHTML=clozeHTML(f,filled);return}
+    if(mode==='type'){
+      cz.innerHTML=f.tpl.replace(/\{(\d)\}/g,function(_,n){n=+n;return filled[n]?'<span class="blank ok">'+filled[n]+'</span>':'<input class="blankin" data-n="'+n+'" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"'+(heard?'':' disabled')+' aria-label="第 '+(n+1)+' 个空">'});
+      var row=el('div','row'),ck=el('button','btn teal','检查'),hb=el('button','btn sec','写不出？给我选项');row.style.width='100%';
+      ck.disabled=!heard;hb.disabled=!heard;row.appendChild(ck);row.appendChild(hb);chips.appendChild(row);
+      chips.appendChild(el('p','hint',heard?'听写：把听到的词（或数字）打进空格，再点「检查」。':'先点「听这一句」，听完把听到的词打进空格。'));
+      ck.onclick=check;hb.onclick=function(){mode='pick';miss();fb.className='fb no';fb.textContent='降一档：从三个里选。用了选项的句子会进错题本，结尾再听写一次。';draw()};
+      $$('.blankin',cz).forEach(function(i){i.onkeydown=function(e){if(e.key==='Enter'){e.preventDefault();check()}}});
+      return;
+    }
+    cz.innerHTML=clozeHTML(f,filled);var sp=$('.blank[data-n="'+act+'"]',cz);if(sp)sp.classList.add('act');
+    shuffle(f.blanks[act].o).forEach(function(w){var c=el('button',null,w);c.disabled=!heard;c.onclick=function(){
+      if(w===f.blanks[act].a){filled[act]=w;fb.className='fb';draw();if(act>=f.blanks.length)finish()}
+      else{miss();c.classList.add('no');c.disabled=true;fb.className='fb no';fb.textContent='不对。点「慢速」或「复读 ×3」再听一遍，注意空格前后的词。'}
+    };chips.appendChild(c)});
+  }
+  function check(){
+    var ins=$$('.blankin',cz),bad=0,empty=0;
+    ins.forEach(function(i){var n=+i.dataset.n,v=i.value.trim();if(!v){empty++;return}if(accept(f.blanks[n],v))filled[n]=f.blanks[n].a;else bad++});
+    if(!bad&&empty===ins.length){fb.className='fb no';fb.textContent='空格还没填。先听，再把听到的词打进去。';return}
+    if(bad)miss();
+    draw();
+    if(act>=f.blanks.length){finish();return}
+    fb.className='fb no';fb.textContent=bad?'有 '+bad+' 个空不对，已清空。点「慢速」或「复读 ×3」再听一遍；实在写不出，点「给我选项」。':'还有空没填。';
+  }
+  function finish(){
+    fb.className='fb ok';fb.textContent=missed?'这次对了。这一句已记进错题本，本步结尾再听写一次。':'一次就写对！';
+    after.innerHTML='<div class="tip">'+f.tip+'</div><p class="zh">'+SENT.filter(function(s){return s.id===f.id})[0].zh+'</p>';
+    cb(after,missed);
+  }
+  draw();
+}
+function renderFine(){
+  markSegs();
+  if(fi>=FINE.length){renderReview();return}
+  var f=FINE[fi];
+  fineHost.style.display='';
+  var head=el('h3',null,'第 '+(fi+1)+' / '+FINE.length+' 句　<span class="hint">听 → 挖空听写 → 跟读</span>');
+  var body=el('div');fineHost.innerHTML='';fineHost.appendChild(head);fineHost.appendChild(body);
+  buildCloze(body,f,false,function(after){
+    var sh=el('div','shadow','<h3>跟读（听中带说）</h3>'),rh=el('div');sh.appendChild(rh);after.appendChild(sh);
+    var nx=el('button','btn full',fi<FINE.length-1?'下一句 →':'精听完成 →');nx.disabled=true;nx.style.marginTop='12px';
+    var d=el('div','demo','样本演示：现在只录音、回放，由你自己和原音对比；正式版在这里接 AI 纠音，给发音和流利度打分。');
+    after.appendChild(d);after.appendChild(nx);
+    recorder(rh,{max:12,label:'跟读录音',verb:'跟读',origClip:f.id,note:'照着原音的节奏和重音读一遍。',onDone:function(){nx.disabled=false}});
+    nx.onclick=function(){stopAudio();S.fine[fi]=true;fi++;refresh();renderFine();var y=fineHost.getBoundingClientRect().top+window.pageYOffset-110;window.scrollTo(0,y)};
+  });
+}
+function wrongList(){return FINE.filter(function(f){return S.wrong[f.id]&&!S.fixed[f.id]})}
+function renderReview(demo){
+  var host=$('#review');host.style.display='';
+  var list=wrongList();
+  if(!list.length){
+    fineHost.innerHTML='<h3>精听 5 句完成 ✓</h3><p class="hint">分句停顿、挖空、复读、跟读、精修细节都走过了。可以点上面的格子重听任意一句。</p>';
+    var had=Object.keys(S.wrong).length;
+    host.innerHTML='<h3>错题巩固</h3>'+(had?'<div class="fb ok">错题本里的 '+had+' 句都重新做对了，已标记「已巩固」。</div><div class="demo">样本演示：正式版会把错过的句子排进后面几天的复习里，隔几天再考一次。</div>':'<p>这次 5 句全对，错题本是空的，不用巩固。</p>');
+    if(!had){var d=el('button','link','样本演示：想看「错题巩固」长什么样，点这里放一道错题进来');d.onclick=function(){S.wrong.s08=1;renderReview(true)};host.appendChild(d)}
+    return;
+  }
+  fineHost.innerHTML='<h3>精听 5 句完成 ✓</h3><p class="hint">还差最后一小步：把错过的句子再听一遍。</p>';
+  var f=list[0];
+  host.innerHTML='<h3>错题巩固　<span class="hint">错题本还有 '+list.length+' 句</span></h3><p class="hint">'+(demo?'（演示用的错题）':'')+'这一句刚才填错过。不看提示，再听、再填一次。</p>';
+  var body=el('div');host.appendChild(body);
+  buildCloze(body,f,true,function(after,missed){
+    if(missed){var again=el('button','btn full sec','再来一次');again.onclick=function(){renderReview(demo)};after.appendChild(again);return}
+    S.fixed[f.id]=true;var nx=el('button','btn full',wrongList().length?'下一道错题 →':'巩固完成 →');nx.onclick=function(){stopAudio();renderReview(demo)};after.appendChild(nx);
+  });
+}
+renderFine();
+
+/* ---------- step 3 文字 ---------- */
+(function(){var host=$('#script'),lastPart=0;
+  SENT.forEach(function(s){
+    if(s.part!==lastPart){lastPart=s.part;host.appendChild(el('span','part '+PARTS[s.part][0],PARTS[s.part][1]))}
+    var p=el('p',null,s.t+'<span class="zh">'+s.zh+'</span>');p.dataset.id=s.id;p.onclick=function(){readAllStop();playBtn(p,clip(s.id))};host.appendChild(p)});
+  $('#zhbtn').onclick=function(){var on=host.classList.toggle('showzh');this.textContent=on?'隐藏中文':'显示中文'};
+  var alive=false,rb=$('#readall');
+  function readAllStop(){alive=false;rb.textContent='▶ 从头连读';rb.classList.remove('playing')}
+  window.readAllStop=readAllStop;
+  rb.onclick=function(){
+    if(alive){readAllStop();stopAudio();return}
+    alive=true;rb.textContent='■ 停止';rb.classList.add('playing');var i=0;
+    (function nextp(){if(!alive||i>=SENT.length){readAllStop();return}var s=SENT[i],p=$('p[data-id="'+s.id+'"]',host);p.classList.add('playing');
+      playAudio(clip(s.id),{onstop:function(ended){p.classList.remove('playing');if(!ended)readAllStop()},onend:function(){i++;setTimeout(function(){if(alive&&!cur)nextp();else readAllStop()},350)},onfail:readAllStop})})();
+  };
+})();
+function readAllStop(){if(window.readAllStop)window.readAllStop()}
+
+/* ---------- step 4 游戏 ---------- */
+var G={state:'idle',order:[],i:0,lives:3,score:0,streak:0,correct:0,iv:null,tl:0,best:0,auto:null,plays:0,track:[],last:null};
+var sky=$('#sky'),cloud=$('#cloud'),stage=$('#gstage');
+(function(){var road=$('#road');[1,2,3,4,5,10].forEach(function(k){var s=el('span',null,k+'km');s.style.left=kmPos(k,true)+'%';road.appendChild(s)})})();
+function kmPos(k,onRoad){var x=Math.min(k,10);var p=(x<=5?x*13:65+(x-5)*5);return onRoad?p:(17+p*0.74)}
+function setCloud(km,label){cloud.style.left=kmPos(km)+'%';$('#ckm').textContent=label}
+function zap(){sky.classList.remove('zap');void sky.offsetWidth;sky.classList.add('zap')}
+function hud(){$('#ground').textContent='第 '+Math.min(G.i+1,G.order.length)+' / '+G.order.length+' 道';$('#gscore').textContent=G.score;$('#ghearts').textContent='♥♥♥'.slice(0,G.lives)+'♡♡♡'.slice(0,3-G.lives)}
+function gameAbort(){clearInterval(G.iv);clearTimeout(G.auto);G.state='idle';stopAudio();stage.innerHTML='<p style="margin:8px 0">游戏已暂停。</p>';var b=el('button','btn yel full','重新开始');b.onclick=gameStart;stage.appendChild(b)}
+function gameStart(){
+  /* first play tells a story: the storm comes from 10 km to 1 km, then leaves. later plays are shuffled */
+  G.order=G.plays?shuffle([0,1,2,3,4,5,6,7]):[5,4,2,3,1,0,6,7];G.plays++;G.i=0;G.lives=3;G.score=0;G.streak=0;G.correct=0;G.track=[];G.last=null;$('#gcap').textContent='';
+  try{sfx.currentTime=0;sfx.volume=0.6;var p=sfx.play();if(p&&p.catch)p.catch(function(){})}catch(e){}
+  round();
+}
+$('#gstart').onclick=gameStart;
+function round(){
+  clearInterval(G.iv);clearTimeout(G.auto);
+  var r=GAME[G.order[G.i]];G.state='listen';hud();zap();
+  if(r.from)setCloud(r.from,'刚才 '+r.from+' km');else setCloud(G.last==null?7:G.last,'? km');
+  $('#gbar').style.width='100%';
+  stage.innerHTML='';
+  var q=el('p','gq',r.o.length===2?'雷暴在靠近，还是在远离？':'雷暴离你多远？');
+  var rp=el('button','btn sec','▶ 再听一次报告');rp.style.marginTop='8px';
+  var opts=el('div','gopts'),fb=el('div','gfb','<span class="hint">正在播报告…听完才能作答，然后开始 8 秒倒计时。</span>');
+  stage.appendChild(q);stage.appendChild(opts);stage.appendChild(rp);stage.appendChild(fb);
+  (r.o.length===2?r.o:shuffle(r.o)).forEach(function(t){var b=el('button',null,t==='Coming closer'?'Coming closer<br><small style="font-weight:400;font-size:13px">在靠近</small>':t==='Moving away'?'Moving away<br><small style="font-weight:400;font-size:13px">在远离</small>':t);b.dataset.v=t;b.disabled=true;b.onclick=function(){answer(t)};opts.appendChild(b)});
+  function say(){playAudio(clip(r.id),{onend:timer,onfail:function(){fb.innerHTML='<span class="hint">没自动播出来，点「再听一次报告」。</span>';$$('.gopts button',stage).forEach(function(b){b.disabled=false})}})}
+  rp.onclick=function(){if(G.state==='listen'||G.state==='timing'){clearInterval(G.iv);G.state='listen';$('#gbar').style.width='100%';say()}};
+  say();
+}
+function timer(){
+  if(G.state!=='listen')return;G.state='timing';G.tl=8;clearInterval(G.iv);$$('.gopts button',stage).forEach(function(b){b.disabled=false});
+  $('.gfb',stage).innerHTML='<span class="hint">选答案！没听清可以再听一次。</span>';
+  G.iv=setInterval(function(){G.tl-=0.1;$('#gbar').style.width=Math.max(0,G.tl/8*100)+'%';if(G.tl<=0){clearInterval(G.iv);answer(null)}},100);
+}
+function answer(v){
+  if(G.state!=='listen'&&G.state!=='timing')return;
+  var early=G.state==='listen';clearInterval(G.iv);stopAudio();G.state='fb';
+  var r=GAME[G.order[G.i]],ok=v===r.a;
+  $$('.gopts button',stage).forEach(function(b){b.disabled=true;if(b.dataset.v===r.a)b.classList.add('ok');else if(b.dataset.v===v)b.classList.add('no')});
+  var gain=0;
+  if(ok){G.correct++;G.streak++;gain=100+Math.round((early?8:Math.max(0,G.tl))*10)+(G.streak>1?G.streak*10:0);G.score+=gain}
+  else{G.lives--;G.streak=0;sky.classList.remove('hit');void sky.offsetWidth;sky.classList.add('hit');zap();try{sfx.currentTime=0;sfx.volume=0.8;var p=sfx.play();if(p&&p.catch)p.catch(function(){})}catch(e){}}
+  setCloud(r.km,r.km+' km');hud();G.last=r.km;G.track.push({km:r.km,ok:ok});
+  $('#gcap').textContent=r.km<=1?'雷暴到头顶了：Time to head inside!':r.km<=2?'很近了…':'';
+  var last=G.lives<=0||G.i>=G.order.length-1;
+  var fb=$('.gfb',stage);
+  fb.innerHTML='<b style="color:'+(ok?'var(--teal)':'var(--red)')+'">'+(ok?'✓ 正确　+'+gain+(G.streak>1?'　连对 '+G.streak:''):(v===null?'✗ 超时了':'✗ 不对'))+'</b><br>报告原话：<i>'+r.t+'</i><br>'+r.ex;
+  var nx=el('button','btn full yel',last?'看结果':'下一道 ▶');nx.style.marginTop='8px';
+  nx.onclick=function(){clearTimeout(G.auto);if(last)gameEnd();else{G.i++;round()}};
+  stage.appendChild(nx);
+  if(!last&&ok)G.auto=setTimeout(function(){if(G.state==='fb'&&stepIdx===4){G.i++;round()}},2600);
+}
+function trackSVG(){var W=300,H=100,n=G.track.length;if(n<2)return '';
+  var pts=G.track.map(function(t,i){return [24+i*(W-48)/7,10+(H-36)*(1-Math.min(t.km,10)/10),t]});
+  return '<p class="hint" style="margin:10px 0 0">你追踪到的雷暴路线（越往下离你越近）</p><svg viewBox="0 0 '+W+' '+H+'" style="width:100%;max-width:340px;display:block;margin:2px auto 6px">'
+   +'<line x1="8" y1="'+(H-26)+'" x2="'+(W-8)+'" y2="'+(H-26)+'" stroke="#c9cede" stroke-dasharray="3 3"/>'
+   +'<polyline fill="none" stroke="#14213d" stroke-width="2" points="'+pts.map(function(q){return q[0].toFixed(1)+','+q[1].toFixed(1)}).join(' ')+'"/>'
+   +pts.map(function(q){return '<circle cx="'+q[0].toFixed(1)+'" cy="'+q[1].toFixed(1)+'" r="5" fill="'+(q[2].ok?'#1a9c8f':'#d9463b')+'"/><text x="'+q[0].toFixed(1)+'" y="'+(H-8)+'" font-size="10" text-anchor="middle" fill="#5b6577">'+q[2].km+' km</text>'}).join('')+'</svg>'}
+function gameEnd(){
+  G.state='idle';clearInterval(G.iv);clearTimeout(G.auto);S.gamePlayed=true;
+  if(G.correct>S.game)S.game=G.correct;if(G.score>G.best)G.best=G.score;refresh();
+  var dead=G.lives<=0;
+  stage.innerHTML='<div class="result"><p style="margin:8px 0 0">'+(dead?'错了 3 次，这局结束':'8 道全部听完，雷暴走远了')+'</p><div class="n">'+G.correct+' / 8</div><p style="margin:0">得分 '+G.score+'　最高 '+G.best+'</p>'+trackSVG()+'<p class="hint">听力积累 +'+Math.round(S.game/8*25)+'（按最好的一局算，满分 25）</p></div>';
+  var row=el('div','row');var a=el('button','btn sec','再玩一局');a.onclick=gameStart;var b=el('button','btn','去过关 →');b.onclick=function(){go(5)};row.appendChild(a);row.appendChild(b);stage.appendChild(row);
+}
+
+/* ---------- step 5 过关 ---------- */
+var spokeDur=null;
+function renderLock(){
+  var v=score(),open=v>=TH||S.demoUnlock,L=$('#lock');
+  L.className='card lock'+(open?' open':'');
+  if(open){
+    L.innerHTML='<div class="ico">🔓</div><h3>'+(v>=TH?'听力积累 '+v+' ≥ 80，口语任务已自动解锁':'（样本演示）按已解锁的样子展示')+'</h3><p class="hint" style="margin:0">这段听力对应的口语层级：Level 4 小型主题汇报。听过、跟读过的句子，现在拿来自己讲。</p>';
+    $('#speak').style.display='';
+  }else{
+    var todo=[];
+    if(!S.video)todo.push(['看完短片 +20',1]);
+    if(!(S.gist[0]&&S.gist[1]))todo.push(['答对两道大意题 +10',1]);
+    if(!S.loop)todo.push(['磨耳朵循环听满一遍 +10',1]);
+    if(!S.fine.every(Boolean))todo.push(['精听还差 '+S.fine.filter(function(x){return !x}).length+' 句（每句 +7）',2]);
+    if(S.game<8)todo.push([S.gamePlayed?'游戏再玩一局，答对更多（最多 +25）':'玩一局游戏（最多 +25）',4]);
+    L.innerHTML='<div class="ico">🔒</div><h3>听力积累 '+v+' / 80，还没到阈值</h3><p class="hint">输入够了，输出才打开。还可以做这些：</p>';
+    var box=el('div','opts');todo.forEach(function(t){var b=el('button',null,t[0]+' →');b.onclick=function(){go(t[1])};box.appendChild(b)});L.appendChild(box);
+    var d=el('button','link','样本演示：不想走完也行，点这里直接看解锁后的样子');d.onclick=function(){S.demoUnlock=true;renderLock()};L.appendChild(d);
+    $('#speak').style.display='none';
+  }
+}
+$('#modelbtn').onclick=function(){playBtn(this,clip('model'))};
+recorder($('#spkrec'),{max:120,label:'开始讲（录音）',verb:'讲',note:'准备好就开始。目标 1–2 分钟，最长录 2 分钟，讲完点停止。',onDone:function(d){spokeDur=d;$('#selfcheck').style.display=''}});
+$('#submitspk').onclick=function(){
+  var ck={};$$('#selfcheck input').forEach(function(i){ck[i.value]=i.checked});
+  var lines=[];
+  lines.push(ck.open&&ck.end?'结构：开头、主体、结尾三段都有，这是 Level 4 要建立的框架。':'结构：'+(!ck.open?'缺开头——先用一句 Have you ever noticed …? 把问题抛出来。':'')+(!ck.end?'缺结尾——最后用 So here is a trick … 或 Next time …, try it yourself! 收住。':''));
+  lines.push(ck.body?'内容：原因讲到了（光快、声音慢）。':'内容：原因没讲清。主体里要有这两句：Light travels incredibly fast. Sound is much slower.');
+  lines.push(ck.num?'细节：用上了数字，听的人能照着做。':'细节：补一个数字会更清楚，比如 about three seconds to travel one kilometer。');
+  if(spokeDur!=null)lines.push('时长：'+spokeDur.toFixed(0)+' 秒。'+(spokeDur<50?'偏短：这一级要求 1–2 分钟，主体再展开两三句（闪电怎么产生雷声、光和声音各有多快）。':'达到 1–2 分钟的要求。'));
+  else lines.push('时长：这次没有录音，无法统计。');
+  var f=$('#spkfb');f.style.display='';
+  f.innerHTML='<h3>反馈</h3><ul style="padding-left:20px;margin:0">'+lines.map(function(l){return '<li>'+l+'</li>'}).join('')+'</ul><div class="demo">样本演示：这里是预置反馈（按你勾的自评和录音时长，用规则拼出来的），正式版接 AI：自动听录音，给发音、流利度、逻辑三项打分并逐句纠音。</div>';
+  S.spoke=true;refresh();
+  var mins=Math.max(1,Math.round((Date.now()-S.t0)/60000)),wr=Object.keys(S.wrong).length;
+  var fin=$('#finish');fin.style.display='';
+  fin.innerHTML='<h3>这一课过关了</h3><div class="badge"><i>⚡</i>雷声测距员</div><div class="sum"><div><b>'+score()+'</b>听力积累</div><div><b>'+wr+'</b>错题（已巩固 '+Object.keys(S.fixed).length+'）</div><div><b>'+mins+' 分</b>用时</div></div>'
+   +'<p class="hint">学 → 练 → 玩 → 过关 这条线由页面自己带着走完了。</p>'
+   +'<div class="demo" style="text-align:left">样本演示：正式版里，老师那边只收到你的错题、口语录音和你点「问老师」提的问题；同一级会继续推送动画科普短片，这一级累计够了，再升到「TED精简主题演讲（中阶、观点类输入）」。</div>';
+  fin.scrollIntoView({behavior:'smooth',block:'start'});
+};
+
+/* ---------- ask teacher ---------- */
+function openAsk(){
+  var names=secs.map(function(s){return s.dataset.name});
+  $('#faq').innerHTML=FAQ[stepIdx].map(function(f){return '<details><summary>'+f[0]+'</summary><div>'+f[1]+'</div></details>'}).join('');
+  var wr=Object.keys(S.wrong).map(function(id){return SENT.filter(function(s){return s.id===id})[0].t.replace(/<[^>]+>/g,'')});
+  $('#ctx').innerHTML='会一起带给老师：<br>· 当前步骤：第 '+(stepIdx+1)+' 步 '+names[stepIdx]+'<br>· 听力积累：'+score()+' / 100<br>· 错题本：'+(wr.length?wr.length+' 句<ol class="wrongbook" style="margin:4px 0 0;padding-left:20px">'+wr.map(function(w){return '<li>'+w+'</li>'}).join('')+'</ol>':'暂时没有');
+  $('#mask').classList.add('on');$('#sheet').classList.add('on');
+}
+function closeAsk(){$('#mask').classList.remove('on');$('#sheet').classList.remove('on')}
+$('#askbtn').onclick=openAsk;$('#mask').onclick=closeAsk;$('#askclose').onclick=closeAsk;
+$('#asksend').onclick=function(){var t=$('#asktxt').value.trim();if(!t){toast('先写一句你卡在哪儿');return}closeAsk();$('#asktxt').value='';toast('已记下你的问题（样本演示：正式版会推给陪跑老师，老师回复后在这里提醒你）')};
+
+go(0);
+window.__S=S;window.__go=go;
+})();
+</script>
+</body>
+</html>

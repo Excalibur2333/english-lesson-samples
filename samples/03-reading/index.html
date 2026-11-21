@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>阅读样本 · Sea Otters Hold Hands</title>
+<style>
+:root{--navy:#0E3A4F;--teal:#1F8A8C;--sea:#DDF1EE;--paper:#FFF8EA;--coral:#FF7A59;--sun:#FFD65A;--ok:#2FA36B;--ink:#17313B;--muted:#5E7780;--line:#E6DCC6;--bg:#F1EBDB}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC","Microsoft YaHei","Segoe UI",sans-serif}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:var(--bg);position:relative;padding-bottom:40px}
+@media(min-width:520px){body{background:#d9e6e2}.app{box-shadow:0 0 0 1px #c8d6d1,0 20px 60px rgba(14,58,79,.18)}}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
+.en{font-family:Georgia,"Noto Serif","Times New Roman",serif}
+/* top */
+.top{background:var(--navy);color:#fff;padding:16px 18px 30px;position:relative}
+.top .lv{font-size:12px;letter-spacing:.04em;color:#9FD3CF}
+.top h1{margin:4px 0 2px;font:700 23px/1.25 Georgia,"Noto Serif",serif}
+.top .zh{font-size:13px;color:#CFE6E3}
+.top .chips{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.top .chips span{font-size:11.5px;border:1px solid rgba(255,255,255,.35);border-radius:99px;padding:2px 9px;color:#EAF6F4}
+.top:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:14px;background:radial-gradient(circle at 12px -4px,transparent 13px,var(--bg) 14px) repeat-x;background-size:24px 14px}
+details.map{margin:10px 14px 0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+details.map summary{list-style:none;padding:11px 14px;font-weight:600;font-size:14px;display:flex;justify-content:space-between;align-items:center}
+details.map summary::-webkit-details-marker{display:none}
+details.map summary:after{content:"展开";font-weight:400;font-size:12px;color:var(--teal)}
+details.map[open] summary:after{content:"收起"}
+.map ol{margin:0;padding:0 14px 12px 14px;list-style:none}
+.map li{border-top:1px dashed var(--line);padding:9px 0;font-size:13px}
+.map q{display:block;quotes:none;color:var(--navy);font-weight:600;border-left:3px solid var(--coral);padding-left:8px;margin-bottom:3px}
+.map i{font-style:normal;color:var(--muted);font-size:11.5px}
+.map .how{color:#33525c}
+/* stepper */
+.steps{position:sticky;top:0;z-index:20;background:var(--bg);display:flex;padding:10px 12px 8px;gap:4px;border-bottom:1px solid var(--line)}
+.steps button{flex:1;text-align:center;font-size:12px;color:var(--muted);position:relative;padding-top:22px}
+.steps button:before{content:attr(data-n);position:absolute;top:0;left:50%;margin-left:-10px;width:20px;height:20px;border-radius:50%;background:#fff;border:1.5px solid #c9c0a8;font-size:11px;line-height:17px;color:var(--muted)}
+.steps button.on{color:var(--navy);font-weight:700}
+.steps button.on:before{background:var(--coral);border-color:var(--coral);color:#fff}
+.steps button.done:before{content:"✓";background:var(--teal);border-color:var(--teal);color:#fff}
+section.step{display:none;padding:14px 14px 0}
+section.step.on{display:block}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}
+.card.paper{background:var(--paper)}
+h2{margin:2px 0 8px;font-size:18px;line-height:1.3}
+h2 small{display:block;font-weight:400;font-size:12.5px;color:var(--muted);margin-top:2px}
+h3{margin:0 0 6px;font-size:14.5px}
+.tag{display:inline-block;font-size:11.5px;border-radius:6px;padding:1px 7px;background:var(--sea);color:var(--teal);font-weight:600;margin-right:4px}
+.tag.c{background:#FFE7DF;color:#C8472A}
+.note{font-size:11.5px;color:#8a7f66;margin-top:6px}
+.demo{font-size:11px;color:#8a7f66;border-top:1px dashed var(--line);margin-top:8px;padding-top:5px}
+.btn{display:block;width:100%;background:var(--navy);color:#fff;border-radius:14px;padding:13px 14px;font-weight:700;font-size:15.5px;text-align:center;margin:6px 0 0}
+.btn.coral{background:var(--coral)}
+.btn.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+.btn[disabled]{opacity:.35}
+.opts{display:grid;gap:8px;margin-top:8px}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid #d5cdb8;border-radius:12px;padding:10px 12px;font-size:15px;line-height:1.4}
+.opt.en{font-size:16px}
+.opt.ok{border-color:var(--ok);background:#E8F7EF}
+.opt.no{border-color:#D9534F;background:#FDECEA;animation:shake .3s}
+.opt.pick{border-color:var(--teal);background:var(--sea)}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.fb{margin-top:8px;font-size:13.5px;border-radius:10px;padding:8px 10px;background:#F4F1E6}
+.fb.ok{background:#E8F7EF;color:#1d6b46}
+.fb.no{background:#FDECEA;color:#9b2f2a}
+.fb a{color:var(--coral);font-weight:700;text-decoration:underline}
+/* listen */
+.hero{width:100%;border-radius:12px;display:block;aspect-ratio:3/2;object-fit:cover;background:#bfe1dc}
+.player{display:flex;align-items:center;gap:12px;margin-top:10px}
+.playbtn{width:58px;height:58px;border-radius:50%;background:var(--coral);color:#fff;font-size:22px;flex:none;box-shadow:0 4px 0 #d95f41}
+.playbtn:active{transform:translateY(2px);box-shadow:0 2px 0 #d95f41}
+.bar{flex:1;height:8px;border-radius:9px;background:#E9E2CE;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--teal)}
+.ptime{font-size:12px;color:var(--muted);width:42px;text-align:right}
+.ears{font-size:12.5px;color:var(--muted);margin-top:6px}
+/* video */
+video{width:100%;border-radius:12px;background:#0E3A4F;display:block;aspect-ratio:16/9}
+.vwrap{position:relative}
+.vplay{position:absolute;left:0;top:0;right:0;bottom:0;width:100%;display:flex;align-items:center;justify-content:center;background:rgba(14,58,79,.25);border-radius:12px}
+.vplay span{width:68px;height:68px;border-radius:50%;background:var(--coral);color:#fff;font-size:26px;line-height:68px;text-align:center;padding-left:5px;box-shadow:0 4px 0 #d95f41}
+details.script{margin-top:8px;font-size:13px}
+details.script summary{color:var(--teal);font-weight:600;padding:4px 0}
+details.script p{margin:6px 0;color:var(--muted)}
+details.script .en{color:var(--navy);font-size:15px}
+.four{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.four div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:8px 10px;font-size:13px}
+.four b{display:block;font:700 15px Georgia,serif;color:var(--navy)}
+.four em{font-style:normal;color:var(--coral);font-weight:700;margin-right:4px}
+.clues{margin:0;padding:0;list-style:none;font-size:13.5px}
+.clues li{padding:6px 0;border-top:1px dashed var(--line)}
+.clues li:first-child{border:0}
+.clues .en{color:var(--navy);font-size:15px}
+/* reading */
+.passage{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px 16px 10px;margin-bottom:12px;transition:filter .3s}
+.passage.blur p{filter:blur(5px);opacity:.6}
+.passage h4{margin:0 0 6px;font:700 20px Georgia,"Noto Serif",serif;color:var(--navy)}
+.passage p{margin:0 0 9px;font:18px/1.72 Georgia,"Noto Serif","Times New Roman",serif;color:#1c2f36;transition:filter .3s,opacity .3s}
+.passage p:before{content:attr(data-p);font:600 10px -apple-system,sans-serif;color:#b3a682;margin-right:5px;vertical-align:2px}
+.passage.blur p.keep{filter:none;opacity:1}
+.sent{border-radius:5px;padding:2px 0;transition:background .2s}
+.sent.playing{background:#FBEBC4}
+.sent.clue{background:#DDF3E6;box-shadow:0 -2px 0 #2FA36B inset}
+.sent.loc{background:#FFE9A8}
+.sent.reread{background:#FFE7DF}
+.sent.miss{animation:miss .5s}
+@keyframes miss{50%{background:#FBD5D0}}
+.w.target{background:var(--sun);border-radius:5px;padding:0 3px;animation:pulse 1s infinite}
+.w.circled{animation:none;background:none;outline:2.5px solid var(--coral);outline-offset:1px;border-radius:50%/60%;padding:0 4px}
+.w.known{animation:none;background:none;border-bottom:2.5px solid var(--ok);padding:0}
+@keyframes pulse{50%{box-shadow:0 0 0 5px rgba(255,214,90,.45)}}
+.panel{position:sticky;bottom:8px;z-index:15;background:#fff;border:2px solid var(--navy);border-radius:16px;padding:10px 13px;box-shadow:0 8px 24px rgba(14,58,79,.22);max-height:56vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.sent,.passage p{scroll-margin-top:78px}
+.opts.row{grid-template-columns:repeat(3,1fr);gap:6px}
+.opts.row .opt{text-align:center;padding:9px 4px;font-size:14.5px}
+.panel .opt{padding:8px 11px}
+.panel .btn{padding:11px 14px}
+.panel .who{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--muted);margin-bottom:5px}
+.panel .who b{color:var(--teal)}
+.panel .say{font-size:15px;line-height:1.5}
+.panel .say .en{font-size:16.5px;color:var(--navy)}
+.qchips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 2px}
+.qchips button{font:600 16.5px Georgia,serif;border:1.5px dashed #b9b196;border-radius:10px;padding:5px 9px;background:#fff;color:var(--navy)}
+.qchips button.key{border:2.5px solid var(--coral);border-radius:50%/60%;background:#FFF1EC}
+.qchips button.no{animation:shake .3s;opacity:.55}
+.kelpimg{width:100%;height:104px;object-fit:cover;object-position:50% 30%;border-radius:10px;margin-top:8px;display:block}
+#s3{padding-bottom:50vh}
+/* game */
+.sea{position:relative;height:236px;border-radius:16px;overflow:hidden;background:#3E9C98 url(assets/sea.jpg) center/cover;border:1px solid #1F8A8C}
+.sea:before{content:"";position:absolute;right:0;top:0;bottom:0;width:26%;background:linear-gradient(90deg,transparent,rgba(14,58,79,.45));z-index:1}
+.sea:after{content:"drift \2192";position:absolute;right:10px;top:44px;z-index:1;font:italic 700 13px Georgia,serif;color:rgba(255,255,255,.85)}
+.hud{position:absolute;left:10px;right:10px;top:8px;display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;color:var(--navy);z-index:3}
+.hud span{background:rgba(255,255,255,.8);border-radius:99px;padding:2px 10px}
+.ot{position:absolute;width:52px;height:74px;object-fit:contain;z-index:2;animation:bob 2.4s ease-in-out infinite;filter:drop-shadow(0 3px 2px rgba(14,58,79,.35))}
+.ot:nth-child(odd){animation-delay:-1.1s}
+@keyframes bob{50%{transform:translateY(5px) rotate(2deg)}}
+.seamsg{position:absolute;right:12px;bottom:10px;z-index:3;font:italic 700 15px Georgia,serif;color:#fff;text-shadow:0 1px 3px rgba(14,58,79,.6);opacity:0;transition:opacity .3s}
+.seamsg.on{opacity:1}
+.raftlabel{position:absolute;left:10px;bottom:8px;z-index:3;font:700 12px Georgia,serif;color:#fff;text-shadow:0 1px 2px rgba(14,58,79,.6)}
+.gcard{margin-top:10px}
+.gcard .gt{font:18px/1.55 Georgia,"Noto Serif",serif;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px;color:#1c2f36}
+.gcard .gt b.tw{background:var(--sun);border-radius:5px;padding:0 3px}
+.gcard .gq{margin:8px 2px 0;font-weight:700;font-size:15px}
+.gchip{background:#FFF1C9;border-bottom:2px dashed #B9A97A;border-radius:6px;padding:2px 4px;cursor:pointer;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.gchip.ok{background:#CDEFDB;border-bottom:2px solid var(--ok)}
+.gchip.no{background:#FBD5D0;border-bottom:2px solid #D9534F}
+.gcard .gt{line-height:1.85}
+.stars{font-size:30px;letter-spacing:4px;color:#E3DAC2}
+.stars b{color:#F5B301;font-weight:400}
+/* pass */
+.badge{width:100%;border-radius:14px;display:block;aspect-ratio:3/2;object-fit:cover;background:#bfe1dc}
+.mbar{margin:8px 0}
+.mbar .t{display:flex;justify-content:space-between;font-size:13px}
+.mbar .b{height:10px;background:#EFE8D4;border-radius:9px;overflow:hidden;margin-top:3px}
+.mbar .b i{display:block;height:100%;background:var(--teal);border-radius:9px;width:0;transition:width .8s}
+.tmsg{background:#F2F7F6;border-left:3px solid var(--teal);border-radius:8px;padding:8px 10px;font-size:13px;margin-top:6px}
+.words{display:flex;flex-wrap:wrap;gap:6px}
+.words span{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:4px 9px;font-size:13px}
+.words b{font:700 15px Georgia,serif;color:var(--navy);margin-right:4px}
+/* ask teacher */
+.steps .ask{flex:none;align-self:center;background:#fff;border:2px solid var(--coral);color:#C8472A;border-radius:99px;padding:5px 10px;font-weight:700;font-size:12.5px;line-height:1.3;margin-left:2px}
+.steps .ask:before{display:none}
+.steps .ask.nudge{animation:nudge .5s 3;background:#FFE7DF}
+@keyframes nudge{50%{transform:scale(1.14)}}
+.mask{position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(14,58,79,.5);z-index:50;display:none;align-items:flex-end;justify-content:center}
+.mask.on{display:flex}
+.sheet{background:#fff;width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:16px 16px 22px}
+.sheet h3{font-size:17px}
+.ctx{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;margin:8px 0}
+.sheet .x{float:right;font-size:22px;line-height:1;color:var(--muted);padding:0 4px}
+.hide{display:none!important}
+</style>
+</head>
+<body>
+<div class="app">
+
+<header class="top">
+  <div class="lv">阅读样本 · 小学中阶短文阶段 · 科普短文</div>
+  <h1>Sea Otters Hold Hands</h1>
+  <div class="zh">海獭为什么手拉手睡觉 · 约 5 分钟 · 系统带着学完</div>
+  <div class="chips"><span>上下文猜词 Context Clues</span><span>关键词定位 Keyword Spotting</span><span>自我理解监控 Self-Questioning</span></div>
+</header>
+
+<details class="map">
+  <summary>这个样本对应你方案里的哪几条</summary>
+  <ol>
+    <li><q>听力听过的所有素材，全部同步转为阅读素材，实现「先听懂、再读懂」的闭环降维学习</q><i>方案 四 · 核心规则</i><div class="how">第 1 步先把这一篇当听力听；第 3 步同一篇变成阅读，每一句都能点开再听。</div></li>
+    <li><q>小学中阶短文阶段策略：关键词定位（Keyword Spotting）、上下文猜词（Context Clues）、自我理解监控（Self-Questioning）</q><i>方案 四 · 全阶分层阅读策略 2</i><div class="how">第 2 步视频由系统示范「上下文猜词」；第 3 步三个策略各练一组；第 4 步游戏里换新句子混着用。</div></li>
+    <li><q>阅读策略专项AI引导：预测、猜词、圈画关键词、概括自测</q><i>方案 七</i><div class="how">听之前先预测；在文章上点生词、点线索句；在题目里圈关键词；最后一题是概括自测。</div></li>
+    <li><q>阅读策略分层植入，根治中国学生“看得懂、做不对题”痛点</q><i>方案 九</i><div class="how">关键词定位的两道题，各放了一个「文章里有这个词、但不是答案」的选项；自我监控那一步先让孩子自评「懂没懂」，再当场验证。</div></li>
+    <li><q>阅读素材进阶路径：自研组合绘本 → 短篇故事/科普短文 → KET篇章 …</q><i>方案 四</i><div class="how">这一篇是为样本原创的科普短文（137 词），对应「短篇故事/科普短文」这一段；在听力线里对应「中级提升段：轻科普短文」。</div></li>
+    <li><q>AI游戏化闯关、积分徽章、趣味交互，解决坚持问题</q><i>方案 七</i><div class="how">第 4 步小游戏「别让海獭漂走」，第 5 步过关徽章。</div></li>
+    <li><q>老师只是服务，教学由系统主要完成。孩子有卡点的时候老师再答疑就行。</q><i>微信原话</i><div class="how">全程由系统带着走；同一处连错两次，系统提示「问老师」；过关页有一份给老师的卡点小结。</div></li>
+    <li><q>全维度学情数据看板：听、说、读、写、语法、策略掌握度可视化</q><i>方案 七</i><div class="how">过关页的三条「策略掌握度」，按你这次的作答算出来。</div></li>
+  </ol>
+</details>
+
+<div id="anchor"></div>
+<nav class="steps" id="steps">
+  <button data-n="1" data-go="1" class="on">先听</button>
+  <button data-n="2" data-go="2">看示范</button>
+  <button data-n="3" data-go="3">读和练</button>
+  <button data-n="4" data-go="4">玩</button>
+  <button data-n="5" data-go="5">过关</button>
+  <button class="ask" id="askBtn">问老师</button>
+</nav>
+
+<!-- 1 listen -->
+<section class="step on" id="s1">
+  <h2>第 1 步 · 先听一遍<small>先用耳朵听懂，等一下同一篇会变成阅读。</small></h2>
+  <div class="note" style="margin:-4px 0 10px">样本演示：正式系统里，这一篇会先在听力课（中级提升段：轻科普短文）出现，听过以后才转成阅读；样本里用「先听一遍」来代表。</div>
+  <div class="card">
+    <img class="hero" src="assets/hero.jpg" alt="两只海獭手拉手漂在海面上">
+    <div id="predict">
+      <h3 style="margin-top:10px"><span class="tag">预测 Predict</span>听之前先猜</h3>
+      <div class="en" style="font-size:17px;color:var(--navy)">Why do these sea otters hold hands?</div>
+      <div class="opts" id="predOpts"></div>
+      <div class="fb hide" id="predFb"></div>
+    </div>
+  </div>
+  <div class="card" id="listenCard">
+    <h3>只听，不看字</h3>
+    <div class="player">
+      <button class="playbtn" id="playBtn" aria-label="播放">▶</button>
+      <div class="bar"><i id="barI"></i></div>
+      <div class="ptime" id="ptime">1:08</div>
+    </div>
+    <div class="ears" id="ears">点一下播放。带着你的猜想去听：他们到底为什么手拉手？</div>
+    <button class="btn ghost hide" id="heardBtn" style="margin-top:10px">我听完了</button>
+  </div>
+  <div class="card hide" id="gistCard">
+    <h3><span class="tag">听懂了吗</span>听到的答案是哪个？</h3>
+    <div class="en" style="font-size:17px;color:var(--navy)">Why do some sea otters hold hands?</div>
+    <div class="opts" id="gistOpts"></div>
+    <div class="fb hide" id="gistFb"></div>
+  </div>
+  <button class="btn hide" id="to2">下一步：看系统示范一个读法 →</button>
+</section>
+
+<!-- 2 video -->
+<section class="step" id="s2">
+  <h2>第 2 步 · 系统示范：碰到生词怎么办<small>视频示范的是上下文猜词 Context Clues，用刚才那篇里的 drift。另外两个策略（关键词定位、读完问自己）在第 3 步由教练一步一步带。</small></h2>
+  <div class="card">
+    <div class="vwrap">
+      <video id="vid" src="assets/lesson.mp4" poster="assets/lesson-poster.jpg" playsinline webkit-playsinline x5-playsinline preload="none"></video>
+      <button class="vplay" id="vplay" aria-label="播放视频"><span>▶</span></button>
+    </div>
+    <div class="note">点一下播放，72 秒，英文讲解带中英字幕。字小可以点全屏横过来看。</div>
+    <details class="script">
+      <summary>视频里系统讲了什么（文字稿）</summary>
+      <p><span class="en">You are reading. Then you see a new word: <b>drift</b>. What do you do?</span><br>读着读着，碰到一个生词：drift。怎么办？</p>
+      <p><span class="en">Don't stop. Don't skip it. Use context clues — the words around it.</span><br>别停下，也别跳过。用上下文线索——它周围的词。</p>
+      <p><span class="en">Step one. Circle the word.</span><br>第一步：把生词圈出来。</p>
+      <p><span class="en">Step two. Read around it. The sentence before, and the sentence after.</span><br>第二步：读它的前一句和后一句。</p>
+      <p><span class="en">Step three. Find the clues. The sea is always moving. The water slowly carries it far from its family.</span><br>第三步：找线索。海一直在动；水慢慢把它带到离家人很远的地方。</p>
+      <p><span class="en">Step four. Guess. Drift means: the water slowly moves it away.</span><br>第四步：猜。drift 就是「被水慢慢带走、漂走」。</p>
+      <p><span class="en">Now check. Read it again with your guess. A sleeping otter can slowly move away with the water. Yes — it makes sense!</span><br>放回去再读一遍：读得通，猜对了。</p>
+      <p><span class="en">Circle. Read around. Find clues. Guess and check. Now it's your turn!</span><br>圈出来、读前后、找线索、猜了再验。轮到你了！</p>
+    </details>
+  </div>
+  <div class="card">
+    <h3>四步记下来</h3>
+    <div class="four">
+      <div><b><em>1</em>Circle</b>把生词圈出来，别停、别跳</div>
+      <div><b><em>2</em>Read around</b>读它的前一句、后一句</div>
+      <div><b><em>3</em>Find clues</b>找出在解释它的词</div>
+      <div><b><em>4</em>Guess &amp; check</b>猜一个意思，放回去读通不通</div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>线索常见的三种样子</h3>
+    <ul class="clues">
+      <li><b>直接解释</b>　<span class="en">A is … / … is called A</span></li>
+      <li><b>反着说</b>　<span class="en">It does <u>not</u> …</span></li>
+      <li><b>打比方</b>　<span class="en">… <u>like</u> a …</span></li>
+    </ul>
+  </div>
+  <button class="btn" id="to3">看完了，去文章里自己用 →</button>
+</section>
+
+<!-- 3 read -->
+<section class="step" id="s3">
+  <h2>第 3 步 · 读同一篇，练三个策略<small id="s3sub">刚才听的那一篇，现在变成字了。</small></h2>
+  <div class="passage" id="passage"></div>
+  <div class="panel" id="panel">
+    <div class="who"><b id="pTag">阅读教练（演示）</b><span id="pProg"></span></div>
+    <div class="say" id="pSay"></div>
+    <div id="pBody"></div>
+    <div class="demo">样本演示：这里是预置反馈，正式版接 AI。</div>
+  </div>
+</section>
+
+<!-- 4 game -->
+<section class="step" id="s4">
+  <h2>第 4 步 · 小游戏：别让海獭漂走<small>Don't let them drift away! 换了新句子，用的还是那三个策略。</small></h2>
+  <div class="sea" id="sea">
+    <div class="hud"><span>RAFT × <b id="raftN">1</b></span><span id="roundN">准备</span></div>
+    <div class="raftlabel">your raft</div>
+    <div class="seamsg" id="seamsg"></div>
+  </div>
+  <div class="card gcard" id="gcard"></div>
+</section>
+
+<!-- 5 pass -->
+<section class="step" id="s5">
+  <div id="passBody"></div>
+</section>
+
+<div class="mask" id="mask">
+  <div class="sheet">
+    <button class="x" id="askX" aria-label="关闭">×</button>
+    <h3>问老师</h3>
+    <div style="font-size:13px;color:var(--muted)">系统会把你卡在哪一步一起带给老师，不用自己从头讲。</div>
+    <div class="ctx" id="askCtx"></div>
+    <div class="opts" id="askOpts"></div>
+    <div class="fb ok hide" id="askFb"></div>
+    <div class="demo">样本演示：这里不会真的发出。正式版把这一步的作答记录推给陪练老师，老师用语音或文字回复。</div>
+  </div>
+</div>
+
+<audio id="story" src="assets/story.mp3" preload="none"></audio>
+</div>
+
+<script>
+(function(){
+"use strict";
+var $=function(s){return document.querySelector(s)},$$=function(s){return [].slice.call(document.querySelectorAll(s))};
+var el=function(html){var d=document.createElement('div');d.innerHTML=html;return d.firstElementChild};
+
+/* ---------- data ---------- */
+var PARAS=[
+ [["Sea otters live in the cold sea.",3.5,6.19],["They eat, play, and even sleep in the water.",6.57,10.36]],
+ [["When a sea otter sleeps, it floats on its back.",11.21,14.81],["It does not sink.",15.19,17.06],["It stays on top of the water, like a little boat.",17.44,21.06]],
+ [["But the sea is always moving.",21.91,24.45],["A sleeping otter can drift away.",24.83,27.69],["The water slowly carries it far from its family.",28.07,31.81]],
+ [["So some sea otters have a clever trick.",32.66,35.59],["Before they sleep, they hold hands!",35.97,39.11],["This way, they stay together.",39.49,41.96]],
+ [["Other otters use kelp.",42.81,44.85],["Kelp is a very long seaweed.",45.23,47.85],["It grows up from the bottom of the sea.",48.23,51.09],["An otter wraps the kelp around its body, like a blanket.",51.47,55.74],["The kelp holds the otter in one place.",56.12,58.98]],
+ [["A group of sleeping otters is called a raft.",59.83,63.14],["One raft can have more than one hundred otters!",63.52,67.26]]
+];
+var SEG={};
+var S={step:1,maxStep:1,pred:null,practiceDone:false,saved:0,gameDone:false,
+  score:{cc:[0,0],kw:[0,0],sq:[0,0]},stuck:[],ctx:{where:'第 1 步 · 先听',item:'',fails:0}};
+function rec(k,ok){S.score[k][1]++;if(ok)S.score[k][0]++}
+function stuck(key,label,quiet){if(S.stuck.every(function(x){return x.key!==key}))S.stuck.push({key:key,label:label});if(quiet)return;var b=$('#askBtn');b.classList.remove('nudge');void b.offsetWidth;b.classList.add('nudge')}
+function ctx(where,item){S.ctx={where:where,item:item||'',fails:0}}
+
+/* ---------- sound ---------- */
+var AC=null;
+function beep(ok){try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();var o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime;o.type='sine';o.connect(g);g.connect(AC.destination);
+  if(ok){o.frequency.setValueAtTime(660,t);o.frequency.setValueAtTime(990,t+.1)}else{o.frequency.setValueAtTime(200,t)}
+  g.gain.setValueAtTime(.13,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.31)}catch(e){}}
+
+/* ---------- steps ---------- */
+function go(n){
+  S.step=n;if(n>S.maxStep)S.maxStep=n;
+  $$('section.step').forEach(function(s,i){s.classList.toggle('on',i+1===n)});
+  $$('#steps button[data-go]').forEach(function(b,i){b.classList.toggle('on',i+1===n);b.classList.toggle('done',i+1<n||(i+1<S.maxStep&&i+1!==n))});
+  var a=$('#story');if(n!==1){a.pause();setPlayIcon(false)} if(n!==3)stopSeg();
+  var v=$('#vid');if(n!==2&&v&&!v.paused)v.pause();
+  if(n===1)ctx('第 1 步 · 先听');
+  if(n===2)ctx('第 2 步 · 看示范（上下文猜词）');
+  if(n===3)startReading();
+  if(n===4)gameIntro();
+  if(n===5)renderPass();
+  if(n!==4)stopGame();
+  window.scrollTo(0,$('#anchor').offsetTop);
+}
+$('#steps').addEventListener('click',function(e){var b=e.target.closest('button[data-go]');if(b)go(+b.dataset.go)});
+$('#to2').onclick=function(){go(2)};$('#to3').onclick=function(){go(3)};
+(function(){var v=$('#vid'),b=$('#vplay');b.onclick=function(){v.controls=true;var p=v.play();if(p&&p.catch)p.catch(function(){})};
+  v.addEventListener('play',function(){b.classList.add('hide')});v.addEventListener('ended',function(){b.classList.remove('hide')})})();
+
+/* ---------- options helper ---------- */
+function mkOpts(box,list,cls){box.innerHTML='';return list.map(function(t,i){var b=el('<button class="opt '+(cls||'')+'"></button>');b.innerHTML=t;b.dataset.i=i;box.appendChild(b);return b})}
+
+/* ---------- step 1: predict + listen ---------- */
+var GIST=['Because they are playing a game.','So they can stay together.','Because their hands are cold.'];
+mkOpts($('#predOpts'),GIST,'en').forEach(function(b){b.onclick=function(){
+  S.pred=+b.dataset.i;$$('#predOpts .opt').forEach(function(x){x.classList.toggle('pick',x===b)});
+  var f=$('#predFb');f.classList.remove('hide');f.textContent='记下了。现在去听，听完看看你猜得对不对。';}});
+var audio=$('#story'),segEnd=null;
+function setPlayIcon(p){$('#playBtn').textContent=p?'❚❚':'▶'}
+$('#playBtn').onclick=function(){segEnd=null;if(audio.paused){audio.play();}else{audio.pause()}};
+audio.addEventListener('play',function(){if(S.step===1)setPlayIcon(true)});
+audio.addEventListener('pause',function(){setPlayIcon(false)});
+audio.addEventListener('timeupdate',function(){
+  var d=audio.duration||67.7,t=audio.currentTime;
+  if(S.step===1){$('#barI').style.width=(t/d*100)+'%';var r=Math.max(0,d-t);$('#ptime').textContent=Math.floor(r/60)+':'+('0'+Math.floor(r%60)).slice(-2);
+    if(t>4&&$('#gistCard').classList.contains('hide'))$('#heardBtn').classList.remove('hide');if(!audio.paused)$('#ears').textContent='正在听… 想想：海獭睡着以后会遇到什么麻烦？'}
+});
+audio.addEventListener('ended',function(){if(S.step===1)showGist()});
+$('#heardBtn').onclick=function(){audio.pause();showGist()};
+function showGist(){
+  $('#heardBtn').classList.add('hide');$('#ears').textContent='听完了。想再听可以再点播放。';
+  var c=$('#gistCard');if(!c.classList.contains('hide'))return;c.classList.remove('hide');
+  var tries=0;
+  mkOpts($('#gistOpts'),GIST,'en').forEach(function(b){b.onclick=function(){
+    var i=+b.dataset.i,f=$('#gistFb');f.classList.remove('hide');
+    if(i===1){b.classList.add('ok');beep(true);f.className='fb ok';
+      var p=S.pred===null?'':(S.pred===1?'你听之前就猜中了。':'和你听之前猜的不一样——带着猜想去听，听到答案时印象更深。');
+      f.innerHTML='对。<span class="en">This way, they stay together.</span> '+p;$('#to2').classList.remove('hide');
+      $$('#gistOpts .opt').forEach(function(x){x.disabled=true});c.scrollIntoView({behavior:'smooth',block:'center'})}
+    else{tries++;b.classList.add('no');beep(false);f.className='fb no';f.innerHTML='文章里没这么说。再听一遍中间那段：<span class="en">Before they sleep, they hold hands! This way, they …</span>'+(tries>=2?' <a data-ask>还是没听出来？问老师</a>':'');S.ctx.fails=tries;if(tries>=2)stuck('gist','听力主旨：没听出手拉手的原因')}
+  }});
+  c.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+/* ---------- passage render ---------- */
+function renderPassage(){
+  var box=$('#passage');box.innerHTML='<h4>Sea Otters Hold Hands</h4>';
+  PARAS.forEach(function(par,pi){
+    var p=document.createElement('p');p.dataset.p=pi+1;
+    par.forEach(function(s,si){
+      var id=(pi+1)+'-'+si;SEG[id]=[s[1],s[2]];
+      var sp=document.createElement('span');sp.className='sent';sp.dataset.id=id;
+      sp.innerHTML=s[0].split(' ').map(function(tok){var m=tok.match(/^([^A-Za-z]*)([A-Za-z'-]+)([^A-Za-z]*)$/);return m?m[1]+'<span class="w" data-w="'+m[2].toLowerCase()+'">'+m[2]+'</span>'+m[3]:tok}).join(' ');
+      p.appendChild(sp);p.appendChild(document.createTextNode(' '));
+    });
+    box.appendChild(p);
+  });
+}
+renderPassage();
+function sentEl(id){return $('.sent[data-id="'+id+'"]')}
+function wordEl(id,w){return sentEl(id).querySelector('.w[data-w="'+w+'"]')}
+/* one small mp3 per sentence: no seeking needed, works on any static host and in WeChat */
+var segA=new Audio();segA.preload='none';
+function stopSeg(){try{segA.pause()}catch(e){}$$('.sent.playing').forEach(function(x){x.classList.remove('playing')})}
+segA.addEventListener('ended',stopSeg);
+function playSeg(id){if(!SEG[id])return;audio.pause();stopSeg();sentEl(id).classList.add('playing');
+  segA.src='assets/s/'+id+'.mp3';var p=segA.play();if(p&&p.catch)p.catch(function(){})}
+function scrollToSent(id){var e=sentEl(id);if(e)setTimeout(function(){e.closest('p').scrollIntoView({behavior:'smooth',block:'start'})},60)}
+
+/* tap plumbing: tasks await taps on the passage or choices in the panel */
+var tapWaiter=null,freeMode=false;
+$('#passage').addEventListener('click',function(e){
+  var s=e.target.closest('.sent'),w=e.target.closest('.w');if(!s)return;
+  var x={sid:s.dataset.id,sEl:s,wEl:w,word:w?w.dataset.w:null};
+  if(tapWaiter){var f=tapWaiter;tapWaiter=null;f(x)}else if(freeMode){playSeg(x.sid)}
+});
+function nextTap(){return new Promise(function(r){tapWaiter=r})}
+function say(html){$('#pSay').innerHTML=html}
+function body(html){$('#pBody').innerHTML=html||''}
+function head(tag,prog){$('#pTag').textContent=tag;$('#pProg').textContent=prog||''}
+function choose(list,cls){return new Promise(function(r){var box=el('<div class="opts'+(cls==='row'?' row':'')+'"></div>'),f0=$('#pBody .fb');if(f0)$('#pBody').insertBefore(box,f0);else $('#pBody').appendChild(box);mkOpts(box,list,cls).forEach(function(b){b.onclick=function(){r({i:+b.dataset.i,b:b})}})})}
+function fb(html,kind){var o=$('#pBody .fb');if(o)o.remove();$('#pBody').appendChild(el('<div class="fb '+(kind||'')+'">'+html+'</div>'))}
+function nextBtn(label){return new Promise(function(r){var b=el('<button class="btn coral">'+label+'</button>');$('#pBody').appendChild(b);b.onclick=function(){r()};var pn=$('#panel');pn.scrollTop=pn.scrollHeight})}
+var ASK=' <a data-ask>还是卡住？问老师</a>';
+
+/* ---------- step 3 tasks ---------- */
+var GUESS=[
+ {word:'floats',sid:'2-0',clues:['2-1','2-2'],opts:['沉到水底','浮在水面上','游得很快'],ans:1,
+  miss:'这一句没说它在水里是什么样子。看 floats 后面紧跟的两句。',
+  type:'反着说（<span class="en">does not sink</span> 不会沉）＋ 打比方（<span class="en">like a little boat</span>）',
+  back:'it <u>stays on top of the water</u> on its back'},
+ {word:'kelp',sid:'5-0',clues:['5-1','5-2'],opts:['一种小船','一种鱼','一种海藻'],ans:2,
+  miss:'这一句没解释 kelp 是什么。找那句直接说「Kelp is …」的。',
+  type:'直接解释（<span class="en">Kelp is a very long seaweed.</span>）。seaweed 也可以拆开猜：sea + weed，海里的草',
+  back:'Other otters use <u>a very long seaweed</u>',img:'assets/kelp.jpg'},
+ {word:'wraps',sid:'5-3',clues:['5-3'],opts:['裹在身上','吃掉','扔掉'],ans:0,
+  miss:'不在这一句。提示：线索有时就在生词自己这一句里。',
+  type:'线索就在同一句：<span class="en">around its body</span>（绕着身体）＋ <span class="en">like a blanket</span>（像毯子）',
+  back:'An otter <u>puts</u> the kelp around its body, like a blanket'}
+];
+var KW=[
+ {q:['How many','otters','can','one','raft','have?'],keys:['How many','raft'],
+  why:{'otters':'otters 全文到处都是，靠它找不到位置。','one':'one 太常见，定位不了。','can':'can 这种小词不能帮你定位。','have?':'have 这种小词不能帮你定位。'},
+  tip:'<b>How many</b> 告诉你要找一个数字；<b>raft</b> 是全文很少出现的词，用它回文章定位。',
+  loc:'6-1',near:{'6-0':'这句有 raft，但没有数字。题目问 How many，要找带数字的那一句。'},far:'这一句里没有 raft。扫一眼全文，raft 只在最后一段出现。',
+  opts:['one hundred','more than one hundred','one'],ans:1,
+  trap:{0:'差一点。文章写的是 <span class="en">more than one hundred</span>（一百多只）。少看两个词，题就错了——回到定位句，一个词一个词对。',2:'这个 one 是 <span class="en">One raft</span> 里的 one：一个 raft，也就是一群。它数的是 raft，不是海獭。'},
+  right:'定位句里一个词一个词对上了：<span class="en">more than one hundred</span>。',label:'How many … raft'},
+ {q:['What','keeps','a sleeping otter','in one place?'],keys:['in one place?'],
+  why:{'What':'What 告诉你要找「一样东西」，但文章里没有 what 这个词，定位要靠后面的词。','a sleeping otter':'全文都在讲 otter，靠它定位不了。','keeps':'keeps 很重要，但文章里换了个说法（holds）。先用文章里原样出现的词去定位。'},
+  tip:'<b>in one place</b> 在文章里原样出现，而且只出现一次——最好的定位词。',
+  loc:'5-4',near:{},far:'这一句里没有 in one place。它在第 5 段。',
+  opts:['holding hands','the kelp','a little boat'],ans:1,
+  trap:{0:'这是最容易掉的坑。手拉手是让它们 <span class="en">stay together</span>（待在一起）；题目问的是 <span class="en">in one place</span>（待在原地）。定位句是 <span class="en">The kelp holds the otter in one place.</span>',2:'<span class="en">like a little boat</span> 只是打比方，文章里没有真的船。'},
+  right:'题目里的 <span class="en">keeps</span>，文章里说成了 <span class="en">holds</span>——题目常常换个说法，所以要靠关键词回原文，不能凭印象。',label:'What keeps … in one place'}
+];
+
+var readingStarted=false;
+async function startReading(){
+  if(readingStarted){if(S.practiceDone)return;return}
+  readingStarted=true;
+  ctx('第 3 步 · 读课文');
+  freeMode=true;head('阅读教练（演示）','');
+  say('先自己读一遍。<b>点任意一句，可以再听这一句</b>——听过的，现在读。');body('');
+  await nextBtn('读好了，开始练策略');
+  freeMode=false;audio.pause();stopSeg();
+
+  /* A. context clues */
+  for(var i=0;i<GUESS.length;i++){await runGuess(GUESS[i],i)}
+  /* B. keyword spotting */
+  for(var j=0;j<KW.length;j++){await runKW(KW[j],j)}
+  /* C. self-questioning */
+  await runSelfQ();
+  S.practiceDone=true;
+  head('阅读教练（演示）','全部完成');
+  say('三个策略都在这一篇里用过了：<b>猜词、定位、问自己</b>。去游戏里换几个新句子试试。');body('');
+  await nextBtn('去玩：别让海獭漂走 →');go(4);
+}
+
+async function runGuess(t,i){
+  head('上下文猜词 Context Clues','猜词 '+(i+1)+' / '+GUESS.length);ctx('第 3 步 · 上下文猜词',t.word);
+  var w=wordEl(t.sid,t.word);w.classList.add('target');scrollToSent(t.sid);
+  say('<b>① 圈出来。</b>在文章里点一下黄色的 <span class="en"><b>'+t.word+'</b></span>。先别查词典。');body('');
+  while(true){var x=await nextTap();if(x.wEl===w)break;fb('先点黄色闪动的那个词：'+t.word,'')}
+  w.classList.remove('target');w.classList.add('circled');
+  say('<b>② ③ 读前后，找线索。</b>哪一句在帮你猜 <span class="en"><b>'+t.word+'</b></span>？<b>在文章上点出那一句。</b>');body('');
+  var fails=0;
+  while(true){
+    var y=await nextTap();
+    if(t.clues.indexOf(y.sid)>=0){break}
+    fails++;S.ctx.fails=fails;y.sEl.classList.add('miss');setTimeout(function(e){return function(){e.classList.remove('miss')}}(y.sEl),600);beep(false);
+    if(fails>=2){stuck('cc-'+t.word,'上下文猜词：'+t.word+' 的线索句找了 '+fails+' 次没找到');t.clues.forEach(function(c){sentEl(c).classList.add('clue')});fb('线索在亮起来的地方，点一下它。'+ASK,'no')}
+    else fb(t.miss,'no');
+  }
+  rec('cc',fails===0);beep(true);
+  t.clues.forEach(function(c){sentEl(c).classList.add('clue')});
+  say('<b>④ 猜一猜。</b>找对了。线索是：'+t.type+'。<br>那 <span class="en"><b>'+t.word+'</b></span> 是什么意思？');body('');
+  var f2=0;
+  while(true){
+    var c=await choose(t.opts,'row');
+    if(c.i===t.ans){c.b.classList.add('ok');break}
+    f2++;S.ctx.fails=f2;c.b.classList.add('no');beep(false);
+    var keep=c.b.parentNode;setTimeout(function(){},0);
+    fb('放回去读不通。再看绿色那句线索。'+(f2>=2?ASK:''),'no');if(f2>=2)stuck('ccm-'+t.word,'上下文猜词：'+t.word+' 的意思选错 '+f2+' 次');
+    await new Promise(function(r){setTimeout(r,500)});keep.remove();
+  }
+  rec('cc',f2===0);beep(true);w.classList.remove('circled');w.classList.add('known');
+  $$('#pBody .opt').forEach(function(b){b.disabled=true});
+  fb('✓ 放回去验一下：<span class="en">'+t.back+'</span>。读得通。'+(t.img?'<img class="kelpimg" src="'+t.img+'" alt="">':''),'ok');
+  await nextBtn(i<GUESS.length-1?'下一个词':'下一个策略：关键词定位');
+  t.clues.forEach(function(c){sentEl(c).classList.remove('clue')});
+}
+
+async function runKW(t,i){
+  head('关键词定位 Keyword Spotting','定位 '+(i+1)+' / '+KW.length);ctx('第 3 步 · 关键词定位',t.label);
+  var need=t.keys.length;
+  say('<b>① 先圈题目，不急着看选项。</b>圈出最能帮你回文章定位的 '+need+' 个词：');
+  body('<div class="qchips">'+t.q.map(function(x,k){return '<button data-k="'+k+'">'+x+'</button>'}).join('')+'</div>');
+  var got=0,bad=0;
+  await new Promise(function(done){
+    $$('#pBody .qchips button').forEach(function(b){b.onclick=function(){
+      var word=t.q[+b.dataset.k];if(b.classList.contains('key'))return;
+      if(t.keys.indexOf(word)>=0){b.classList.add('key');got++;beep(true);if(got>=need){done()}else fb('对，再圈 1 个。','ok')}
+      else{bad++;S.ctx.fails=bad;b.classList.add('no');beep(false);fb((t.why[word]||'这个词定位不了。')+(bad>=2?ASK:''),'no');if(bad>=2)stuck('kwq-'+i,'关键词定位：题目「'+t.label+'」圈关键词错 '+bad+' 次')}
+    }});
+  });
+  rec('kw',bad===0);
+  $$('#pBody .qchips button').forEach(function(b){b.disabled=true});
+  fb(t.tip,'ok');
+  await nextBtn('拿着关键词回文章');
+  say('<b>② 回文章定位。</b>答案在哪一句？<b>在文章上点出来。</b><div class="qchips" style="pointer-events:none">'+t.q.map(function(x){return '<button class="'+(t.keys.indexOf(x)>=0?'key':'')+'">'+x+'</button>'}).join('')+'</div>');body('');
+  setTimeout(function(){window.scrollTo({top:$('#passage').offsetTop-64,behavior:'smooth'})},60);
+  var fails=0;
+  while(true){
+    var y=await nextTap();if(y.sid===t.loc)break;
+    fails++;S.ctx.fails=fails;y.sEl.classList.add('miss');setTimeout(function(e){return function(){e.classList.remove('miss')}}(y.sEl),600);beep(false);
+    if(fails>=2){stuck('kwl-'+i,'关键词定位：题目「'+t.label+'」回文章定位错 '+fails+' 次');sentEl(t.loc).classList.add('loc');fb('定位句已经亮出来了，点一下它。'+ASK,'no')}
+    else fb(t.near[y.sid]||t.far,'no');
+  }
+  rec('kw',fails===0);beep(true);sentEl(t.loc).classList.add('loc');scrollToSent(t.loc);
+  say('<b>③ 对着定位句答题。</b><div class="en" style="margin-top:4px">'+t.q.join(' ')+'</div>');body('');
+  var f3=0;
+  while(true){
+    var c=await choose(t.opts,'en');
+    if(c.i===t.ans){c.b.classList.add('ok');break}
+    f3++;S.ctx.fails=f3;c.b.classList.add('no');c.b.disabled=true;beep(false);
+    var box=c.b.parentNode;fb(t.trap[c.i]+(f3>=2?ASK:''),'no');
+    if(f3===1)stuck('kwa-'+i,'关键词定位：题目「'+t.label+'」选了「'+t.opts[c.i]+'」（文章里有这个词，但不是答案）',true);
+    await new Promise(function(r){[].forEach.call(box.querySelectorAll('.opt'),function(b){if(!b.disabled)b.onclick=function(){r(b)}})}).then(function(b){
+      box.dataset.pick=b.dataset.i});
+    var pi=+box.dataset.pick;var pb=box.querySelector('.opt[data-i="'+pi+'"]');
+    if(pi===t.ans){pb.classList.add('ok');break}
+    f3++;pb.classList.add('no');pb.disabled=true;beep(false);fb(t.trap[pi]+ASK,'no');
+    await new Promise(function(r){setTimeout(r,900)});box.querySelector('.opt[data-i="'+t.ans+'"]').classList.add('ok');break;
+  }
+  rec('kw',f3===0);beep(true);$$('#pBody .opt').forEach(function(b){b.disabled=true});
+  var old=$('#pBody .fb');var prev=(f3>0&&old)?old.innerHTML+'<br>':'';
+  fb((f3>0?'':'✓ ')+(f3>0?prev:'')+'<span>'+t.right+'</span>',f3>0?'':'ok');
+  await nextBtn(i<KW.length-1?'下一题':'下一个策略：读完问自己');
+  sentEl(t.loc).classList.remove('loc');
+}
+
+async function runSelfQ(){
+  head('自我理解监控 Self-Questioning','自问 1 / 3');ctx('第 3 步 · 自我理解监控','第 3 段自问');
+  var P=$('#passage');P.classList.add('blur');
+  say('<b>读完一段，停一下，问自己一句。</b><div class="en" style="margin-top:4px">What is the problem for a sleeping otter?</div><span style="font-size:13px;color:var(--muted)">（第 3 段讲了睡着的海獭有什么麻烦？）文章先盖住了。不回头看，你答得出来吗？</span>');body('');
+  var r=await choose(['答得出来','不太确定']);var sure=r.i===0;
+  $$('#pBody .opts').forEach(function(x){x.remove()});
+  var p3=$('#passage p[data-p="3"]');
+  p3.scrollIntoView({behavior:'smooth',block:'start'});
+  if(!sure){p3.classList.add('keep');['3-0','3-1','3-2'].forEach(function(s){sentEl(s).classList.add('reread')});
+    fb('不确定就回读——这一步做对了。第 3 段已经给你亮出来，读完再答。','ok')}
+  var QA=['It gets very hungry.','The water can carry it away from its family.','It cannot swim.'],f=0,ok=false;
+  while(!ok){
+    var c=await choose(QA,'en');
+    if(c.i===1){c.b.classList.add('ok');ok=true;break}
+    f++;S.ctx.fails=f;c.b.classList.add('no');beep(false);var bx=c.b.parentNode;
+    p3.classList.add('keep');p3.scrollIntoView({behavior:'smooth',block:'start'});['3-0','3-1','3-2'].forEach(function(s){sentEl(s).classList.add('reread')});
+    fb((sure&&f===1?'你觉得懂了，但没答对。这正是「看得懂、做不对」的来源：以为懂了，其实没有。':'还不对。')+'回读亮出来的第 3 段，再答一次。'+(f>=2?ASK:''),'no');
+    if(f===1&&sure)stuck('sq-1','自我理解监控：第 3 段自评「答得出来」，实际答错（自评偏高）');
+    await new Promise(function(r2){setTimeout(r2,700)});bx.remove();
+  }
+  rec('sq',f===0);beep(true);$$('#pBody .opt').forEach(function(b){b.disabled=true});
+  fb(f===0?(sure?'✓ 你说答得出来，也真的答对了——对自己的判断是准的。':'✓ 回读以后答对了。读完一段问自己一句，答不出就回读，这就是自我理解监控。'):'✓ 这次对了。以后每读完一段，都像这样问自己一句：<span class="en">What is this part about?</span>','ok');
+  await nextBtn('下一步：这次问题你来挑');
+  P.classList.remove('blur');$$('.sent.reread').forEach(function(x){x.classList.remove('reread')});p3.classList.remove('keep');
+
+  /* the learner picks the question, then answers it */
+  head('自我理解监控 Self-Questioning','自问 2 / 3');ctx('第 3 步 · 自我理解监控','第 5 段：自己挑问题');
+  var p5=$('#passage p[data-p="5"]');setTimeout(function(){p5.scrollIntoView({behavior:'smooth',block:'start'})},60);
+  say('<b>刚才是教练替你问，这次你来挑。</b>读完第 5 段，哪个问题最值得问自己？<br><span style="font-size:13px;color:var(--muted)">好的自问：问到这一段的要点（What / Why / How），答案在文章里找得到。</span>');body('');
+  var PQ=['What color is kelp?','How does kelp help a sleeping otter?','Do I like sea otters?'],
+      PW={0:'文章没有说 kelp 的颜色，这也不是这一段的要点。',2:'这个问题和读懂文章没关系，答案不在文章里。'},h=0;
+  while(true){
+    var e=await choose(PQ,'en');
+    if(e.i===1){e.b.classList.add('ok');break}
+    h++;S.ctx.fails=h;e.b.classList.add('no');beep(false);var b3=e.b.parentNode;fb(PW[e.i]+(h>=2?ASK:''),'no');
+    if(h>=2)stuck('sq-q','自我理解监控：第 5 段挑「该问自己的问题」错 '+h+' 次');
+    await new Promise(function(r4){setTimeout(r4,700)});b3.remove();
+  }
+  rec('sq',h===0);beep(true);$$('#pBody .opt').forEach(function(b){b.disabled=true});
+  fb('✓ 这个问题问到了第 5 段的要点。','ok');
+  await nextBtn('现在自己答这个问题');
+  say('<b>自己答一下。</b><div class="en" style="margin-top:4px">How does kelp help a sleeping otter?</div>');body('');
+  var PA=['It gives the otter food.','It holds the otter in one place.','It keeps the otter warm.'],
+      PAW={0:'第 5 段没有说 kelp 是吃的。回读亮出来的最后两句。',2:'<span class="en">like a blanket</span> 说的是「裹」的样子，不是保暖。打比方不能按字面理解，回读最后一句。'},m=0;
+  while(true){
+    var a5=await choose(PA,'en');
+    if(a5.i===1){a5.b.classList.add('ok');break}
+    m++;S.ctx.fails=m;a5.b.classList.add('no');beep(false);var b4=a5.b.parentNode;
+    ['5-3','5-4'].forEach(function(s){sentEl(s).classList.add('reread')});
+    fb(PAW[a5.i]+(m>=2?ASK:''),'no');
+    if(m>=2)stuck('sq-a','自我理解监控：第 5 段自问自答错 '+m+' 次');
+    await new Promise(function(r5){setTimeout(r5,700)});b4.remove();
+  }
+  rec('sq',m===0);beep(true);$$('#pBody .opt').forEach(function(b){b.disabled=true});
+  fb('✓ 对。读完一段：自己问一句 → 自己答 → 答不出就回读。这三下就是自我理解监控。','ok');
+  await nextBtn('最后一题：概括自测');
+  $$('.sent.reread').forEach(function(x){x.classList.remove('reread')});
+  head('自我理解监控 · 概括自测','自问 3 / 3');ctx('第 3 步 · 概括自测','一句话概括全文');
+  say('<b>读完全文，再问自己：一句话，它讲了什么？</b>选最能概括全文的一句。');body('');
+  var SUM=['Kelp is a very long seaweed.','Sea otters sleep in little boats at night.','Sea otters hold hands or use kelp so they do not drift away when they sleep.'],
+      WHY={0:'这句话文章里有，但只是一个细节，概括不了全文。',1:'文章没这么说。<span class="en">like a little boat</span> 是打比方。'},g=0;
+  while(true){
+    var d=await choose(SUM,'en');
+    if(d.i===2){d.b.classList.add('ok');break}
+    g++;S.ctx.fails=g;d.b.classList.add('no');beep(false);var b2=d.b.parentNode;fb(WHY[d.i]+(g>=2?ASK:''),'no');
+    if(g>=2)stuck('sq-2','概括自测：一句话概括全文选错 '+g+' 次');
+    await new Promise(function(r3){setTimeout(r3,700)});b2.remove();
+  }
+  rec('sq',g===0);beep(true);$$('#pBody .opt').forEach(function(b){b.disabled=true});
+  fb('✓ 对。问题（会漂走）＋ 两个办法（手拉手、用 kelp）都在里面，才算概括。','ok');
+  await nextBtn('完成');
+}
+
+/* ---------- step 4 game ---------- */
+var ROUNDS=[
+ {tag:'猜词',k:'cc',t:'A baby sea otter is called a <b class="tw">pup</b>.',q:'pup 是什么？',o:['海獭的窝','海獭宝宝','海獭吃的鱼'],a:1,why:'线索：<span class="en">is called</span>——直接解释。'},
+ {tag:'找线索',k:'cc',q:'在句子上点出帮你猜 fur 的词（点一处就行）',
+  c:[['Sea otters',0],' ',['have',0],' thick ',['fur','t'],'. ',['It',0],' ',['covers their body',1],' and ',['keeps them warm',1],'.'],
+  why:'盖住全身、让它们暖和的东西——fur 是毛。线索在后一句。'},
+ {tag:'验一验',k:'cc',t:'Otters <b class="tw">dive</b> for food. They go down under the water.',q:'有人猜 dive 是「飞起来」。放回去读得通吗？',o:['读得通','读不通'],a:1,why:'<span class="en">go down under the water</span> 是往水下去——dive 是潜水。猜完一定要放回去验。'},
+ {tag:'圈关键词',k:'kw',q:'这是一道题目。点出最能帮你回文章定位的词',
+  c:[['What',0],' ',['do',0],' ',['sea otters',0],' ',['use',0],' to open a ',['shell',1],'?'],
+  why:'sea otters 全文都是，do、use 是小词；shell 少见，用它定位最快。'},
+ {tag:'定位',k:'kw',pre:'<div style="font-size:14px;color:#5E7780;margin-bottom:4px">题目：What do sea otters use to open a <u>shell</u>?</div>',q:'带着 shell 扫这一小段，点出有答案的那一句',T:17,
+  c:[['Sea otters love to eat.',0],' ',['The shell is hard, so the otter hits it with a rock.',1],' ',['Then the otter washes its face.',0]],
+  why:'带着 shell 去找，一眼就到：用 rock（石头）。'},
+ {tag:'别掉坑',k:'kw',t:'Most sea otters do not sleep on the beach. They sleep in the water.',q:'Where do most sea otters sleep?',o:['on the beach','in the water'],a:1,cls:'en',why:'beach 在文章里出现了，但前面有 <span class="en">do not</span>。看到词不等于就是答案。'},
+ {tag:'问自己',k:'sq',t:'An otter has a pocket of skin under its arm. It keeps its favorite rock there.',q:'读完停一下。哪个问题能检查自己读懂了没有？',T:17,o:['How many words are in this sentence?','Where does the otter keep its rock?','What is my favorite animal?'],a:1,cls:'en',why:'好的自问问的是这句话的要点，而且答案就在句子里：<span class="en">in a pocket under its arm</span>。'}
+];
+var G={i:0,timer:null,cur:null,running:false};
+function slot(n){return {x:10+(n%5)*40,y:44+Math.floor(n/5)*84}}
+function addOtter(x,y){var o=el('<img class="ot" src="assets/otter.png" alt="">');o.style.left=x+'px';o.style.top=y+'px';$('#sea').appendChild(o);return o}
+function stopGame(){clearTimeout(G.timer);G.running=false}
+function gameIntro(){
+  ctx('第 4 步 · 小游戏');stopGame();
+  $$('#sea .ot').forEach(function(o){o.remove()});S.saved=0;G.i=0;$('#raftN').textContent=1;$('#roundN').textContent='准备';$('#seamsg').classList.remove('on');
+  var s=slot(0);addOtter(s.x,s.y);
+  $('#gcard').innerHTML='<h3>玩法</h3><div style="font-size:14px">海獭睡着了，会被水带走（<span class="en">drift away</span>）。<b>在它漂出画面之前答对</b>，它就拉住手，加入你的 <span class="en">raft</span>；答错或太慢，它就漂走了。<br>有的题要<b>直接在句子上点</b>（黄底的地方都能点），有的题是选一个。一共 7 只，<b>留住 5 只过关</b>。</div><button class="btn coral" id="gStart">开始</button>';
+  $('#gStart').onclick=function(){beep(true);G.running=true;round()};
+}
+function round(){
+  if(!G.running)return;
+  if(G.i>=ROUNDS.length)return gameEnd();
+  var r=ROUNDS[G.i],sea=$('#sea'),W=sea.clientWidth,T=r.T||14;
+  $('#roundN').textContent='第 '+(G.i+1)+' / '+ROUNDS.length+' 只';$('#seamsg').classList.remove('on');
+  var o=addOtter(W*0.50,118);G.cur=o;o.style.transition='none';void o.offsetWidth;o.style.transition='left '+T+'s linear';o.style.left=(W+30)+'px';
+  var card=$('#gcard'),tagH='<div style="margin-bottom:6px"><span class="tag c">'+r.tag+'</span></div>';
+  if(r.c){ /* tap-on-the-text round: the learner taps a word or a sentence in the text itself */
+    card.innerHTML=tagH+'<div class="gq" style="margin:0 2px 8px">'+r.q+'</div>'+(r.pre||'')+'<div class="gt" id="gText">'+r.c.map(function(x){
+      if(typeof x==='string')return x;if(x[1]==='t')return '<b class="tw">'+x[0]+'</b>';return '<span class="gchip" data-ok="'+x[1]+'">'+x[0]+'</span>'}).join('')+'</div>';
+  }else{
+    card.innerHTML=tagH+'<div class="gt">'+r.t+'</div><div class="gq">'+r.q+'</div><div class="opts" id="gOpts"></div>';
+  }
+  var answered=false;
+  function finish(ok,btn,timeout){
+    if(answered)return;answered=true;clearTimeout(G.timer);rec(r.k,ok);
+    var left=o.getBoundingClientRect().left-sea.getBoundingClientRect().left;
+    o.style.transition='none';o.style.left=left+'px';void o.offsetWidth;
+    $$('#gOpts .opt').forEach(function(b){b.disabled=true;if(+b.dataset.i===r.a)b.classList.add('ok')});
+    $$('#gText .gchip').forEach(function(b){if(b.dataset.ok==='1')b.classList.add('ok')});
+    if(ok){beep(true);S.saved++;var s=slot(S.saved);o.style.transition='left .7s ease,top .7s ease';o.style.left=s.x+'px';o.style.top=s.y+'px';$('#raftN').textContent=S.saved+1;$('#seamsg').textContent='Got it! Holding hands.';}
+    else{beep(false);if(btn)btn.classList.add('no');o.style.transition='left 1.1s ease-in,opacity 1.1s';o.style.left=(W+40)+'px';o.style.opacity='0';setTimeout(function(){o.remove()},1200);$('#seamsg').textContent=timeout?'Too slow… it drifted away.':'It drifted away…';}
+    $('#seamsg').classList.add('on');
+    card.appendChild(el('<div class="fb '+(ok?'ok':'no')+'">'+(ok?'✓ ':'')+r.why+'</div>'));
+    var nb=el('<button class="btn coral">'+(G.i<ROUNDS.length-1?'下一只 →':'看结果')+'</button>');card.appendChild(nb);nb.onclick=function(){G.i++;round()};
+    nb.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+  if(r.c)$$('#gText .gchip').forEach(function(b){b.onclick=function(){if(!answered)finish(b.dataset.ok==='1',b,false)}});
+  else mkOpts($('#gOpts'),r.o,r.cls||'').forEach(function(b){b.onclick=function(){finish(+b.dataset.i===r.a,b,false)}});
+  G.timer=setTimeout(function(){finish(false,null,true)},T*1000-300);
+}
+function gameEnd(){
+  G.running=false;S.gameDone=true;var n=S.saved,pass=n>=5,st=n>=7?3:n>=6?2:n>=5?1:0;
+  $('#roundN').textContent='结束';$('#seamsg').textContent='A raft of '+(n+1)+' otters!';$('#seamsg').classList.add('on');
+  $('#gcard').innerHTML='<div class="stars">'+[0,1,2].map(function(i){return i<st?'<b>★</b>':'★'}).join('')+'</div><h3 style="font-size:17px">'+(pass?'留住了 '+n+' 只，过关':'留住了 '+n+' 只，还差 '+(5-n)+' 只')+'</h3><div style="font-size:13.5px;color:var(--muted)">'+(pass?'加上最开始那一只，你的 raft 现在有 '+(n+1)+' 只海獭。':'漂走的那几只，都卡在看线索太慢或掉进了坑里。再来一次。')+'</div>'+
+    (pass?'<button class="btn" id="gPass">去领徽章 →</button><button class="btn ghost" id="gAgain">再玩一次</button>':'<button class="btn coral" id="gAgain">再玩一次</button><button class="btn ghost" id="gPass">先看看过关页</button>');
+  $('#gAgain').onclick=gameIntro;$('#gPass').onclick=function(){go(5)};
+  if(!pass)stuck('game','小游戏：7 只只留住 '+n+' 只，没过关');
+}
+
+/* ---------- step 5 pass ---------- */
+function pct(a){return a[1]?Math.round(a[0]/a[1]*100):0}
+function renderPass(){
+  ctx('第 5 步 · 过关');
+  var passed=S.practiceDone&&S.gameDone&&S.saved>=5,sc=S.score;
+  var bars=[['上下文猜词 Context Clues','cc'],['关键词定位 Keyword Spotting','kw'],['自我理解监控 Self-Questioning','sq']].map(function(x){var a=sc[x[1]];
+    return '<div class="mbar"><div class="t"><span>'+x[0]+'</span><b>'+(a[1]?a[0]+' / '+a[1]+' 一次做对':'还没做')+'</b></div><div class="b"><i data-w="'+pct(a)+'"></i></div></div>'}).join('');
+  var todo=[];if(!S.practiceDone)todo.push('第 3 步的三组策略练习还没做完');if(!S.gameDone||S.saved<5)todo.push('第 4 步小游戏要留住 5 只海獭');
+  var tm=S.stuck.length?S.stuck.map(function(x){return '<div class="tmsg">'+x.label+'</div>'}).join(''):'<div class="tmsg">'+(S.practiceDone?'这一课没有卡点，老师不用介入。':'练习还没做完，暂时没有小结。')+'</div>';
+  $('#passBody').innerHTML=
+   (passed?'<h2>过关！<small>这一课全程是系统带着学完的。</small></h2><div class="card"><img class="badge" src="assets/raft.jpg" alt="一大群海獭漂在一起"><h3 style="margin-top:10px;font-size:17px">徽章：Raft Keeper</h3><div style="font-size:13.5px">你留住了 '+S.saved+' 只海獭，也留住了这一课的三个读法。</div></div>'
+          :'<h2>还没过关<small>过关条件：三组策略练习做完 ＋ 小游戏留住 5 只海獭。</small></h2><div class="card">'+todo.map(function(t){return '<div class="fb no" style="margin:0 0 6px">'+t+'</div>'}).join('')+'<button class="btn coral" id="backTo">'+(!S.practiceDone?'回第 3 步继续练':'回第 4 步再玩一次')+'</button></div>')+
+   '<div class="card"><h3>策略掌握度（这一课）</h3>'+bars+'<div class="demo">样本演示：按你刚才每一步是不是第一次就做对算出来的，是规则统计，不是 AI 评估。正式版并入学情看板。</div></div>'+
+   '<div class="card"><h3>这一课猜出来的词</h3><div class="words"><span><b>float</b>浮</span><span><b>drift</b>漂走</span><span><b>kelp</b>海藻</span><span><b>wrap</b>裹</span><span><b>raft</b>（一群海獭）</span></div><div class="note">这几个词都没有先给中文意思：drift 是视频里示范猜的，float、kelp、wrap 是你自己猜的，raft 是文章里直接解释的。</div></div>'+
+   '<div class="card"><h3>系统给老师的小结：卡点和典型错误</h3><div style="font-size:13px;color:var(--muted)">老师不用盯全程，只看这里；有卡点再答疑。</div>'+tm+'<div class="demo">样本演示：这段按你刚才的作答用预置规则生成，没有真的发给谁。正式版推送到老师端。</div></div>'+
+   '<button class="btn ghost" id="restart">从头再来一遍</button>';
+  setTimeout(function(){$$('.mbar i').forEach(function(i){i.style.width=i.dataset.w+'%'})},60);
+  var bt=$('#backTo');if(bt)bt.onclick=function(){go(!S.practiceDone?3:4)};
+  $('#restart').onclick=function(){location.reload()};
+}
+
+/* ---------- ask teacher ---------- */
+function openAsk(){
+  var c=S.ctx;$('#askCtx').innerHTML='<b>你现在在：</b>'+c.where+(c.item?' · <span class="en">'+c.item+'</span>':'')+(c.fails?'　已经试了 '+c.fails+' 次':'');
+  $('#askFb').classList.add('hide');
+  mkOpts($('#askOpts'),['我找不到线索 / 答案在哪一句','这个词的意思我还是不明白','题目问的是什么，我没看懂','别的问题（正式版可以直接语音说）']).forEach(function(b){b.onclick=function(){
+    $$('#askOpts .opt').forEach(function(x){x.classList.toggle('pick',x===b)});var f=$('#askFb');f.classList.remove('hide');
+    f.innerHTML='会带给老师的内容：「'+b.textContent+'」＋ 你在这一步的作答记录。老师回复之前，你可以先接着往下学。'}});
+  $('#mask').classList.add('on');
+}
+$('#askBtn').onclick=openAsk;$('#askX').onclick=function(){$('#mask').classList.remove('on')};
+$('#mask').addEventListener('click',function(e){if(e.target===this)this.classList.remove('on')});
+document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('[data-ask]')){e.preventDefault();openAsk()}});
+
+window.__S=S;window.__go=go;
+})();
+</script>
+</body>
+</html>

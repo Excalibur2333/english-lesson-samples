@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:,">
+<title>口语样本 · Level 3 · Saturday Plan</title>
+<style>
+:root{--bg:#FFF6E9;--card:#fff;--ink:#1F2A44;--muted:#6B7285;--coral:#FF7A59;--coral-bg:#FFE9E2;--teal:#1FA6A0;--teal-bg:#DDF4F2;--yellow:#FFC94D;--line:#F0E3D0;--ok:#1E9E6A;--ok-bg:#E3F6EC;--bad:#D9483B;--bad-bg:#FDE8E5;--lock:#C9CCD6}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",Roboto,sans-serif}
+button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:pointer}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:480px;margin:0 auto;padding:0 14px 110px}
+.en{font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+/* 顶栏 */
+.top{position:sticky;top:0;z-index:20;background:rgba(255,246,233,.96);border-bottom:1px solid var(--line)}
+.top-in{max-width:480px;margin:0 auto;padding:8px 14px 8px}
+.top-row{display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;font-size:14px}
+.brand b{display:inline-block;background:var(--coral);color:#fff;border-radius:6px;padding:0 7px;margin-right:6px;font-size:12px;line-height:20px}
+.pts{display:inline-block;font-size:13px;font-weight:700;background:#fff;border:1.5px solid var(--yellow);border-radius:12px;padding:0 9px;line-height:22px;margin-right:6px}
+.demo-tag{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:0 8px;line-height:18px;background:#fff}
+.stepper{display:flex;margin-top:8px}
+.stepper button{flex:1;font-size:12px;color:var(--muted);padding:5px 0 4px;border-bottom:3px solid var(--line);white-space:nowrap}
+.stepper button.done{color:var(--teal);border-color:var(--teal)}
+.stepper button.cur{color:var(--coral);border-color:var(--coral);font-weight:700}
+/* 通用 */
+.step{display:none;padding-top:14px}
+.step.on{display:block}
+h1{font-size:25px;line-height:1.25;margin:6px 0 4px}
+h2{font-size:19px;margin:22px 0 8px;line-height:1.3}
+h3{font-size:16px;margin:0 0 6px}
+p{margin:6px 0}
+.sub{color:var(--muted);font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin:12px 0;box-shadow:0 2px 0 rgba(31,42,68,.04)}
+.num{display:inline-block;width:24px;height:24px;line-height:24px;text-align:center;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;font-weight:700;margin-right:6px}
+.btn{display:block;width:100%;background:var(--coral);color:#fff;font-weight:700;font-size:17px;border-radius:14px;padding:13px 12px;text-align:center;box-shadow:0 3px 0 #D95C3F;margin:14px 0 6px}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 #D95C3F}
+.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--ink);box-shadow:none}
+.btn.teal{background:var(--teal);box-shadow:0 3px 0 #15807B}
+.btn[disabled]{opacity:.45;pointer-events:none}
+.pill{display:inline-flex;align-items:center;background:#fff;border:1.5px solid var(--ink);border-radius:20px;padding:6px 13px;font-size:14px;font-weight:600;margin:4px 6px 4px 0;min-height:36px}
+.pill.playing{background:var(--yellow);border-color:var(--ink)}
+.pill.sm{font-size:13px;padding:3px 10px;min-height:30px}
+.pill.coral{background:var(--coral);border-color:var(--coral);color:#fff}
+.op{background:var(--coral-bg);border-radius:6px;padding:1px 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.rs{background:var(--teal-bg);border-radius:6px;padding:1px 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.tag{display:inline-block;font-size:11px;font-weight:700;border-radius:5px;padding:0 6px;line-height:18px;margin-right:4px;vertical-align:middle}
+.tag.o{background:var(--coral);color:#fff}.tag.r{background:var(--teal);color:#fff}.tag.x{background:var(--bad-bg);color:var(--bad)}.tag.g{background:#EEF0F5;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);background:#FBF1DF;border:1px dashed #E3CFA9;border-radius:8px;padding:5px 9px;margin:8px 0}
+.fb{border-radius:10px;padding:8px 11px;font-size:14px;margin:8px 0}
+.fb.ok{background:var(--ok-bg);color:#11694A}.fb.bad{background:var(--bad-bg);color:#9B2C22}
+.link{color:var(--teal);text-decoration:underline;font-size:13px}
+.hide{display:none!important}
+/* 首页 */
+.hero{background:linear-gradient(160deg,#FFE3C4,#FFD0BF);border-radius:20px;padding:16px 16px 0;margin-top:4px;overflow:hidden}
+.hero .lv{display:inline-block;background:var(--ink);color:#fff;border-radius:8px;padding:1px 9px;font-size:12px;font-weight:700}
+.hero img{border-radius:14px 14px 0 0;margin-top:12px}
+details.map{background:#fff;border:1.5px solid var(--ink);border-radius:14px;margin:12px 0;overflow:hidden}
+details.map summary{list-style:none;padding:11px 14px;font-weight:700;font-size:15px;display:flex;justify-content:space-between;align-items:center}
+details.map summary::-webkit-details-marker{display:none}
+details.map summary:after{content:"展开 ▾";font-size:12px;color:var(--muted);font-weight:400}
+details.map[open] summary:after{content:"收起 ▴"}
+.map-row{border-top:1px solid var(--line);padding:9px 14px;font-size:13.5px}
+.map-row q{display:block;font-weight:700;quotes:"「" "」"}
+.map-row span{color:var(--muted)}
+.stairs{display:flex;align-items:flex-end;height:118px;margin:26px 0 2px}
+.stairs div{flex:1;margin:0 2px;border-radius:7px 7px 0 0;background:var(--lock);position:relative;color:#fff;font-size:12px;font-weight:700;text-align:center;padding-top:3px}
+.stairs .dn{background:var(--teal)}.stairs .cu{background:var(--coral)}
+.stairs .cu:before{content:"你在这里";position:absolute;top:-25px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:11px;border-radius:8px;padding:1px 7px;white-space:nowrap;font-weight:600}
+.lvrow{display:flex;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line);font-size:14px}
+.lvrow:first-child{border-top:0}
+.lvrow .k{flex:0 0 62px;font-size:12px;font-weight:700;border-radius:7px;text-align:center;line-height:22px;margin-right:10px;color:#fff}
+.lvrow .k.dn{background:var(--teal)}.lvrow .k.cu{background:var(--coral)}.lvrow .k.lk{background:var(--lock)}
+.lvrow b{display:block}
+.lvrow small{color:var(--muted);font-size:12.5px;display:block;line-height:1.5}
+.all8{font-size:13px;color:var(--muted);margin:6px 0 0;padding-left:18px}
+.all8 li{margin:2px 0}
+.all8 li.cu{color:var(--coral);font-weight:700}
+.flow{display:flex;margin:6px -3px 0}
+.flow div{flex:1;background:#fff;border:1px solid var(--line);border-radius:12px;margin:0 3px;padding:8px 4px;text-align:center;font-size:12px;line-height:1.35}
+.flow b{display:block;font-size:20px}
+/* 视频与课文 */
+.vid{width:100%;border-radius:14px;background:#000;display:block;aspect-ratio:16/9}
+.line{display:flex;align-items:flex-start;margin:10px 0}
+.line .av{flex:0 0 38px;width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 0 0 1.5px var(--ink);margin-right:9px;background:#eee}
+.line .bub{flex:1;background:#F6F1E8;border-radius:4px 14px 14px 14px;padding:8px 11px;font-size:16px;line-height:1.5}
+.line .bub small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.line .who{font-size:11px;font-weight:700;color:var(--muted);display:block}
+.line.playing .bub{background:#FFF0B8}
+.formula{display:flex;align-items:stretch;margin:10px 0 4px}
+.formula div{flex:1;border-radius:12px;padding:8px 6px;text-align:center;font-weight:700;font-size:14px;color:#fff}
+.formula .plus{flex:0 0 20px;color:var(--ink);background:none;padding:8px 0;font-size:18px}
+.formula .a{background:var(--coral)}.formula .b{background:var(--ink)}.formula .c{background:var(--teal)}
+.formula small{display:block;font-weight:500;font-size:12px;opacity:.95}
+.starters{margin:8px 0 0;padding:0;list-style:none}
+.starters li{padding:6px 0;border-top:1px dashed var(--line);font-size:15px}
+.starters li small{color:var(--muted);font-size:12.5px;margin-left:6px}
+/* 录音条 */
+.rec{background:#F6F1E8;border-radius:12px;padding:9px 10px;margin:10px 0 4px}
+.rec .mic{display:flex;align-items:center;justify-content:center;width:100%;background:var(--ink);color:#fff;border-radius:12px;font-weight:700;padding:11px;font-size:16px}
+.rec .mic.on{background:var(--bad);animation:pulse 1s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(217,72,59,.18)}}
+.rec .hint{font-size:12.5px;color:var(--muted);margin:6px 2px 0}
+/* 小测 */
+.dots{display:flex;margin:2px 0 10px}
+.dots i{flex:1;height:5px;border-radius:3px;background:var(--line);margin-right:4px}
+.dots i.d{background:var(--teal)}.dots i.c{background:var(--coral)}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--ink);border-radius:12px;padding:10px 12px;margin:8px 0;font-size:16px;line-height:1.45}
+.opt.ok{background:var(--ok-bg);border-color:var(--ok)}
+.opt.bad{background:var(--bad-bg);border-color:var(--bad)}
+.opt[disabled]{pointer-events:none}
+.tiles{display:flex;flex-wrap:wrap;margin:6px -4px}
+.tile{background:#fff;border:1.5px solid var(--ink);border-radius:10px;padding:7px 11px;margin:4px;font-size:15.5px;font-weight:600}
+.tile.used{opacity:.25;pointer-events:none}
+.slot{min-height:50px;border:2px dashed #D8C9AE;border-radius:12px;padding:4px;display:flex;flex-wrap:wrap;align-items:center;background:#FFFCF6}
+.slot .tile{background:var(--yellow)}
+.cue{display:flex;align-items:center;background:#F6F1E8;border-radius:12px;padding:8px 10px;margin:8px 0}
+.cue b{font-size:28px;margin-right:8px}
+.cue span{font-size:15.5px;font-weight:600}
+.cue i{font-style:normal;color:var(--muted);margin:0 8px}
+.frame{font-size:15.5px;margin:6px 0;color:var(--ink)}
+.frame u{text-decoration:none;display:inline-block;min-width:54px;border-bottom:2px solid var(--ink);margin:0 3px}
+/* 对练 */
+.scene{position:relative;border-radius:14px;overflow:hidden;margin:8px 0 10px;background:#ddd}
+.scene img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.scene span{position:absolute;left:8px;bottom:8px;background:rgba(31,42,68,.85);color:#fff;font-size:12px;border-radius:8px;padding:2px 8px}
+.chat .line.me{flex-direction:row-reverse}
+.chat .line.me .av{margin:0 0 0 9px;display:flex;align-items:center;justify-content:center;background:var(--yellow);font-size:12px;font-weight:700}
+.chat .line.me .bub{background:#FFF0B8;border-radius:14px 4px 14px 14px}
+.chat .sys{font-size:12.5px;color:var(--muted);text-align:center;margin:8px 0}
+.panel{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:12px;margin:12px 0}
+.panel h3{font-size:15px}
+.cues{display:flex;flex-wrap:wrap;margin:4px -3px}
+.cues span{background:#F6F1E8;border-radius:10px;padding:4px 9px;margin:3px;font-size:14px;font-weight:600}
+.score{border:2px solid var(--ink);border-radius:18px;background:#fff;padding:14px;margin:14px 0}
+.score h3{font-size:17px;margin-bottom:2px}
+.dim{display:flex;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line)}
+.dim .n{flex:0 0 86px;font-weight:700;font-size:15px}
+.dim .n small{display:block;font-weight:400;color:var(--muted);font-size:10.5px}
+.dim .v{flex:1}
+.stars{font-size:18px;letter-spacing:2px;color:var(--yellow)}
+.stars i{font-style:normal;color:#E3E5EC}
+.dim p{font-size:13.5px;margin:2px 0 0;color:#3B4563}
+.src{display:inline-block;font-size:11px;border-radius:5px;padding:0 6px;line-height:17px;margin-left:6px;vertical-align:middle;letter-spacing:0}
+.src.rule{background:var(--teal-bg);color:#0F6F6A}.src.pre{background:#EEF0F5;color:var(--muted)}
+.fix{background:#F6F1E8;border-radius:10px;padding:7px 10px;margin:6px 0;font-size:14px}
+.fix b{font-size:16px}
+.fix code{font-family:inherit;color:var(--coral);font-weight:700}
+/* 游戏 */
+.gbar{display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:700}
+.ballots{display:flex}
+.ballots i{font-style:normal;width:30px;height:30px;line-height:28px;text-align:center;border:1.5px solid var(--ink);border-radius:8px;margin-right:5px;background:#fff;font-size:15px}
+.ballots i.y{background:var(--ok-bg);border-color:var(--ok)}.ballots i.n{background:#EEF0F5;border-color:var(--lock)}.ballots i.c{border-color:var(--coral);box-shadow:0 0 0 2px var(--coral-bg)}
+.timer{height:8px;border-radius:4px;background:var(--line);overflow:hidden;margin:10px 0}
+.timer i{display:block;height:100%;width:100%;background:var(--teal);transition:width .1s linear}
+.timer i.low{background:var(--bad)}
+.mate{display:flex;align-items:center;margin:8px 0}
+.mate b{font-size:40px;line-height:1;margin-right:8px}
+.mate .say{flex:1;background:#F6F1E8;border-radius:4px 14px 14px 14px;padding:8px 11px;font-size:17px;font-weight:600}
+.mate .say small{display:block;font-weight:400;color:var(--muted);font-size:12.5px}
+.build{font-size:16px;line-height:2.1;margin:8px 0}
+.build u{text-decoration:none;display:inline-block;min-width:70px;border-radius:8px;padding:0 8px;line-height:1.7;text-align:center}
+.build u.o{background:var(--coral-bg);border:1.5px dashed var(--coral)}.build u.r{background:var(--teal-bg);border:1.5px dashed var(--teal)}
+.build u.f{border-style:solid;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;margin:2px -3px 6px}
+.chip{border-radius:10px;padding:8px 11px;margin:3px;font-size:15px;font-weight:600;background:#fff;border:1.5px solid var(--ink)}
+.chip.o.sel{background:var(--coral);border-color:var(--coral);color:#fff}
+.chip.r.sel{background:var(--teal);border-color:var(--teal);color:#fff}
+.glabel{font-size:12px;font-weight:700;margin-top:6px}
+.pop{animation:pop .45s}
+@keyframes pop{0%{transform:scale(.6)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+.badge{width:132px;height:132px;border-radius:50%;margin:10px auto;background:radial-gradient(circle at 35% 30%,#FFE9A8,var(--yellow));border:4px solid var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;text-align:center;line-height:1.2}
+.badge b{font-size:44px}
+.badge.off{filter:grayscale(1);opacity:.5}
+.check{display:flex;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:14.5px}
+.check:first-child{border-top:0}
+.check i{font-style:normal;flex:0 0 28px;font-size:18px}
+.check span{flex:1}
+/* 问老师 */
+.ask{position:fixed;right:12px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:30;background:var(--ink);color:#fff;border-radius:24px;padding:10px 15px;font-weight:700;font-size:14px;box-shadow:0 4px 12px rgba(31,42,68,.3)}
+.ask.nudge{animation:pulse2 1s 3}
+@keyframes pulse2{50%{transform:scale(1.12)}}
+.mask{position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(31,42,68,.5);z-index:40;display:none;align-items:flex-end;justify-content:center}
+.mask.on{display:flex}
+.sheet{background:#fff;width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:16px 16px calc(18px + env(safe-area-inset-bottom));max-height:86vh;overflow:auto}
+.sheet textarea{width:100%;border:1.5px solid var(--ink);border-radius:12px;padding:9px;font:inherit;min-height:66px;margin-top:6px}
+.sheet .pill.sel{background:var(--yellow)}
+@media(min-width:700px){body{background:#F3E7D3}.wrap{background:var(--bg);min-height:100vh;box-shadow:0 0 0 1px var(--line)}}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="top-in">
+  <div class="top-row">
+    <button class="brand" data-go="home"><b>Level 3</b>口语 · Saturday Plan</button>
+    <span><span class="pts" id="pts">⭐ 0</span><span class="demo-tag">样本</span></span>
+  </div>
+  <div class="stepper" id="stepper">
+    <button data-go="learn">① 看示范</button>
+    <button data-go="practice">② 分步练</button>
+    <button data-go="talk">③ 对练</button>
+    <button data-go="game">④ 游戏</button>
+    <button data-go="pass">⑤ 过关</button>
+  </div>
+</div></div>
+
+<div class="wrap">
+
+<!-- ================= 首页 ================= -->
+<section class="step on" id="s-home">
+  <details class="map">
+    <summary>这个样本对应你方案里的哪几条</summary>
+    <div class="map-row"><q>口语绝对不跳跃学习，八级阶梯逐层搭建</q><span>本页下方的阶梯图：Level 2 已完成才进这一课，Level 4 要等本级过关才解锁。</span></div>
+    <div class="map-row"><q>Level 3 情景对话+个人观点表达（KET-PET阶段）</q><span>情景是「和同学商量周六去哪儿」，整课只练一件事：说出观点，再用 because 给一个理由。</span></div>
+    <div class="map-row"><q>输出形式：AI虚拟情景对练、日常话题阐述、简单理由输出</q><span>都在第 ③ 步。AI虚拟情景对练：和虚拟同学 Leo 对话 4 轮，走向跟着回答分支，第 3 轮要对他的主意表态。简单理由输出：每轮都要给理由，只答一个词会被追问 Why。日常话题阐述：对话结束后，把商量好的计划自己连着讲 3–4 句。</span></div>
+    <div class="map-row"><q>能力目标：摆脱机械跟读，实现主动简单输出</q><span>第 ② 步分三小步：跟读 → 判断配对 → 只给提示词自己说，然后才进对练。</span></div>
+    <div class="map-row"><q>对标：KET/PET口语题型</q><span>方案里写「KET=描述复述｜PET=情景表达」，这一课取的是「情景表达」这一侧。任务形式参考 KET 口语 Part 2（聊喜好并说原因）和 PET 口语 Part 3（两人商量并做决定，要对同伴的主意表态）；句子难度在 KET 和 PET 之间。文字全部原创，没有用真题。</span></div>
+    <div class="map-row"><q>听中带说、输入带动输出，听力积累达到阶段阈值，自动解锁对应层级口语任务</q><span>第 ① 步先听系统示范的对话再开口；阶梯图下写了解锁条件（样本里默认已达标）。</span></div>
+    <div class="map-row"><q>口语全阶纠音、流利度/发音/逻辑多维打分</q><span>对练结束后的打分卡。静态网页接不了真 AI，哪一项是规则算的、哪一项是预置的，卡片上逐项标了。</span></div>
+    <div class="map-row"><q>AI游戏化闯关、积分徽章、趣味交互，解决坚持问题</q><span>第 ④ 步游戏「拉票大作战」、右上角一路累加的积分、第 ⑤ 步的过关徽章。</span></div>
+    <div class="map-row"><q>老师只是服务，教学由系统主要完成。孩子有卡点的时候老师再答疑就行。</q><span>（微信原话）整课没有老师讲课的环节；右下角「问老师」只在卡住时用。</span></div>
+    <div class="map-row"><q>文字+视频+练习+游戏</q><span>（微信原话）文字、视频在第 ① 步，练习在第 ②③ 步，游戏在第 ④ 步。</span></div>
+  </details>
+
+  <div class="hero">
+    <span class="lv">口语八级阶梯 · Level 3 · 第 1 课</span>
+    <h1 class="en">Saturday Plan</h1>
+    <p style="font-weight:700;margin:0">周六去哪儿：说出你的想法，再给一个理由</p>
+    <p class="sub" style="margin:2px 0 0">情景对话 + 个人观点表达（KET–PET 阶段）· 约 6 分钟</p>
+    <img src="assets/img/school.jpg" alt="Leo 和 Mia 在校门口商量周六的安排" width="960" height="540">
+  </div>
+
+  <h2>这一课在八级阶梯的哪一层</h2>
+  <div class="card">
+    <div class="stairs" id="stairs">
+      <div class="dn" style="height:26%">L1</div><div class="dn" style="height:36%">L2</div><div class="cu" style="height:47%">L3</div><div style="height:57%">L4</div><div style="height:67%">L5</div><div style="height:77%">L6</div><div style="height:88%">L7</div><div style="height:100%">L8</div>
+    </div>
+    <div style="margin-top:10px">
+      <div class="lvrow"><span class="k dn">前一级 ✓</span><div><b>Level 2 看图描述 + 短句复述</b><small>已经能「自主组织简单句子」。所以这一课不再教单句，直接要求把两半句连起来说。</small></div></div>
+      <div class="lvrow"><span class="k cu">本级</span><div><b>Level 3 情景对话 + 个人观点表达</b><small>目标：摆脱机械跟读，实现主动简单输出。本课练「观点 + because + 理由」。</small></div></div>
+      <div class="lvrow"><span class="k lk">下一级 🔒</span><div><b>Level 4 小型主题汇报（演讲雏形）</b><small>1–2 分钟 mini presentation，建立「开头-主体-结尾」框架。本级过关后解锁；今天练的「观点 + 理由」就是那时「主体」段要用的句子。</small></div></div>
+    </div>
+    <details style="margin-top:6px"><summary class="link" style="list-style:none">看全部八级 ▾</summary>
+      <ol class="all8">
+        <li>零基础模仿跟读</li><li>看图描述 + 短句复述</li><li class="cu">情景对话 + 个人观点表达（本课）</li><li>小型主题汇报</li><li>完整正式英文演讲</li><li>结构化观点论证</li><li>专业英语辩论</li><li>模拟联合国（模联）</li>
+      </ol>
+    </details>
+    <p class="note">解锁条件按方案里的「绑定口语逻辑」设计：听力积累达到阶段阈值 → 自动解锁本级口语任务。样本里默认已达标，没有接真实的听力数据。</p>
+  </div>
+
+  <h2>这一课怎么走（孩子自己能走完）</h2>
+  <div class="flow">
+    <div><b>🎬</b>看示范<br>系统教</div>
+    <div><b>🗣️</b>分步练<br>跟读→自己说</div>
+    <div><b>💬</b>对练<br>对话+阐述</div>
+    <div><b>🗳️</b>游戏<br>拉票</div>
+    <div><b>🏅</b>过关<br>看阶梯</div>
+  </div>
+  <p class="sub" style="margin-top:10px">每一步都要开口。能用麦克风就录音，录完可以回放、和示范对比；微信里拿不到麦克风时，改为「大声说 + 点选」，一样能走完。</p>
+  <button class="btn" data-go="learn">开始这一课 →</button>
+</section>
+
+<!-- ================= ① 看示范 ================= -->
+<section class="step" id="s-learn">
+  <h2 style="margin-top:6px"><span class="num">1</span>看示范：系统来教</h2>
+  <p class="sub">约 1 分钟。先听 Leo 和 Mia 怎么商量，再听讲解。点一下播放。</p>
+  <video class="vid" id="vid" controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/lesson-poster.jpg?v=2">
+    <source src="assets/lesson.mp4?v=2" type="video/mp4">
+  </video>
+
+  <h2>课文 <span class="sub" style="font-weight:400">点哪句听哪句</span></h2>
+  <div class="card" id="dlg"></div>
+  <button class="pill sm" id="zhToggle">显示 / 隐藏中文</button>
+
+  <h2>要点：观点 + because + 理由</h2>
+  <div class="card">
+    <p style="margin-top:0">别人问你的想法时，只回一个词（<span class="en">“The park.”</span>）对话就断了。说完整的两半句：</p>
+    <div class="formula">
+      <div class="a">观点<small class="en">Opinion</small></div><div class="plus">+</div>
+      <div class="b en">because</div><div class="plus">+</div>
+      <div class="c">理由<small class="en">Reason</small></div>
+    </div>
+    <p class="en" style="font-size:16.5px;margin:10px 0 2px"><span class="op">I think we should go to the park,</span> <span class="rs">because the weather is nice.</span></p>
+    <ul class="starters en">
+      <li><b>I think</b> we should … <small>我觉得我们应该……（提建议）</small></li>
+      <li><b>I’d like to</b> … <small>我想要……（说自己想做的）</small></li>
+      <li><b>I prefer</b> … <small>我更喜欢……（二选一时）</small></li>
+      <li><b>What about you?</b> <small>说完把问题抛回去，对话才接得下去</small></li>
+      <li><b>That’s a good idea,</b> because … <small>同意别人的主意，也要给理由</small></li>
+      <li><b>I’m not sure,</b> because … <b>How about</b> …? <small>客气地不同意，再提一个新建议</small></li>
+    </ul>
+  </div>
+  <button class="btn" data-go="practice">会了，去练 →</button>
+</section>
+
+<!-- ================= ② 分步练 ================= -->
+<section class="step" id="s-practice">
+  <h2 style="margin-top:6px"><span class="num">2</span>分步练：从跟读走到自己说</h2>
+  <p class="sub">三小步，一步比一步放手。</p>
+
+  <div class="card">
+    <h3>第 1 小步 · 跟读 <span class="tag g">照着说</span></h3>
+    <p class="sub">先听示范，再自己说一遍。录了音可以和示范对比着听。</p>
+    <div id="shadow"></div>
+  </div>
+
+  <div class="card">
+    <h3>第 2 小步 · 判断配对 <span class="tag g">分清观点和理由</span></h3>
+    <div id="quiz"></div>
+  </div>
+
+  <div class="card">
+    <h3>第 3 小步 · 只看提示，自己说 <span class="tag g">不给句子了</span></h3>
+    <p class="sub">这一步没有现成的句子可以照着读：看提示，自己把整句说出来，再对参考答案。</p>
+    <div id="cuesay"></div>
+  </div>
+
+  <button class="btn" data-go="talk">去和 Leo 对练 →</button>
+</section>
+
+<!-- ================= ③ 对练 ================= -->
+<section class="step" id="s-talk">
+  <h2 style="margin-top:6px"><span class="num">3</span>情景对练：和 Leo 商量周六</h2>
+  <p class="sub">Leo 是系统里的虚拟同学。他问，你答；你答什么，他就接什么。</p>
+  <p class="note">样本演示：这里是预置反馈，正式版接 AI。Leo 的话和分支是预先写好的；正式版由 AI 听懂孩子说的话并接话，不需要点选。</p>
+  <div class="scene"><img id="sceneImg" src="assets/img/school.jpg" alt="情景图" width="960" height="540"><span id="sceneCap">周五放学 · 校门口</span></div>
+  <div class="chat" id="chat"></div>
+  <div id="talkPanel"></div>
+  <div id="scoreHost"></div>
+</section>
+
+<!-- ================= ④ 游戏 ================= -->
+<section class="step" id="s-game">
+  <h2 style="margin-top:6px"><span class="num">4</span>游戏：拉票大作战 <span class="en" style="font-size:14px;color:var(--muted)">Win the Vote</span></h2>
+  <p class="sub">你在竞选班里的「周末活动委员」。5 位同学各有各的情况，你要给每个人出一个对得上的主意：<b>观点</b>回应他的情况，<b>理由</b>接得上观点，才能拿到他的一票。拿到 3 票就当选。</p>
+  <div class="card" id="gameHost"></div>
+</section>
+
+<!-- ================= ⑤ 过关 ================= -->
+<section class="step" id="s-pass">
+  <h2 style="margin-top:6px"><span class="num">5</span>过关</h2>
+  <div id="passHost"></div>
+</section>
+
+</div>
+
+<button class="ask" id="askBtn">🙋 问老师</button>
+<div class="mask" id="askMask"><div class="sheet" id="askSheet"></div></div>
+
+<script src="assets/app.js?v=1121d"></script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="data:,">
+<title>写作样本 · KET 短邮件：讲讲昨天的事</title>
+<style>
+:root{--paper:#FBF6EC;--ink:#1F3A5F;--red:#D9483B;--blue:#2F6FB5;--yellow:#F2B544;--green:#2E9E6B;--line:#E6DCC8;--muted:#6B7A8F;--soft:#F3EBDA}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#E9DFCB;color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer}
+img{max-width:100%;display:block}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:var(--paper);position:relative;padding-bottom:40px;box-shadow:0 0 40px rgba(31,58,95,.14)}
+.strip{height:8px;background:repeating-linear-gradient(135deg,var(--red) 0,var(--red) 10px,#fff 10px,#fff 20px,var(--blue) 20px,var(--blue) 30px,#fff 30px,#fff 40px)}
+.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.top-in{padding:8px 14px 8px}
+.top-t{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:var(--muted)}
+.top-t b{color:var(--ink);font-size:14px}
+.prog{display:flex;justify-content:space-between;list-style:none;margin:6px 0 0;padding:0}
+.prog button{width:30px;height:30px;border-radius:50%;border:2px dashed #C9BCA1;background:#fff;font-size:13px;font-weight:700;color:#A3967D;padding:0;line-height:1}
+.prog button.done{border:2px solid var(--red);color:var(--red);background:#FFF1EE;transform:rotate(-8deg)}
+.prog button.cur{border:2px solid var(--ink);background:var(--ink);color:#fff;transform:none}
+details.map{margin:10px 14px 0;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:14px}
+details.map summary{padding:10px 12px;font-weight:700;list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+details.map summary::-webkit-details-marker{display:none}
+details.map summary:after{content:"点开 ▾";font-weight:400;color:var(--blue);font-size:13px}
+details.map[open] summary:after{content:"收起 ▴"}
+.map ol{margin:0;padding:0 12px 12px 30px}
+.map li{margin:0 0 10px}
+.map q{display:block;font-weight:700;quotes:"「" "」"}
+.map .src{color:var(--muted);font-size:12px}
+.map .how{display:block;color:#33506F}
+main{padding:14px}
+.scr{display:none}
+.scr.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{transform:translateY(6px)}to{transform:none}}
+h1{font-size:24px;line-height:1.3;margin:6px 0 4px}
+h2{font-size:20px;line-height:1.35;margin:0 0 4px}
+h3{font-size:16px;margin:18px 0 8px}
+.sub{color:var(--muted);margin:0 0 10px;font-size:14px}
+.plan{font-size:12.5px;color:#8A7B5E;background:var(--soft);border-left:3px solid var(--yellow);padding:6px 10px;border-radius:0 8px 8px 0;margin:6px 0 14px}
+.en{font-family:Georgia,"Times New Roman",serif;font-size:19px;line-height:1.6;margin:0}
+.muted{color:var(--muted);font-size:13px}
+.demo{font-size:12px;color:#8A5A00;background:#FFF4D6;border:1px dashed #E0B44C;border-radius:8px;padding:5px 9px;margin:8px 0;display:block}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0;box-shadow:0 2px 0 rgba(31,58,95,.05)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tag{font-size:12.5px;padding:3px 9px;border-radius:999px;background:#E7EEF7;color:var(--blue);font-weight:600}
+.tag.r{background:#FDE9E5;color:var(--red)}
+.tag.y{background:#FCEFCB;color:#8A5A00}
+.hero{display:flex;align-items:flex-end;gap:10px;margin-top:4px}
+.hero img{width:112px;height:112px;object-fit:contain;flex:none}
+.bubble{position:relative;background:#fff;border:2px solid var(--ink);border-radius:16px;padding:10px 12px;font-size:15px;margin-bottom:22px}
+.bubble:before{content:"";position:absolute;left:-10px;bottom:14px;border:8px solid transparent;border-right-color:var(--ink);border-left:0}
+.path{list-style:none;padding:0;margin:10px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.path li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 6px;font-size:13px;text-align:center}
+.path li b{display:block;color:var(--red);font-size:12px}
+.btn{display:block;width:100%;min-height:50px;border-radius:14px;border:2px solid var(--ink);background:#fff;font-size:17px;font-weight:700;padding:10px 14px;margin:12px 0 0}
+.btn.primary{background:var(--ink);color:#fff;box-shadow:0 4px 0 #122640}
+.btn.primary:active{transform:translateY(2px);box-shadow:0 2px 0 #122640}
+.btn.go{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 4px 0 #A8342A}
+.btn[disabled]{opacity:.38;box-shadow:none}
+.btn.ghost{border-color:var(--green);color:var(--green)}
+.link{background:none;border:0;color:var(--blue);text-decoration:underline;font-size:14px;padding:8px 4px}
+.skip{display:block;margin:10px auto 0;background:none;border:0;color:#A3967D;font-size:12px;text-decoration:underline}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.row .btn{flex:1;width:auto}
+video{width:100%;border-radius:12px;background:#122640;display:block;aspect-ratio:16/9}
+.points{margin:8px 0 0;padding-left:20px;font-size:15px}
+.points li{margin:4px 0}
+.points .en{font-size:16px}
+/* email card */
+.mail{background:#fff;border-radius:12px;border:1px solid var(--line);overflow:hidden;margin:12px 0;box-shadow:0 3px 0 rgba(31,58,95,.06)}
+.mail-h{padding:8px 14px;border-bottom:1px dashed var(--line);font-size:13px;color:var(--muted)}
+.mail-h b{color:var(--ink)}
+.mail-b{padding:12px 14px 14px;position:relative}
+.mail-b .ln{font-family:Georgia,"Times New Roman",serif;font-size:19px;line-height:2.6;margin:0;padding-left:10px;border-left:4px solid transparent}
+.mail-b.struct .p1{border-left-color:var(--yellow)}
+.mail-b.struct .p2{border-left-color:var(--blue)}
+.mail-b.struct .p3{border-left-color:var(--green)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12.5px;padding:0 14px 10px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.w{position:relative;display:inline-block;border-radius:6px;padding:0 1px;cursor:pointer}
+.w.hit{background:#FDE9E5;color:var(--red);font-weight:700}
+.w.hit small{position:absolute;left:50%;bottom:-1px;transform:translateX(-50%);white-space:nowrap;font:600 10.5px/1 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--red);opacity:.9}
+.w.no{animation:shake .35s}
+.w.peek{outline:2px dashed var(--yellow)}
+@keyframes shake{20%{transform:translateX(-4px)}40%{transform:translateX(4px)}60%{transform:translateX(-3px)}80%{transform:translateX(3px)}}
+.pic{border-radius:12px;border:1px solid var(--line);width:100%;aspect-ratio:3/2;object-fit:cover;background:#EADFC8}
+.task{background:#FFF8E6;border:2px solid var(--yellow);border-radius:12px;padding:10px 12px;margin:12px 0;font-size:15px}
+.task b.n{color:var(--red)}
+.fb{min-height:0;border-radius:10px;font-size:15px;margin-top:10px}
+.fb.ok{background:#E6F5EE;border:1px solid #A9DBC4;color:#165F40;padding:9px 11px}
+.fb.no{background:#FDECE9;border:1px solid #F1B5AD;color:#8E2A20;padding:9px 11px}
+.fb .en{font-size:17px;display:block;margin-top:2px}
+.fb .ans{margin-top:6px;padding-top:6px;border-top:1px dashed currentColor}
+.count{font-size:13px;color:var(--muted);margin-bottom:6px}
+.pair{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px 10px;margin:8px 0}
+.pair.mine{border:2px solid var(--blue)}
+.who{font-size:12px;color:var(--muted);font-weight:600}
+.pair.mine .who{color:var(--blue)}
+.pair .en u{text-decoration:none;border-bottom:3px solid var(--yellow)}
+.pair .en em{font-style:normal;color:var(--red);font-weight:700}
+.blank{display:inline-block;min-width:54px;border-bottom:2px dashed #B9AC90;color:#B9AC90;font:13px/1.9 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;text-align:center;margin:0 2px}
+.fill{font-weight:700;color:var(--blue)}
+.fill.v{color:var(--red)}
+.slot{margin:10px 0 0}
+.slab{font-size:12.5px;color:var(--muted);margin-bottom:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:7px 13px;border-radius:12px;border:2px solid #C6CFDB;background:#fff;font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:1.3;box-shadow:0 3px 0 #D7DEE8}
+.chip.sel{border-color:var(--ink);background:var(--ink);color:#fff;box-shadow:0 3px 0 #122640}
+.chip.bad{border-color:var(--red);background:#FDECE9;color:var(--red);animation:shake .35s}
+.chip.good{border-color:var(--green);background:#E6F5EE;color:#165F40}
+.chip.used{opacity:.25;pointer-events:none}
+.chip.zh{font-family:inherit;font-size:15px}
+.locked .chip,.locked input,.locked textarea,.locked [data-check],.locked [data-clear],.locked [data-opts]{pointer-events:none}
+.locked [data-check],.locked [data-clear],.locked [data-opts]{display:none}
+.gap{width:118px;height:42px;border:0;border-bottom:3px solid var(--blue);background:#EEF4FB;border-radius:8px 8px 0 0;font:700 19px Georgia,serif;color:var(--red);text-align:center;outline:none;padding:0 4px}
+.zh{font-size:18px;font-weight:700;margin:4px 0 8px}
+.answer{min-height:58px;border:2px dashed #B9AC90;border-radius:12px;padding:6px;display:flex;flex-wrap:wrap;gap:6px;background:#fff;margin-bottom:10px}
+.answer:empty:before{content:"点下面的词块，拼成英文句子";color:#B9AC90;font-size:14px;padding:10px 6px}
+.nextitem{margin-top:10px}
+/* write */
+.tabs{display:flex;background:var(--soft);border-radius:12px;padding:4px;margin:12px 0 10px}
+.tabs button{flex:1;border:0;background:none;border-radius:9px;min-height:42px;font-weight:700;color:var(--muted);font-size:15px}
+.tabs button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.pics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:8px 0}
+.pics figure{margin:0}
+.pics img{border-radius:10px;border:1px solid var(--line);aspect-ratio:1/1;object-fit:cover;width:100%;background:#EADFC8}
+.pics figcaption{font-size:12px;text-align:center;color:var(--muted);margin-top:2px}
+.brief{font-family:Georgia,serif;font-size:16.5px;line-height:1.55}
+.brief ul{margin:4px 0;padding-left:20px}
+.wl{margin:10px 0 0;padding-top:8px;border-top:1px dashed var(--line)}
+.wl:first-child{border-top:0;padding-top:0}
+.wl .slab b{color:var(--ink)}
+.wl .answer{min-height:52px;margin-bottom:6px}
+.wl .answer:empty:before{content:"点下面的词块";padding:8px 6px}
+.wl .chip{font-size:16.5px;min-height:40px;padding:5px 10px}
+#wText{width:100%;min-height:210px;border:2px solid #C6CFDB;border-radius:12px;padding:12px;font:18px/1.6 Georgia,serif;color:var(--ink);background:#fff;outline:none;resize:vertical}
+#wText:focus,#wName:focus,#askText:focus{border-color:var(--blue)}
+#wName{width:150px;height:44px;border:2px solid #C6CFDB;border-radius:10px;padding:0 10px;font:18px Georgia,serif;color:var(--ink);outline:none}
+.wc{font-size:13px;color:var(--muted);text-align:right;margin-top:4px}
+.wc b{color:var(--red)}
+.wc b.enough{color:var(--green)}
+.preview .mail-b{white-space:pre-wrap;font:18px/1.7 Georgia,serif;min-height:70px}
+.preview .mail-b:empty:before{content:"你拼好的邮件会出现在这里";color:#B9AC90;font:14px/1.7 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+/* mark */
+.verdict{border-radius:14px;padding:12px 14px;font-weight:700;font-size:17px;margin:10px 0}
+.verdict.pass{background:#E6F5EE;border:2px solid var(--green);color:#165F40}
+.verdict.todo{background:#FFF4D6;border:2px solid var(--yellow);color:#6E4A00}
+.verdict small{display:block;font-weight:400;font-size:14px;margin-top:2px}
+.checks{list-style:none;margin:0;padding:0}
+.checks li{display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.checks li:last-child{border:0}
+.checks .ic{flex:none;width:22px;height:22px;border-radius:50%;font-size:13px;line-height:22px;text-align:center;color:#fff;background:var(--green);font-weight:700}
+.checks .x .ic{background:var(--red)}
+.checks .x{color:#8E2A20}
+.marked .mail-b{white-space:pre-wrap;font:18px/2 Georgia,serif}
+.marked del{color:var(--red);text-decoration:line-through;background:#FDECE9;padding:0 2px;border-radius:4px}
+.marked ins{color:#165F40;text-decoration:none;font-weight:700;background:#E6F5EE;padding:0 3px;border-radius:4px;margin-left:2px}
+.marked mark{background:#E7EEF7;color:var(--blue);border-radius:4px;padding:0 2px}
+.fixlist{margin:8px 0 0;padding:0;list-style:none;font-size:14.5px}
+.fixlist li{padding:6px 0;border-bottom:1px dashed var(--line)}
+.fixlist li:last-child{border:0}
+.fixlist del{color:var(--red)} .fixlist ins{color:#165F40;font-weight:700;text-decoration:none}
+.sg{border-left:4px solid var(--blue);padding:6px 10px;margin:8px 0;background:#F4F8FC;border-radius:0 10px 10px 0;font-size:14.5px}
+.sg .en{font-size:16.5px}
+.sg .bf{color:var(--muted)} .sg .af{color:#165F40;font-weight:700}
+.bars{display:grid;grid-template-columns:auto 1fr auto;gap:6px 10px;align-items:center;font-size:14px}
+.bar{height:10px;border-radius:5px;background:var(--soft);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--blue);border-radius:5px}
+/* game */
+.g-top{display:flex;align-items:center;gap:10px}
+.g-van{width:108px;flex:none}
+.g-slots{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;flex:1}
+.g-slots i{height:26px;border-radius:6px;border:2px dashed #C9BCA1;background:#fff;font-style:normal;text-align:center;font-size:15px;line-height:22px}
+.g-slots i.in{border:2px solid var(--red);background:#FFF1EE}
+.g-info{display:flex;justify-content:space-between;font-size:14px;font-weight:700;margin:10px 0 4px}
+.g-timer{height:10px;border-radius:5px;background:var(--soft);overflow:hidden}
+.g-timer i{display:block;height:100%;width:100%;background:var(--yellow);border-radius:5px}
+.g-timer.low i{background:var(--red)}
+.road{position:relative;height:74px;margin:4px 0 8px;border-bottom:8px solid #B9AC90;background:linear-gradient(#DCEBF7,#F6EFE0);border-radius:12px 12px 4px 4px;overflow:hidden}
+.road.low{background:linear-gradient(#FBD3CC,#F6EFE0)}
+.road #gVan{position:absolute;bottom:-3px;left:0;width:96px;transition:left .15s linear}
+.road .flag{position:absolute;right:4px;bottom:0;font-size:30px;line-height:1.2}
+.locked [data-totype]{display:none}
+.letter{background:#fff;border-radius:12px;border:1px solid var(--line);overflow:hidden;margin:12px 0 10px;box-shadow:0 4px 0 rgba(31,58,95,.08);transition:transform .45s ease,opacity .45s ease}
+.letter.fly{transform:translate(-30%,-170px) scale(.15) rotate(-18deg);opacity:0}
+.letter.bad{animation:shake .4s}
+.letter .kind{font-size:13px;color:var(--muted);padding:8px 12px 0;font-weight:600}
+.letter .body{padding:6px 12px 14px;font:20px/1.7 Georgia,serif;min-height:74px}
+.letter .body .hole{display:inline-block;min-width:64px;border-bottom:3px solid var(--blue);text-align:center;color:var(--red);font-weight:700}
+.letter .body .gw{display:inline-block;padding:1px 5px;border-radius:8px;border:2px solid transparent;margin:0 1px}
+.letter .body.spot .gw{border-color:#D7DEE8;background:#F7F9FC;cursor:pointer}
+.letter .body .gw.good{border-color:var(--green);background:#E6F5EE;color:#165F40;font-weight:700}
+.letter .body .gw.bad{border-color:var(--red);background:#FDECE9;color:var(--red)}
+.g-end{text-align:center}
+.g-end .stars{font-size:40px;letter-spacing:6px;margin:6px 0}
+.vanrun{animation:vanrun 1.6s ease-in forwards}
+@keyframes vanrun{to{transform:translateX(140%)}}
+/* pass */
+.badge{width:150px;height:150px;border-radius:50%;margin:10px auto;border:4px double var(--red);color:var(--red);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-9deg);background:#FFF7F4;text-align:center;font-weight:800}
+.badge span{font:700 13px Georgia,serif;letter-spacing:1px}
+.badge b{font:800 21px Georgia,serif;line-height:1.15;margin:4px 0}
+.stat{display:grid;grid-template-columns:auto 1fr auto;gap:6px 10px;align-items:center;font-size:14px}
+/* ask */
+.ask{background:var(--yellow);border:2px solid var(--ink);border-radius:999px;padding:4px 12px;font-weight:800;font-size:14px;box-shadow:0 2px 0 var(--ink);color:var(--ink);white-space:nowrap}
+.sheet{position:fixed;top:0;right:0;bottom:0;left:0;z-index:40;background:rgba(18,38,64,.5);display:none;align-items:flex-end;justify-content:center}
+.sheet.on{display:flex}
+.sheet-card{background:var(--paper);width:100%;max-width:480px;border-radius:18px 18px 0 0;padding:16px 16px 22px;max-height:88vh;overflow:auto}
+#askText{width:100%;min-height:70px;border:2px solid #C6CFDB;border-radius:12px;padding:10px;font-size:16px;line-height:1.5;font-family:inherit;margin-top:10px;outline:none;background:#fff;color:var(--ink)}
+.toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 14px;border-radius:10px;font-size:14px;z-index:50;opacity:0;transition:opacity .2s;pointer-events:none;max-width:86vw;text-align:center}
+.toast.on{opacity:.96}
+@media (min-width:700px){body{padding:18px 0}.app{border-radius:18px;overflow:hidden;min-height:0}.top{position:static}}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="strip"></div>
+<header class="top">
+  <div class="top-in">
+    <div class="top-t" style="align-items:center"><span><b>写作样本 · KET 短邮件</b><br><span id="progT">开始</span></span><button class="ask" id="askBtn">🙋 卡住了？问老师</button></div>
+    <ol class="prog" id="prog"></ol>
+  </div>
+</header>
+
+<details class="map" id="map">
+  <summary>📌 这个样本对应你方案里的哪几条</summary>
+  <ol>
+    <li><q>语法不单独开课，全部融入写作与句型训练落地</q><span class="src">方案一·3 整体架构总原则</span>
+      <span class="how">这一课的语法点是一般过去时（按通常理解，属于你基础语法清单里「四大基础时态」之一）。整课没有一页语法讲解，它出现在：读范文找动词 → 仿写 → 改写 → 翻译 → 写邮件 → 批改 → 游戏。</span></li>
+    <li><q>无单独语法课，所有语法知识点全部通过仿写、改写、翻译、写作落地实操掌握</q><span class="src">方案五·设计原则</span>
+      <span class="how">第 3、4、5、6 步依次就是仿写、改写、翻译、写作，每一步都要孩子亲手把动词变成过去的样子。</span></li>
+    <li><q>便条、短邮件、信息填空、短篇记叙</q><span class="src">方案六·2 KET写作</span>
+      <span class="how">这一课做的是其中的「短邮件」：给朋友写 25 词以上，回应三个要点（题型对标 KET，题目和范文都是原创）。</span></li>
+    <li><q>阅读素材同步仿写 → 句型翻译夯实语法 → 文体专项训练</q><span class="src">方案六·写作训练模式（前三段）</span>
+      <span class="how">这一课就按这个顺序排：先读 Lily 的邮件（第 2 步）→ 照着仿写、改写（第 3、4 步）→ 句子翻译（第 5 步）→ 写一封 KET 短邮件（第 6 步）。</span></li>
+    <li><q>写作AI智能批改、语法纠错、句型优化、素材推送、文体专项训练</q><span class="src">方案七·AI系统配套赋能功能</span>
+      <span class="how">第 7 步批改分三块：任务完成度、语法纠错、句型优化。样本里用规则检查加预置反馈来演示，正式版接 AI；「素材推送」这一项样本里没做。</span></li>
+    <li><q>AI游戏化闯关、积分徽章、趣味交互，解决坚持问题</q><span class="src">方案七·AI系统配套赋能功能</span>
+      <span class="how">第 8 步游戏「赶邮车」练的就是这一课的句型和动词；每过一步盖一枚邮戳，最后发一枚徽章。</span></li>
+    <li><q>老师只是服务，教学由系统主要完成。孩子有卡点的时候老师再答疑就行。</q><span class="src">你的微信原话</span>
+      <span class="how">全程由系统里的 Pip 带着学、练、玩、过关；右上角「问老师」随时能点，同一题连错两次会主动提醒孩子去问。</span></li>
+    <li><q>全维度学情数据看板：听、说、读、写、语法、策略掌握度可视化</q><span class="src">方案七·AI系统配套赋能功能</span>
+      <span class="how">过关页有这一课的学情小结（只含这一课的数据，是示意，不是完整看板）。</span></li>
+  </ol>
+</details>
+
+<main>
+<!-- 0 开始 -->
+<section class="scr on" id="s-start">
+  <div class="tags"><span class="tag r">KET 写作 · 短邮件</span><span class="tag">语法融在里面：一般过去时</span><span class="tag y">约 6 分钟</span></div>
+  <h1>给没去成的朋友，<br>讲讲昨天的事</h1>
+  <p class="en" style="color:#6B7A8F;font-size:17px">A short email about yesterday</p>
+  <div class="hero">
+    <img src="assets/img/pip.webp" alt="Pip" onerror="this.style.display='none'">
+    <div class="bubble">嗨，我是 Pip！这一课我带你写一封短邮件。学完你能给朋友写清楚：<b>昨天去了哪儿、看到了什么、做了什么</b>。</div>
+  </div>
+  <ol class="path">
+    <li><b>1 看</b>Pip 教写邮件</li><li><b>2 读</b>Lily 的邮件</li><li><b>3 仿写</b>照着写句子</li>
+    <li><b>4 改写</b>平时→昨天</li><li><b>5 翻译</b>中文→英文</li><li><b>6 写</b>一封短邮件</li>
+    <li><b>7 批改</b>AI 当场改</li><li><b>8 游戏</b>赶邮车</li><li><b>9 过关</b>领徽章</li>
+  </ol>
+  <p class="muted">每一步系统都会当场告诉你对不对。卡住了，点右上角「问老师」。</p>
+  <button class="btn go" data-go="next">开始这一课 →</button>
+</section>
+
+<!-- 1 视频 -->
+<section class="scr" id="s-video">
+  <h2>第 1 步 · 看：Pip 教你写这封邮件</h2>
+  <p class="sub">点一下播放，大约 1 分钟，有英文配音和中英字幕。</p>
+  <video id="vid" controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="assets/poster.jpg?v=2">
+    <source src="assets/lesson.mp4?v=2" type="video/mp4">
+  </video>
+  <div class="card">
+    <b>这段视频教了三件事</b>
+    <ol class="points">
+      <li>一封短邮件有三部分：<span class="en">Say hello → Share your news → Say goodbye</span>，最后写名字。</li>
+      <li>讲你的事，就是回答三个问题：<span class="en">Where did you go? What did you see? What did you do?</span></li>
+      <li>写昨天的事，动词要变一变：<span class="en">go → went，see → saw，pick → picked，have → had，is → was</span></li>
+    </ol>
+  </div>
+  <button class="btn primary" data-go="next">看完了，去读 Lily 的邮件 →</button>
+</section>
+
+<!-- 2 读范文 -->
+<section class="scr" id="s-read">
+  <h2>第 2 步 · 读：Lily 写给 Ben 的邮件</h2>
+  <div class="plan">方案原句：「阅读素材同步仿写」——先读，后面三步都照着这封邮件来。</div>
+  <img class="pic" src="assets/img/farm.jpg" alt="Lily 在奶奶的农场" onerror="this.style.display='none'">
+  <div class="mail">
+    <div class="mail-h">To: <b>Ben</b>　Subject: <b>My weekend</b></div>
+    <div class="mail-b struct" id="modelMail"></div>
+    <div class="legend"><span><i style="background:#F2B544"></i>打招呼</span><span><i style="background:#2F6FB5"></i>讲你的事</span><span><i style="background:#2E9E6B"></i>说再见 + 名字</span></div>
+  </div>
+  <button class="btn" id="listenBtn">🔊 听 Lily 读一遍</button>
+  <div class="task"><b>找一找：</b>Lily 讲的都是上周六的事。邮件里有 5 个<b>变成了「过去的样子」的动词</b>（视频里见过），把它们点出来。<b class="n" id="readN">0 / 5</b>
+    <button class="link" id="readHint">给我一点提示</button></div>
+  <div class="fb" id="readFb"></div>
+  <button class="btn primary" data-go="next" data-need="read" disabled>下一步：仿写 →</button>
+  <button class="skip" data-skip>样本审阅用：跳过这一步</button>
+</section>
+
+<!-- 3 仿写 -->
+<section class="scr" id="s-imitate">
+  <h2>第 3 步 · 仿写：照 Lily 的句子，写你自己的</h2>
+  <div class="plan">方案原句：「阅读素材同步仿写」。每一句都要自己选对动词。</div>
+  <div id="imBox"></div>
+  <button class="btn primary" data-go="next" data-need="imitate" disabled>下一步：改写 →</button>
+  <button class="skip" data-skip>样本审阅用：跳过这一步</button>
+</section>
+
+<!-- 4 改写 -->
+<section class="scr" id="s-rewrite">
+  <h2>第 4 步 · 改写：把「平时的事」改成「昨天的事」</h2>
+  <div class="plan">方案原句：「所有语法知识点全部通过仿写、改写、翻译、写作落地实操掌握」。</div>
+  <div id="rwBox"></div>
+  <button class="btn primary" data-go="next" data-need="rewrite" disabled>下一步：翻译 →</button>
+  <button class="skip" data-skip>样本审阅用：跳过这一步</button>
+</section>
+
+<!-- 5 翻译 -->
+<section class="scr" id="s-trans">
+  <h2>第 5 步 · 翻译：用英文说出这三句</h2>
+  <div class="plan">方案原句：「句型翻译夯实语法」。这三句等会儿写邮件正好用得上。</div>
+  <div id="trBox"></div>
+  <button class="btn primary" data-go="next" data-need="trans" disabled>下一步：写邮件 →</button>
+  <button class="skip" data-skip>样本审阅用：跳过这一步</button>
+</section>
+
+<!-- 6 写邮件 -->
+<section class="scr" id="s-write">
+  <h2>第 6 步 · 写：给 Tom 写一封短邮件</h2>
+  <div class="plan">方案原句：「文体专项训练」——文体是你 KET 写作里的「短邮件」。</div>
+  <div class="card">
+    <div class="brief">
+      Your class went to the Science Museum yesterday. Your friend Tom was ill and stayed at home.<br>
+      Write an email to Tom. Tell him:
+      <ul><li>where you went</li><li>what you saw</li><li>what you did there</li></ul>
+      Write <b>25 words or more</b>.
+    </div>
+    <div class="pics">
+      <figure><img src="assets/img/museum1.jpg" alt="" onerror="this.style.visibility='hidden'"><figcaption>去了哪儿</figcaption></figure>
+      <figure><img src="assets/img/museum2.jpg" alt="" onerror="this.style.visibility='hidden'"><figcaption>看到了什么</figcaption></figure>
+      <figure><img src="assets/img/museum3.jpg" alt="" onerror="this.style.visibility='hidden'"><figcaption>做了什么</figcaption></figure>
+    </div>
+    <p class="muted" style="margin:0">中文意思：昨天全班去了科技馆，Tom 生病没去。写邮件告诉他：去了哪儿、看到了什么、在那儿做了什么。</p>
+  </div>
+  <div class="tabs" id="wTabs"><button class="on" data-mode="chunk">🧩 词块拼句</button><button data-mode="type">⌨️ 自己打字</button></div>
+  <div id="wChunk">
+    <div class="card" id="wLines"></div>
+    <div class="row" style="margin:6px 0"><span class="muted">④ 你的英文名：</span><input id="wName" type="text" maxlength="14" value="Alex" autocomplete="off" autocorrect="off" spellcheck="false"></div>
+    <div class="mail preview"><div class="mail-h">To: <b>Tom</b>　Subject: <b>The school trip</b></div><div class="mail-b" id="wPrev"></div></div>
+  </div>
+  <div id="wType" hidden>
+    <div class="chips" id="wStarters" style="margin-bottom:8px"></div>
+    <textarea id="wText" autocapitalize="sentences" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Hi Tom,&#10;Yesterday we ..."></textarea>
+  </div>
+  <div class="wc">已写 <b id="wCount">0</b> 词（要求 25 词以上）</div>
+  <button class="btn go" id="wSubmit">交给 AI 批改 →</button>
+  <button class="skip" id="wDemo">样本审阅用：填入一封带典型错误的学生作文，看它怎么被批改</button>
+</section>
+
+<!-- 7 批改 -->
+<section class="scr" id="s-mark">
+  <h2>第 7 步 · AI 批改</h2>
+  <div class="plan">方案原句：「写作AI智能批改、语法纠错、句型优化」。</div>
+  <span class="demo">样本演示：这里是规则检查 + 预置反馈，正式版接 AI。</span>
+  <div id="mkBox"><div class="card">还没有交作文。<button class="btn" data-goto="6">← 回去写邮件</button></div></div>
+  <button class="btn primary" data-go="next" data-need="mark" disabled>下一步：玩游戏 →</button>
+  <button class="skip" data-skip>样本审阅用：跳过这一步</button>
+</section>
+
+<!-- 8 游戏 -->
+<section class="scr" id="s-game">
+  <h2>第 8 步 · 游戏：赶邮车</h2>
+  <div class="plan">方案原句：「AI游戏化闯关、积分徽章、趣味交互，解决坚持问题」。玩的就是这一课的句型和动词。</div>
+  <div id="gBox"></div>
+  <button class="btn primary" data-go="next" data-need="game" disabled>过关，领徽章 →</button>
+  <button class="skip" data-skip>样本审阅用：跳过这一步</button>
+</section>
+
+<!-- 9 过关 -->
+<section class="scr" id="s-pass">
+  <div id="psBox"></div>
+</section>
+</main>
+
+<div class="sheet" id="askSheet">
+  <div class="sheet-card">
+    <h2>问老师</h2>
+    <p class="muted" style="margin:2px 0 10px">你现在在：<b id="askWhere"></b>　哪里卡住了？</p>
+    <div class="chips" id="askWhy">
+      <button class="chip zh">看不懂题目</button><button class="chip zh">不知道动词怎么变</button><button class="chip zh">不知道写什么</button><button class="chip zh">别的问题</button>
+    </div>
+    <textarea id="askText" placeholder="想问老师什么？（可以不填）"></textarea>
+    <button class="btn primary" id="askSend">发给老师</button>
+    <div class="fb" id="askFb"></div>
+    <span class="demo">样本演示：这里不会真的发出去。正式版会把孩子卡住的这一步和当时的作答一起发给陪跑老师，老师在线上或线下答疑。</span>
+    <button class="btn" id="askClose">关闭，继续学</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+</div>
+<script src="assets/app.js?v=8"></script>
+</body>
+</html>

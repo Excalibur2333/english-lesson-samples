@@ -2,20 +2,127 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>英语学习系统 · 样本</title>
+<meta name="format-detection" content="telephone=no">
+<title>英语学习系统 · 五个样本</title>
 <style>
-  body { margin: 0; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f6f4ef; color: #1f2a37; }
-  main { max-width: 560px; margin: 0 auto; padding: 48px 20px; }
-  h1 { font-size: 22px; margin: 0 0 12px; }
-  p { line-height: 1.7; color: #4b5563; }
+  :root {
+    --bg: #f5f2ea; --card: #ffffff; --ink: #1d2733; --sub: #5b6676; --line: #e6e0d2;
+    --c1: #2f7de1; --c2: #e2622b; --c3: #1f9d6b; --c4: #8a56d8; --c5: #d49a12; --c6: #37474f;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    line-height: 1.65; }
+  main { max-width: 620px; margin: 0 auto; padding: 28px 16px calc(40px + env(safe-area-inset-bottom)); }
+  .eyebrow { font-size: 13px; letter-spacing: .08em; color: var(--sub); }
+  h1 { font-size: 26px; line-height: 1.25; margin: 6px 0 12px; }
+  .lead { font-size: 16px; color: #36414f; margin: 0 0 22px; }
+  h2 { font-size: 15px; letter-spacing: .06em; color: var(--sub); font-weight: 600; margin: 30px 0 10px; }
+  .card { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 16px 14px 18px; margin: 0 0 12px; text-decoration: none; color: inherit; position: relative; overflow: hidden; }
+  .card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--c); }
+  .card:active { transform: scale(.992); }
+  .row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .num { font-size: 13px; font-weight: 700; color: var(--c); letter-spacing: .04em; }
+  .skill { font-size: 19px; font-weight: 700; }
+  .level { font-size: 13.5px; color: var(--sub); margin: 2px 0 8px; }
+  .level b { color: var(--ink); font-weight: 600; }
+  .see { font-size: 15px; margin: 0 0 12px; color: #2c3744; }
+  .go { display: inline-block; font-size: 15px; font-weight: 600; color: #fff; background: var(--c);
+    padding: 9px 18px; border-radius: 999px; }
+  .go.ghost { background: transparent; color: var(--c); border: 1.5px solid var(--c); margin-left: 8px; padding: 7.5px 16px; }
+  .four { display: flex; gap: 6px; margin: 0 0 12px; flex-wrap: wrap; }
+  .four span { font-size: 12px; padding: 2px 9px; border-radius: 999px; background: #f1ede2; color: #4a5462; }
+  ul.plain, ol.plain { margin: 0; padding-left: 20px; }
+  ul.plain li, ol.plain li { margin: 0 0 8px; font-size: 15px; color: #2c3744; }
+  .box { background: #fffdf6; border: 1px dashed #d9cfb6; border-radius: 14px; padding: 14px 16px; }
+  .ask { background: #1d2733; color: #f3efe4; border-radius: 14px; padding: 16px 18px; }
+  .ask h3 { margin: 0 0 8px; font-size: 16px; }
+  .ask ol { margin: 0; padding-left: 20px; }
+  .ask li { margin: 0 0 8px; font-size: 15.5px; }
+  footer { margin-top: 28px; font-size: 12.5px; color: var(--sub); text-align: center; }
+  .pending { opacity: .55; pointer-events: none; }
 </style>
 </head>
 <body>
 <main>
-  <h1>英语学习系统 · 样本</h1>
-  <p>样本正在准备中，稍后在这里更新。</p>
+  <div class="eyebrow">按你 11 月 21 日发来的方案做的第一批样本</div>
+  <h1>英语学习系统 · 五个样本</h1>
+  <p class="lead">你说想让 AI 在听、说、读、写每个层面各做一个样本，「文字 + 视频 + 练习 + 游戏」，看看是不是你想要的感觉。下面五个都是能直接点开、从头玩到尾的一课，每个 3–6 分钟。分级和叫法都按你方案里写的来。</p>
+
+  <h2>五个样本</h2>
+
+  <a class="card" style="--c: var(--c1)" href="samples/01-listening/index.html" data-sample="01-listening">
+    <div class="row"><span class="num">样本 1</span><span class="skill">听力</span></div>
+    <div class="level">你方案里的级别：<b>学术进阶段 · TED-Ed 式动画科普短片</b>（初高中铺垫）</div>
+    <p class="see">泛听磨耳朵，精听抠细节：分句停顿、挖空、复读、跟读、错题巩固。过关后解锁一个口语任务。</p>
+    <div class="four"><span>文字</span><span>视频</span><span>练习</span><span>游戏</span></div>
+    <span class="go">打开样本</span>
+  </a>
+
+  <a class="card" style="--c: var(--c2)" href="samples/02-speaking/index.html" data-sample="02-speaking">
+    <div class="row"><span class="num">样本 2</span><span class="skill">口语</span></div>
+    <div class="level">你方案里的级别：<b>Level 3 情景对话 + 个人观点表达</b>（KET–PET）</div>
+    <p class="see">系统先示范，再带着从跟读走到自己说：情景对练、说观点、给理由，说完出一张多维打分卡。</p>
+    <div class="four"><span>文字</span><span>视频</span><span>练习</span><span>游戏</span></div>
+    <span class="go">打开样本</span>
+  </a>
+
+  <a class="card" style="--c: var(--c3)" href="samples/03-reading/index.html" data-sample="03-reading">
+    <div class="row"><span class="num">样本 3</span><span class="skill">阅读</span></div>
+    <div class="level">你方案里的级别：<b>小学中阶短文阶段</b>（短篇故事 / 科普短文）</div>
+    <p class="see">同一篇先听懂、再读懂。系统来教阅读策略：关键词定位、上下文猜词、自我理解监控。</p>
+    <div class="four"><span>文字</span><span>视频</span><span>练习</span><span>游戏</span></div>
+    <span class="go">打开样本</span>
+  </a>
+
+  <a class="card" style="--c: var(--c4)" href="samples/04-writing/index.html" data-sample="04-writing">
+    <div class="row"><span class="num">样本 4</span><span class="skill">写作（语法融在里面）</span></div>
+    <div class="level">你方案里的级别：<b>KET 写作 · 短邮件</b></div>
+    <p class="see">没有单独的语法课。读范文 → 仿写 → 句型翻译 → 自己写一封，写完当场批改。</p>
+    <div class="four"><span>文字</span><span>视频</span><span>练习</span><span>游戏</span></div>
+    <span class="go">打开样本</span>
+  </a>
+
+  <a class="card" style="--c: var(--c5)" href="samples/05-loop/index.html" data-sample="05-loop">
+    <div class="row"><span class="num">样本 5</span><span class="skill">闭环一课</span></div>
+    <div class="level">你方案里的级别：<b>初级段 · 短篇童话故事</b>（口语 Level 2、启蒙绘本阅读策略、入门写作）</div>
+    <p class="see">一篇童话走完一圈：听 → 说 → 读 → 写 → 闯关。最后有一页学情看板，每一步都有「问老师」。</p>
+    <div class="four"><span>文字</span><span>视频</span><span>练习</span><span>游戏</span></div>
+    <span class="go">打开样本</span>
+  </a>
+
+  <h2>在你的方案上补的部分</h2>
+  <div class="card" style="--c: var(--c6)" data-sample="framework">
+    <div class="row"><span class="skill">方案补全稿</span></div>
+    <p class="see" style="margin-top:6px">你说小闭环可以进一步再给 AI 指令。我们先补了一版草案：听、说、读、写四个小闭环，全阶对照表，方案里还没展开的环节，AI 创作内容的流程，以及几件需要你拍板的事。</p>
+    <a class="go" href="framework/index.html">打开网页版</a>
+    <a class="go ghost" id="docx-link" href="framework/" style="display:none">下载 Word 版</a>
+  </div>
+
+  <h2>看之前请知道</h2>
+  <div class="box">
+    <ul class="plain">
+      <li>这些是静态网页样本。标着「样本演示」的地方（AI 批改、AI 对练、AI 打分）现在是预先写好的反馈，正式版再接 AI。</li>
+      <li>英文配音是合成语音，画面是 AI 生成的，课文和题目都是原创。</li>
+      <li>口语录音只留在你自己的手机里，不会上传。微信里如果拿不到麦克风，可以用点选的方式走完。</li>
+      <li>每个样本的级别和题材是我们先挑的，都可以换。</li>
+    </ul>
+  </div>
+
+  <h2>看完想请你说三句</h2>
+  <div class="ask">
+    <ol>
+      <li>五个里，哪个最接近你要的感觉？哪个最不像？</li>
+      <li>文字、视频、练习、游戏这四样，哪一样多了，哪一样少了？</li>
+      <li>下一步先做哪个学段、哪个层面？</li>
+    </ol>
+  </div>
+
+  <footer>2026-11-21 · 第一批样本</footer>
 </main>
 </body>
 </html>
